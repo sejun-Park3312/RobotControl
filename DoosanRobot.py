@@ -1,9 +1,18 @@
 #!/usr/bin/env python3
 
+## <<Before Starting, Open Gazebo>>
+## <<Copy and Paste the Following Commands into Terminal!!>>
+## ---------------------------------------------
+# cd ~/catkin_ws
+# source devel/setup.bash
+# roslaunch dsr_launcher single_robot_gazebo.launch model:=a0509
+## ---------------------------------------------
+
 import time
 import threading
 import subprocess
 import rospy
+import cv2
 from dsr_msgs.srv import MoveLine, MoveHome, MoveWait
 from dsr_msgs.srv import GetCurrentPose
 
@@ -26,11 +35,6 @@ class DoosanRobot:
 
 
     def Ready(self):
-        # Start Gazebo
-        subprocess.run('cd ~/catkin_ws', shell=True)
-        subprocess.run('source devel/setup.bash', shell=True)
-        subprocess.run('roslaunch dsr_launcher single_robot_gazebo.launch model:=a0509', shell=True)
-
         # Preprocessing
         rospy.init_node('simple_move_gazebo')
         rospy.wait_for_service('/dsr01a0509/motion/move_home')
@@ -42,8 +46,12 @@ class DoosanRobot:
         self.Function_MoveLine = rospy.ServiceProxy('/dsr01a0509/motion/move_joint', MoveLine)
         self.Function_GetPose = rospy.ServiceProxy('/dsr01a0509/system/get_current_pose', GetCurrentPose)
 
+        self.Running = True
+        print("Ready!")
+
 
     def Move_Home(self):
+        print("Homing...")
         self.Function_MoveHome()
         self.Function_MoveWait()
         print("Homing Complete!")
@@ -59,8 +67,11 @@ class DoosanRobot:
         blendType = 0
         syncType = 0
 
-        self.Function_MoveLine(pose, vel, acc, time, radius, mode, blendType, syncType)
-        self.Function_MoveWait()
+        if self.Running:
+            print("Moving...")
+            self.Function_MoveLine(pose, vel, acc, time, radius, mode, blendType, syncType)
+            self.Function_MoveWait()
+            print("Moving Complete!")
 
 
     def Move_Rel(self, X, Y, Z, Phi):
@@ -73,12 +84,42 @@ class DoosanRobot:
         blendType = 0
         syncType = 0
 
-        self.Function_MoveLine(pose, vel, acc, time, radius, mode, blendType, syncType)
-        self.Function_MoveWait()
+        if self.Running:
+            print("Moving...")
+            self.Function_MoveLine(pose, vel, acc, time, radius, mode, blendType, syncType)
+            self.Function_MoveWait()
+            print("Moving Complete!")
 
 
     def Get_Pose(self):
         Pose = self.Function_GetPose(1)
+        print(f"Pose: {Pose}")
 
-        self.EE_Position = Pose[:3]
-        self.EE_Rotation = Pose[3:]
+
+    def Track_EE(self):
+        print("Tracking...")
+        while self.Running:
+            Pose = self.Function_GetPose(1)
+            with self.lock:
+                self.EE_Position = Pose[:3]
+                self.EE_Rotation = Pose[3:]
+        print("Tracking Done!")
+
+
+    def RobotController(self):
+
+        EE_Tracker = threading.Thread(target = self.Track_EE, daemon = True)
+        EE_Tracker.start()
+        print("Start RobotControl!")
+        while self.Running:
+            if cv2.waitKey(1) == 27:
+                self.Running = False
+                self.CloseAll()
+                break
+
+
+    def CloseAll(self):
+        self.Running = False
+        print("Closing...")
+        subprocess.run('pkill -f gazebo', shell=True)
+        print("All Closed!")
