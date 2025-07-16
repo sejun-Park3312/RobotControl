@@ -11,7 +11,7 @@
 ## <<Console Control>>
 ## <<Copy and Paste the Following Commands into "New" Terminal!!>>
 ## ---------------------------------------------
-# python3 robot_console.py
+# python3 RobotController.py
 ## ---------------------------------------------
 
 import threading

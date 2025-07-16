@@ -1,5 +1,19 @@
 #!/usr/bin/env python3
 
+## <<Before Starting, Open Gazebo>>
+## <<Copy and Paste the Following Commands into Terminal!!>>
+## ---------------------------------------------
+# cd ~/catkin_ws
+# source devel/setup.bash
+# roslaunch dsr_launcher single_robot_gazebo.launch model:=a0509 sim:=true
+## ---------------------------------------------
+
+## <<Console Control>>
+## <<Copy and Paste the Following Commands into "New" Terminal!!>>
+## ---------------------------------------------
+# python3 RobotController.py
+## ---------------------------------------------
+
 import rospy
 import threading
 import code
@@ -28,7 +42,7 @@ class RobotController:
 
     def Ready(self):
         # Preprocessing
-        rospy.init_node('Sejun_Robot_Controller', anonymous=True)
+        rospy.init_node('Sejun_RobotController', anonymous=True)
         rospy.wait_for_service('/dsr01a0509/motion/move_home')
         rospy.wait_for_service('/dsr01a0509/motion/move_joint')
 
