@@ -2,7 +2,7 @@
 ## <Start Gazebo with ROS>
 # cd ~/catkin_ws
 # source devel/setup.bash
-# roslaunch dsr_launcher single_robot_gazebo.launch model:=a0509
+# roslaunch dsr_launcher single_robot_gazebo.launch model:=a0509 sim:=true
 
 #!/usr/bin/env python3
 import rospy
@@ -37,7 +37,7 @@ def main():
     res_home = move_home()
     print("Move Home result:", res_home)
 
-    wait_until_motion_done()  # 홈 완료될 때까지 대기!
+    # wait_until_motion_done()  # 홈 완료될 때까지 대기!
     rospy.sleep(2)
 
     joint_pose = [0, 0, 90, 0, 90, 0]
@@ -51,7 +51,7 @@ def main():
 
     res_joint = move_joint(joint_pose, vel, acc, time, radius, mode, blendType, syncType)
 
-    wait_until_motion_done()  # 조인트 이동 완료될 때까지 대기!
+    # wait_until_motion_done()  # 조인트 이동 완료될 때까지 대기!
 
 if __name__ == '__main__':
     main()

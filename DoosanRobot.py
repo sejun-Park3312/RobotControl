@@ -5,15 +5,13 @@
 ## ---------------------------------------------
 # cd ~/catkin_ws
 # source devel/setup.bash
-# roslaunch dsr_launcher single_robot_gazebo.launch model:=a0509
+# roslaunch dsr_launcher single_robot_gazebo.launch model:=a0509 sim:=true
 ## ---------------------------------------------
 
-import time
 import threading
-import subprocess
 import rospy
 import cv2
-from dsr_msgs.srv import MoveLine, MoveHome, MoveWait
+from dsr_msgs.srv import MoveLine, MoveJoint, MoveHome, MoveWait
 from dsr_msgs.srv import GetCurrentPose
 
 class DoosanRobot:
@@ -25,6 +23,7 @@ class DoosanRobot:
         self.Function_MoveWait = None
         self.Function_MoveHome = None
         self.Function_MoveLine = None
+        self.Function_MoveJoint = None
         self.Function_GetPose = None
 
         self.EE_Position = None
@@ -43,7 +42,8 @@ class DoosanRobot:
         # Functions
         self.Function_MoveHome = rospy.ServiceProxy('/dsr01a0509/motion/move_home', MoveHome)
         self.Function_MoveWait = rospy.ServiceProxy('/dsr01a0509/motion/move_wait', MoveWait)
-        self.Function_MoveLine = rospy.ServiceProxy('/dsr01a0509/motion/move_joint', MoveLine)
+        self.Function_MoveLine = rospy.ServiceProxy('/dsr01a0509/motion/move_line', MoveLine)
+        self.Function_MoveJoint = rospy.ServiceProxy('/dsr01a0509/motion/move_joint', MoveJoint)
         self.Function_GetPose = rospy.ServiceProxy('/dsr01a0509/system/get_current_pose', GetCurrentPose)
 
         self.Running = True
@@ -52,9 +52,12 @@ class DoosanRobot:
 
     def Move_Home(self):
         print("Homing...")
-        self.Function_MoveHome()
+        results = self.Function_MoveHome()
         self.Function_MoveWait()
-        print("Homing Complete!")
+        if results.success == True:
+            print("Homing Complete!")
+        else:
+            print("Failed...")
 
 
     def Move_Abs(self, X, Y, Z, Phi):
@@ -63,15 +66,19 @@ class DoosanRobot:
         acc = self.Acceleration
         time = 0
         radius = 0
+        ref = 0
         mode = 0
         blendType = 0
         syncType = 0
 
         if self.Running:
             print("Moving...")
-            self.Function_MoveLine(pose, vel, acc, time, radius, mode, blendType, syncType)
+            results = self.Function_MoveLine(pose, vel, acc, time, radius, ref, mode, blendType, syncType)
             self.Function_MoveWait()
-            print("Moving Complete!")
+            if results.success == True:
+                print("Moving Complete!")
+            else:
+                print("Failed...")
 
 
     def Move_Rel(self, X, Y, Z, Phi):
@@ -80,20 +87,44 @@ class DoosanRobot:
         acc = self.Acceleration
         time = 0
         radius = 0
+        ref = 0
         mode = 1
         blendType = 0
         syncType = 0
 
         if self.Running:
             print("Moving...")
-            self.Function_MoveLine(pose, vel, acc, time, radius, mode, blendType, syncType)
+            results = self.Function_MoveLine(pose, vel, acc, time, radius, ref, mode, blendType, syncType)
             self.Function_MoveWait()
-            print("Moving Complete!")
+            if results.success == True:
+                print("Moving Complete!")
+            else:
+                print("Failed...")
+
+    def Move_Joint(self, q):
+        vel = 40
+        acc = 40
+        time = 0
+        radius = 0
+        mode = 0
+        blendType = 0
+        syncType = 0
+
+        if self.Running:
+            print("Moving...")
+            results = self.Function_MoveJoint(q, vel, acc, time, radius, mode, blendType, syncType)
+            self.Function_MoveWait()
+            if results.success == True:
+                print("Moving Complete!")
+            else:
+                print("Failed...")
+
 
 
     def Get_Pose(self):
         Pose = self.Function_GetPose(1)
-        print(f"Pose: {Pose}")
+        print(f"Pose: {Pose.pos}")
+        return Pose.pos
 
 
     def Track_EE(self):
@@ -101,8 +132,8 @@ class DoosanRobot:
         while self.Running:
             Pose = self.Function_GetPose(1)
             with self.lock:
-                self.EE_Position = Pose[:3]
-                self.EE_Rotation = Pose[3:]
+                self.EE_Position = Pose.pos[:3]
+                self.EE_Rotation = Pose.pos[3:]
         print("Tracking Done!")
 
 
@@ -114,12 +145,5 @@ class DoosanRobot:
         while self.Running:
             if cv2.waitKey(1) == 27:
                 self.Running = False
-                self.CloseAll()
+
                 break
-
-
-    def CloseAll(self):
-        self.Running = False
-        print("Closing...")
-        subprocess.run('pkill -f gazebo', shell=True)
-        print("All Closed!")
