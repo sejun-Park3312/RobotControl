@@ -1,26 +1,13 @@
 #!/usr/bin/env python3
 
-## <<Before Starting, Open Gazebo>>
-## <<Copy and Paste the Following Commands into Terminal!!>>
-## ---------------------------------------------
-# cd ~/catkin_ws
-# source devel/setup.bash
-# roslaunch dsr_launcher single_robot_gazebo.launch model:=a0509 sim:=true
-## ---------------------------------------------
-
-## <<Console Control>>
-## <<Copy and Paste the Following Commands into "New" Terminal!!>>
-## ---------------------------------------------
-# python3 robot_console.py
-## ---------------------------------------------
-
-import threading
 import rospy
-import cv2
+import threading
+import code
 from dsr_msgs.srv import MoveLine, MoveJoint, MoveHome, MoveWait
 from dsr_msgs.srv import GetCurrentPose
 
-class DoosanRobot:
+
+class RobotController:
     def __init__(self):
         self.Running = False
         self.lock = threading.Lock()
@@ -57,6 +44,7 @@ class DoosanRobot:
 
 
     def Move_Home(self):
+
         results = self.Function_MoveHome()
         if results.success == True:
             print("Homing...")
@@ -81,6 +69,7 @@ class DoosanRobot:
             print("Moving...")
             results = self.Function_MoveLine(pose, vel, acc, time, radius, ref, mode, blendType, syncType)
             if results.success == True:
+
                 self.Function_MoveWait()
                 print("Moving Complete!")
             else:
@@ -102,6 +91,7 @@ class DoosanRobot:
             print("Moving...")
             results = self.Function_MoveLine(pose, vel, acc, time, radius, ref, mode, blendType, syncType)
             if results.success == True:
+
                 self.Function_MoveWait()
                 print("Moving Complete!")
             else:
@@ -121,6 +111,7 @@ class DoosanRobot:
             print("Moving...")
             results = self.Function_MoveJoint(q, vel, acc, time, radius, mode, blendType, syncType)
             if results.success == True:
+
                 self.Function_MoveWait()
                 print("Moving Complete!")
             else:
@@ -130,7 +121,7 @@ class DoosanRobot:
     def Get_Pose(self):
         with self.lock:
             Pose = self.Function_GetPose(1)
-        # print(f"Pose: {Pose.pos}")
+        print(f"Pose: {Pose.pos}")
         return Pose.pos
 
 
@@ -145,3 +136,30 @@ class DoosanRobot:
             rospy.sleep(1)
         print("Tracking Done!")
 
+
+    def EndController(self):
+        self.Running = False
+
+
+
+if __name__ == "__main__":
+    RC = RobotController()
+    RC.Ready()
+
+    # EE_Tracker = threading.Thread(target=RC.Track_EE, daemon=True)
+    # EE_Tracker.start()
+
+    RC.Move_Home()
+
+    banner = "\n Waiting Your Order..."
+    locals_dict = {"RC":RC,
+                   'moveJnt':RC.Move_Joint,
+                   'moveRel':RC.Move_Rel,
+                   'moveAbs':RC.Move_Abs,
+                   'getPos':RC.Get_Pose,
+                   'homePos':RC.Move_Home
+                   }
+
+    code.interact(banner=banner, local=locals_dict)
+
+    RC.EndController()
