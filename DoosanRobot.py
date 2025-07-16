@@ -120,9 +120,9 @@ class DoosanRobot:
                 print("Failed...")
 
 
-
     def Get_Pose(self):
-        Pose = self.Function_GetPose(1)
+        with self.lock:
+            Pose = self.Function_GetPose(1)
         print(f"Pose: {Pose.pos}")
         return Pose.pos
 
@@ -134,6 +134,7 @@ class DoosanRobot:
             with self.lock:
                 self.EE_Position = Pose.pos[:3]
                 self.EE_Rotation = Pose.pos[3:]
+            rospy.sleep(0.1)
         print("Tracking Done!")
 
 
