@@ -38,6 +38,7 @@ class RobotController:
 
         self.Velocity = [30, 30]
         self.Acceleration = [30, 30]
+        self.InitJoint = [0,0,90,0,90,0]
 
 
     def Ready(self):
@@ -55,6 +56,7 @@ class RobotController:
 
         self.Running = True
         print("Ready!")
+        print("")
 
 
     def Move_Home(self):
@@ -63,9 +65,11 @@ class RobotController:
         if results.success == True:
             print("Homing...")
             self.Function_MoveWait()
-            print("Homing Complete!")
+            print("Done!")
+            print("")
         else:
             print("Failed...")
+            print("")
 
 
     def Move_Abs(self, X, Y, Z, Phi):
@@ -85,9 +89,11 @@ class RobotController:
             if results.success == True:
 
                 self.Function_MoveWait()
-                print("Moving Complete!")
+                print("Done!")
+                print("")
             else:
                 print("Failed...")
+                print("")
 
 
     def Move_Rel(self, X, Y, Z, Phi):
@@ -107,9 +113,11 @@ class RobotController:
             if results.success == True:
 
                 self.Function_MoveWait()
-                print("Moving Complete!")
+                print("Done!")
+                print("")
             else:
                 print("Failed...")
+                print("")
 
 
     def Move_Joint(self, q):
@@ -127,15 +135,22 @@ class RobotController:
             if results.success == True:
 
                 self.Function_MoveWait()
-                print("Moving Complete!")
+                print("Done!")
+                print("")
             else:
                 print("Failed...")
+                print("")
+
+
+    def Init_Pose(self):
+        if self.Running:
+            self.Move_Joint(self.InitJoint)
 
 
     def Get_Pose(self):
         with self.lock:
             Pose = self.Function_GetPose(1)
-        print(f"Pose: {Pose.pos}")
+        print("")
         return Pose.pos
 
 
@@ -148,7 +163,8 @@ class RobotController:
                 self.EE_Rotation = Pose.pos[3:]
             print(f"Pose: {self.EE_Position}")
             rospy.sleep(1)
-        print("Tracking Done!")
+        print("Done!")
+        print("")
 
 
     def EndController(self):
@@ -167,11 +183,12 @@ if __name__ == "__main__":
 
     banner = "\n Waiting Your Order..."
     locals_dict = {"RC":RC,
-                   'moveJnt':RC.Move_Joint,
-                   'moveRel':RC.Move_Rel,
-                   'moveAbs':RC.Move_Abs,
-                   'getPos':RC.Get_Pose,
-                   'homePos':RC.Move_Home
+                   'MoveJoint':RC.Move_Joint,
+                   'MoveRel':RC.Move_Rel,
+                   'MoveAbs':RC.Move_Abs,
+                   'GetPose':RC.Get_Pose,
+                   'HomePose':RC.Move_Home,
+                   'InitPose':RC.Init_Pose,
                    }
 
     code.interact(banner=banner, local=locals_dict)
