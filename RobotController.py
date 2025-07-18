@@ -40,7 +40,8 @@ class RobotController:
 
         self.Velocity = [30, 30]
         self.Acceleration = [30, 30]
-        self.InitJoint = [0,0,90,0,90,0]
+        self.InitJoint = [7.506136417388916, -0.9212368726730347, 102.26158142089844, -4.5320696895583944e-15, 78.65965270996094, 7.506136417388916]
+
 
 
     def Ready(self):
@@ -196,6 +197,7 @@ if __name__ == "__main__":
                    'MoveRel':RC.Move_Rel,
                    'MoveAbs':RC.Move_Abs,
                    'GetPose':RC.Get_Pose,
+                   'GetJoint':RC.Get_Joint,
                    'HomePose':RC.Move_Home,
                    'InitPose':RC.Init_Pose,
                    }

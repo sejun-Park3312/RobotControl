@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb9d1046-e9e4-45fd-a8cf-311c6b3fc451" name="Changes" comment="First commit">
-      <change beforePath="$PROJECT_DIR$/.idea/RobotControl.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RobotControl.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RobotController.py" beforeDir="false" afterPath="$PROJECT_DIR$/RobotController.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -157,7 +155,7 @@
       <workItem from="1752835902874" duration="1426000" />
       <workItem from="1752837419378" duration="1966000" />
       <workItem from="1752841045529" duration="700000" />
-      <workItem from="1752841833565" duration="651000" />
+      <workItem from="1752841833565" duration="948000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
@@ -255,7 +253,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752738639293</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="First commit">
+      <option name="closed" value="true" />
+      <created>1752842758536</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1752842758536</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
