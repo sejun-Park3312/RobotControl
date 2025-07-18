@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb9d1046-e9e4-45fd-a8cf-311c6b3fc451" name="Changes" comment="First commit">
+      <change beforePath="$PROJECT_DIR$/.idea/RobotControl.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RobotControl.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotController.py" beforeDir="false" afterPath="$PROJECT_DIR$/RobotController.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,30 +49,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.DoosanRobot.executor": "Run",
-    "Python.ROS1.executor": "Run",
-    "Python.ROS1_Test.executor": "Debug",
-    "Python.dsr_ex_a0509.executor": "Run",
-    "Python.ex.executor": "Debug",
-    "Python.robot_console.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/msrl/catkin_ws",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "vcs.Git",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.DoosanRobot.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ROS1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ROS1_Test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.RobotController.executor&quot;: &quot;Run&quot;,
+    &quot;Python.dsr_ex_a0509.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ex.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.robot_console.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/msrl/catkin_ws/devel/lib/python3/dist-packages&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RunManager" selected="Python.RobotController">
     <configuration name="ROS1_Test" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="RobotControl" />
       <option name="ENV_FILES" value="" />
@@ -95,6 +98,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="RobotController" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="RobotControl" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="PYTHONPATH" value="$USER_HOME$/catkin_ws/devel/lib/python3/dist-packages" />
+        <env name="ROS_PACKAGE_PATH" value="$USER_HOME$/catkin_ws/src" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RobotController.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.ROS1_Test" />
+      <item itemvalue="Python.RobotController" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -111,7 +143,21 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1752220091762</updated>
-      <workItem from="1752570492148" duration="43526000" />
+      <workItem from="1752570492148" duration="43535000" />
+      <workItem from="1752740027599" duration="76000" />
+      <workItem from="1752740135779" duration="77000" />
+      <workItem from="1752740223844" duration="72000" />
+      <workItem from="1752740307697" duration="3000" />
+      <workItem from="1752741513206" duration="2000" />
+      <workItem from="1752741546734" duration="2766000" />
+      <workItem from="1752745452465" duration="1557000" />
+      <workItem from="1752815432169" duration="4098000" />
+      <workItem from="1752819723669" duration="2144000" />
+      <workItem from="1752822220556" duration="5108000" />
+      <workItem from="1752835902874" duration="1426000" />
+      <workItem from="1752837419378" duration="1966000" />
+      <workItem from="1752841045529" duration="700000" />
+      <workItem from="1752841833565" duration="651000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
@@ -201,7 +247,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752734840020</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="First commit">
+      <option name="closed" value="true" />
+      <created>1752738639293</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1752738639293</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,7 +281,8 @@
     <SUITE FILE_PATH="coverage/RobotControl$dsr_ex_a0509.coverage" NAME="dsr_ex_a0509 Coverage Results" MODIFIED="1752678634899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RobotControl$robot_console.coverage" NAME="robot_console Coverage Results" MODIFIED="1752684465437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RobotControl$DoosanRobot.coverage" NAME="DoosanRobot Coverage Results" MODIFIED="1752674511225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/RobotControl$ROS1_Test.coverage" NAME="ROS1_Test Coverage Results" MODIFIED="1752672308537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RobotControl$ROS1_Test.coverage" NAME="ROS1_Test Coverage Results" MODIFIED="1752745478674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RobotControl$RobotController.coverage" NAME="RobotController Coverage Results" MODIFIED="1752745128163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RobotControl$ex.coverage" NAME="ex Coverage Results" MODIFIED="1752685079426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

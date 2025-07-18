@@ -6,6 +6,8 @@
 # cd ~/catkin_ws
 # source devel/setup.bash
 # roslaunch dsr_launcher single_robot_gazebo.launch model:=a0509 sim:=true
+# roslaunch dsr_launcher single_robot_gazebo.launch model:=a0509_custom sim:=true
+# roslaunch dsr_launcher SJ_Custom.launch model:=a0509_custom sim:=true
 ## ---------------------------------------------
 
 ## <<Console Control>>
@@ -44,15 +46,15 @@ class RobotController:
     def Ready(self):
         # Preprocessing
         rospy.init_node('Sejun_RobotController', anonymous=True)
-        rospy.wait_for_service('/dsr01a0509/motion/move_home')
-        rospy.wait_for_service('/dsr01a0509/motion/move_joint')
+        rospy.wait_for_service('/dsr01a0509_custom/motion/move_home')
+        rospy.wait_for_service('/dsr01a0509_custom/motion/move_joint')
 
         # Functions
-        self.Function_MoveHome = rospy.ServiceProxy('/dsr01a0509/motion/move_home', MoveHome)
-        self.Function_MoveWait = rospy.ServiceProxy('/dsr01a0509/motion/move_wait', MoveWait)
-        self.Function_MoveLine = rospy.ServiceProxy('/dsr01a0509/motion/move_line', MoveLine)
-        self.Function_MoveJoint = rospy.ServiceProxy('/dsr01a0509/motion/move_joint', MoveJoint)
-        self.Function_GetPose = rospy.ServiceProxy('/dsr01a0509/system/get_current_pose', GetCurrentPose)
+        self.Function_MoveHome = rospy.ServiceProxy('/dsr01a0509_custom/motion/move_home', MoveHome)
+        self.Function_MoveWait = rospy.ServiceProxy('/dsr01a0509_custom/motion/move_wait', MoveWait)
+        self.Function_MoveLine = rospy.ServiceProxy('/dsr01a0509_custom/motion/move_line', MoveLine)
+        self.Function_MoveJoint = rospy.ServiceProxy('/dsr01a0509_custom/motion/move_joint', MoveJoint)
+        self.Function_GetPose = rospy.ServiceProxy('/dsr01a0509_custom/system/get_current_pose', GetCurrentPose)
 
         self.Running = True
         print("Ready!")
@@ -145,6 +147,13 @@ class RobotController:
     def Init_Pose(self):
         if self.Running:
             self.Move_Joint(self.InitJoint)
+
+
+    def Get_Joint(self):
+        with self.lock:
+            Pose = self.Function_GetPose(0)
+        print("")
+        return Pose.pos
 
 
     def Get_Pose(self):
