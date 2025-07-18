@@ -45,17 +45,19 @@ class RobotController:
 
 
     def Ready(self):
+
+        modelName = "a0509"
         # Preprocessing
         rospy.init_node('Sejun_RobotController', anonymous=True)
-        rospy.wait_for_service('/dsr01a0509_custom/motion/move_home')
-        rospy.wait_for_service('/dsr01a0509_custom/motion/move_joint')
+        rospy.wait_for_service("/dsr01" + modelName+ "/motion/move_home")
+        rospy.wait_for_service("/dsr01" + modelName + "/motion/move_joint")
 
         # Functions
-        self.Function_MoveHome = rospy.ServiceProxy('/dsr01a0509_custom/motion/move_home', MoveHome)
-        self.Function_MoveWait = rospy.ServiceProxy('/dsr01a0509_custom/motion/move_wait', MoveWait)
-        self.Function_MoveLine = rospy.ServiceProxy('/dsr01a0509_custom/motion/move_line', MoveLine)
-        self.Function_MoveJoint = rospy.ServiceProxy('/dsr01a0509_custom/motion/move_joint', MoveJoint)
-        self.Function_GetPose = rospy.ServiceProxy('/dsr01a0509_custom/system/get_current_pose', GetCurrentPose)
+        self.Function_MoveHome = rospy.ServiceProxy('/dsr01' + modelName + '/motion/move_home', MoveHome)
+        self.Function_MoveWait = rospy.ServiceProxy('/dsr01' + modelName + '/motion/move_wait', MoveWait)
+        self.Function_MoveLine = rospy.ServiceProxy('/dsr01' + modelName + '/motion/move_line', MoveLine)
+        self.Function_MoveJoint = rospy.ServiceProxy('/dsr01' + modelName + '/motion/move_joint', MoveJoint)
+        self.Function_GetPose = rospy.ServiceProxy('/dsr01' + modelName + '/system/get_current_pose', GetCurrentPose)
 
         self.Running = True
         print("Ready!")
