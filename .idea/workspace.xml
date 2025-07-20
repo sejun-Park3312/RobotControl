@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb9d1046-e9e4-45fd-a8cf-311c6b3fc451" name="Changes" comment="First commit">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RobotController.py" beforeDir="false" afterPath="$PROJECT_DIR$/RobotController.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -158,7 +157,7 @@
       <workItem from="1752841045529" duration="700000" />
       <workItem from="1752841833565" duration="1691000" />
       <workItem from="1752987279921" duration="792000" />
-      <workItem from="1752988937737" duration="2731000" />
+      <workItem from="1752988937737" duration="3054000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
@@ -280,7 +279,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752991000033</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="First commit">
+      <option name="closed" value="true" />
+      <created>1752991732721</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1752991732721</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
