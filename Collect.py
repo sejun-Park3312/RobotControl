@@ -54,8 +54,14 @@ for move in rel_motion:
     RD.AppendData("Robot_XYZ", Robot_XYZ)
     time.sleep(VS.SamplingTime)
     with lock:
-        Vision_XYZ = VS.Position
+        Vision_XYZ = [VS.Position[0]*1000, VS.Position[1]*1000, VS.Position[2]*1000]
+        Vision_XYZ
     RD.AppendData("Vision_XYZ", Vision_XYZ)
+    print(f"Robot:{Robot_XYZ}")
+    print(f"Robot:{Vision_XYZ}")
+    print("")
+
+
 
 RD.SaveData("Robot_XYZ", "Robot_XYZ")
 RD.SaveData("Vision_XYZ", "Vision_XYZ")
