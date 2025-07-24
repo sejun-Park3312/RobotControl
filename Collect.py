@@ -8,12 +8,12 @@ from Vision import Vision
 # 각 축의 범위
 x_range = (-50, 50)
 y_range = (-35, 35)
-z_range = (-20, 20)
+z_range = (-15, 20)
 
 # 축별 샘플링 개수 (자유롭게 조절 가능)
-nx = 3
-ny = 2
-nz = 2
+nx = 10
+ny = 7
+nz = 4
 
 # linspace로 균일 분포 점 생성
 x_vals = np.linspace(x_range[0], x_range[1], nx)
