@@ -6,11 +6,9 @@
 # cd ~/catkin_ws
 # source devel/setup.bash
 # roslaunch dsr_launcher single_robot_gazebo.launch model:=a0509 sim:=true
-# roslaunch dsr_launcher single_robot_gazebo.launch model:=a0509_custom sim:=true
-# roslaunch dsr_launcher SJ_Custom.launch model:=a0509_custom mode:=real host:=192.168.0.181 port:=12345
+# roslaunch dsr_launcher SJ_Custom.launch model:=a0509_Calibration sim:=true
+# roslaunch dsr_launcher SJ_Custom.launch model:=a0509_Calibration mode:=real host:=192.168.0.181 port:=12345
 ## ---------------------------------------------
-
-# roslaunch dsr_launcher single_robot_gazebo.launch mode:=real host:=192.168.0.100 port:=12345
 
 
 ## <<Console Control>>
@@ -22,8 +20,8 @@
 import rospy
 import threading
 import code
-from dsr_msgs.srv import MoveLine, MoveJoint, MoveHome, MoveWait
-from dsr_msgs.srv import GetCurrentPose
+from dsr_msgs.srv import MoveLine, MoveJoint, MoveHome, MoveWait, Fkin, Ikin
+from dsr_msgs.srv import GetCurrentPose, SetCurrentTcp, ConfigCreateTcp, GetCurrentTcp, ConfigDeleteTcp
 
 
 class RobotController:
@@ -31,6 +29,8 @@ class RobotController:
         self.Running = False
         self.lock = threading.Lock()
         self.SamplingTime = 100/1000
+        self.modelName = "a0509_Calibration"
+        self.TCP_Offset = [0,-34.5,-397.5,0,0,0]
 
         self.Function_MoveWait = None
         self.Function_MoveHome = None
@@ -41,16 +41,16 @@ class RobotController:
         self.EE_Position = None
         self.EE_Rotation = None
 
-        self.Velocity = [20, 20]
-        self.Acceleration = [20, 20]
-        self.InitJoint = [7.506136417388916, -0.9212368726730347, 102.26158142089844, -4.5320696895583944e-15, 78.65965270996094, 7.506136417388916]
-
+        self.Velocity = [50, 20]
+        self.Acceleration = [30, 20]
+        self.InitJoint = [11.9, 4.15, 112.47, 0, 63.38, 11.9]
+        self.InitPose = [210.5/1000, 42/1000, 358.0/1000]
 
 
     def Ready(self):
 
         # Model Name
-        modelName = "a0509_custom"
+        modelName = self.modelName
 
         # Preprocessing
         rospy.init_node('Sejun_RobotController', anonymous=True)
@@ -69,6 +69,7 @@ class RobotController:
         print("")
 
 
+
     def Move_Home(self):
 
         results = self.Function_MoveHome()
@@ -82,8 +83,9 @@ class RobotController:
             print("")
 
 
+
     def Move_Abs(self, X, Y, Z, Phi):
-        pose = [X, Y, Z, 0, 0, Phi]
+        pose = [X, Y, Z, 180, 2.7183186830370687e-06, 180 + Phi]
         vel = self.Velocity
         acc = self.Acceleration
         time = 0
@@ -104,6 +106,7 @@ class RobotController:
             else:
                 print("Failed...")
                 print("")
+
 
 
     def Move_Rel(self, X, Y, Z, Phi):
@@ -130,6 +133,7 @@ class RobotController:
                 print("")
 
 
+
     def Move_Joint(self, q):
         vel = 20
         acc = 20
@@ -152,9 +156,11 @@ class RobotController:
                 print("")
 
 
+
     def Init_Pose(self):
         if self.Running:
             self.Move_Joint(self.InitJoint)
+
 
 
     def Get_Joint(self):
@@ -164,11 +170,13 @@ class RobotController:
         return Pose.pos
 
 
+
     def Get_Pose(self):
         with self.lock:
             Pose = self.Function_GetPose(1)
         print("")
         return Pose.pos
+
 
 
     def Track_EE(self):
@@ -182,6 +190,42 @@ class RobotController:
             rospy.sleep(1)
         print("Done!")
         print("")
+
+
+
+    def SetTCP(self):
+        CreatTCP = rospy.ServiceProxy('/dsr01' + self.modelName + '/tcp/config_create_tcp', ConfigCreateTcp)
+        Result1 = CreatTCP(name="SJ_TCP", pos=self.TCP_Offset)
+        SetTCP = rospy.ServiceProxy('/dsr01' + self.modelName + '/tcp/set_current_tcp', SetCurrentTcp)
+        Result2 = SetTCP(name="SJ_TCP")
+        GetTCP = rospy.ServiceProxy('/dsr01' + self.modelName + '/tcp/get_current_tcp', GetCurrentTcp)
+        Result3 = GetTCP()
+        if Result1.success == True and Result2.success == True:
+            print("TCP Setting Done!")
+            print("Current TCP Name:" + Result3.info)
+            print("")
+        else:
+            print("TCP Setting Failed!")
+            print("")
+
+
+
+    def DeletTCP(self):
+        DeletTCP = rospy.ServiceProxy('/dsr01' + self.modelName + '/tcp/config_delete_tcp', ConfigDeleteTcp)
+        Result = DeletTCP(name="SJ_TCP")
+        if Result.success == True:
+            print("TCP Deleting Done!")
+            print("")
+        else:
+            print("TCP Deleting Failed!")
+            print("")
+
+
+    def Fkin(self, q):
+        Function_Fkin = rospy.ServiceProxy('/dsr01' + self.modelName + '/motion/fkin', Fkin)
+        Result = Function_Fkin(pos=q, ref=2)
+        Pose = Result.conv_posx
+        return Pose
 
 
     def EndController(self):
@@ -207,6 +251,7 @@ if __name__ == "__main__":
                    'GetJoint':RC.Get_Joint,
                    'HomePose':RC.Move_Home,
                    'InitPose':RC.Init_Pose,
+                   'SetTcp':RC.SetTCP,
                    }
 
     code.interact(banner=banner, local=locals_dict)
