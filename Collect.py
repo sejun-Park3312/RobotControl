@@ -43,14 +43,14 @@ RD = RealTimeData_Recorder()
 RD.DefineData("Robot_XYZ", {'x', 'y', 'z'})
 RD.DefineData("Vision_XYZ", {'x', 'y', 'z'})
 
-RC = RobotController()
-RC.Ready()
-RC.Init_Pose()
+# Base(Robot) 2 World(Reference)
+P_Offset = [350, 73.75, 275]
 
 for move in rel_motion:
     RC.Move_Rel(move[0], move[1], move[2], 0)
     Pose = RC.Get_Pose()
-    Robot_XYZ = [Pose[0], Pose[1], Pose[2]]
+    Robot_XYZ = np.array([Pose[0] - P_Offset[0], Pose[1] - P_Offset[1], Pose[2] - P_Offset[2]])
+
     RD.AppendData("Robot_XYZ", Robot_XYZ)
     time.sleep(VS.SamplingTime)
     with lock:
@@ -59,3 +59,5 @@ for move in rel_motion:
 
 RD.SaveData("Robot_XYZ", "Robot_XYZ")
 RD.SaveData("Vision_XYZ", "Vision_XYZ")
+np.save("Results/Robot_XYZ", "Robot_XYZ")
+np.save("Results/Vision_XYZ", "Vision_XYZ")

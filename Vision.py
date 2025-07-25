@@ -2,6 +2,8 @@ import cv2
 import threading
 import numpy as np
 import time
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
 from RealTimeData_Recorder import RealTimeData_Recorder
 
 class Vision:
@@ -28,6 +30,11 @@ class Vision:
         self.DataName = "VisionData"
         self.VisionData.DefineData(self.DataName, ["X", "Y", "Z"])
         self.Position = [0,0,0]
+
+        # Regression
+        self.degree = 3
+        self.poly = PolynomialFeatures(self.degree)
+        self.models = [LinearRegression() for _ in range(3)]  # x, y, z
 
         print("Vision Ready!")
 
@@ -80,6 +87,26 @@ class Vision:
 
         self.T_World2Cam1 = np.vstack((np.hstack((R_World2Cam1, P_World2Cam1.reshape(3,1))), [[0, 0, 0, 1]]))
         print(self.T_World2Cam1 )
+
+
+
+    def fit(self):
+        """보간 모델 학습"""
+        Vision_XYZ = np.load("Results/Vision_XYZ.npy")
+        Robot_xyz = np.load("Results/Robot_XYZ.npy")
+
+        X_poly = self.poly.fit_transform(Vision_XYZ)
+        for i in range(3):  # x, y, z에 대해 각각 회귀
+            self.models[i].fit(X_poly, Robot_xyz[:, i])
+
+
+
+    def predict(self, Vision_XYZ):
+        """보간된 로봇 위치 예측"""
+        X_poly = self.poly.transform(Vision_XYZ)
+        predicted = np.column_stack([model.predict(X_poly) for model in self.models])
+        return predicted
+
 
 
     def Get_Center(self, frame):
