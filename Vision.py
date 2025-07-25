@@ -2,8 +2,8 @@ import cv2
 import threading
 import numpy as np
 import time
-# from sklearn.preprocessing import PolynomialFeatures
-# from sklearn.linear_model import LinearRegression
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
 from RealTimeData_Recorder import RealTimeData_Recorder
 
 class Vision:
@@ -32,10 +32,10 @@ class Vision:
         self.Position = [0,0,0]
 
         # Regression
-        # self.degree = 3
-        # self.poly = PolynomialFeatures(self.degree)
-        # self.models = [LinearRegression() for _ in range(3)]
-        # self.fit()
+        self.degree = 3
+        self.poly = PolynomialFeatures(self.degree)
+        self.models = [LinearRegression() for _ in range(3)]
+        self.fit()
 
         print("Vision Ready!")
 
