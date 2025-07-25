@@ -162,10 +162,11 @@ class Vision:
             P_Cam1 = np.array([[x_Cam1], [y_Cam1], [z_Cam1], [1]])
             P_World = self.T_World2Cam1 @ P_Cam1
 
-            x = float(P_World[0])
-            y = float(P_World[1])
-            z = float(P_World[2])
-            Position = [x, y, z]
+            Position = [P_World[0], P_World[1], P_World[2]]
+            CorrectedPosition = self.CorrectPosition([Position])
+            x = CorrectedPosition[0][0]
+            y = CorrectedPosition[0][1]
+            z = CorrectedPosition[0][2]
 
             # Visualization
             if pt1 is not None:
@@ -211,8 +212,6 @@ class Vision:
                     CurrPosition = Position
                     AvgPosition = [x / 2 + y / 2 for x, y in zip(AvgPosition, Position)]
 
-            # CorrectedPosition = self.CorrectPosition(np.array(AvgPosition).reshape(1, -1))
-            # self.VisionData.AppendData(self.DataName, CorrectedPosition[0])
             self.VisionData.AppendData(self.DataName, AvgPosition)
 
             # Threading Lock
