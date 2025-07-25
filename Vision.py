@@ -92,8 +92,8 @@ class Vision:
 
     def fit(self):
         """보간 모델 학습"""
-        Vision_XYZ = np.load("Results/Vision_XYZ.npy")
-        Robot_xyz = np.load("Results/Robot_XYZ.npy")
+        Vision_XYZ = np.load("CalibrationData/Vision_XYZ.npy")
+        Robot_xyz = np.load("CalibrationData/Robot_XYZ.npy")
 
         X_poly = self.poly.fit_transform(Vision_XYZ)
         for i in range(3):  # x, y, z에 대해 각각 회귀
@@ -162,11 +162,11 @@ class Vision:
             P_Cam1 = np.array([[x_Cam1], [y_Cam1], [z_Cam1], [1]])
             P_World = self.T_World2Cam1 @ P_Cam1
 
-            Position = [P_World[0], P_World[1], P_World[2]]
-            CorrectedPosition = self.CorrectPosition([Position])
+            CorrectedPosition = self.CorrectPosition([[P_World[0][0], P_World[1][0], P_World[2][0]]])
             x = CorrectedPosition[0][0]
             y = CorrectedPosition[0][1]
             z = CorrectedPosition[0][2]
+            Position = [x, y, z]
 
             # Visualization
             if pt1 is not None:

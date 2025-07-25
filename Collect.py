@@ -73,7 +73,7 @@ for move in rel_motion:
 
 RC.Init_Pose()
 
-# RD.SaveData("Robot_XYZ", "Robot_XYZ")
-# RD.SaveData("Vision_XYZ", "Vision_XYZ")
+RD.SaveData("Robot_XYZ", "Robot_XYZ")
+RD.SaveData("Vision_XYZ", "Vision_XYZ")
 # np.save("Results/Robot_XYZ", Robot_XYZ)
 # np.save("Results/Vision_XYZ", Vision_XYZ)
