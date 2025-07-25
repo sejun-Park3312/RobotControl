@@ -1,0 +1,21 @@
+Index: Collect.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import numpy as np\nimport threading\nimport time\nfrom RobotController import RobotController\nfrom RealTimeData_Recorder import RealTimeData_Recorder\nfrom Vision import Vision\n\n# 각 축의 범위\nx_range = (-50, 50)\ny_range = (-35, 35)\nz_range = (-15, 20)\n\n# 축별 샘플링 개수 (자유롭게 조절 가능)\nnx = 10\nny = 7\nnz = 4\n\n# linspace로 균일 분포 점 생성\nx_vals = np.linspace(x_range[0], x_range[1], nx)\ny_vals = np.linspace(y_range[0], y_range[1], ny)\nz_vals = np.linspace(z_range[0], z_range[1], nz)\n\n# 3D 그리드 생성\nX, Y, Z = np.meshgrid(x_vals, y_vals, z_vals, indexing='ij')\n\n# 포인트 (N, 3)로 병합\nSamplingPoints = np.vstack([X.ravel(), Y.ravel(), Z.ravel()]).T\n\nrel_motion = np.zeros_like(SamplingPoints)\ni = 0\nprev_point = [0,0,0]\nfor point in SamplingPoints:\n    rel_motion[i, :] = point - prev_point\n    prev_point = point\n    i += 1\n\nVS = Vision()\nlock = VS.lock\nVS_Thread = threading.Thread(target=VS.Tracking, daemon=True)\nVS_Thread.start()\n\nRD = RealTimeData_Recorder()\nRD.DefineData(\"Robot_XYZ\", {'x', 'y', 'z'})\nRD.DefineData(\"Vision_XYZ\", {'x', 'y', 'z'})\n\nRC = RobotController()\nRC.Ready()\nRC.Init_Pose()\n\nfor move in rel_motion:\n    RC.Move_Rel(move[0], move[1], move[2], 0)\n    Pose = RC.Get_Pose()\n    Robot_XYZ = [Pose[0], Pose[1], Pose[2]]\n    RD.AppendData(\"Robot_XYZ\", Robot_XYZ)\n    time.sleep(VS.SamplingTime)\n    with lock:\n        Vision_XYZ = [VS.Position[0]*1000, VS.Position[1]*1000, VS.Position[2]*1000]\n        Vision_XYZ\n    RD.AppendData(\"Vision_XYZ\", Vision_XYZ)\n    print(f\"Robot:{Robot_XYZ}\")\n    print(f\"Robot:{Vision_XYZ}\")\n    print(\"\")\n\n\n\nRD.SaveData(\"Robot_XYZ\", \"Robot_XYZ\")\nRD.SaveData(\"Vision_XYZ\", \"Vision_XYZ\")
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Collect.py b/Collect.py
+--- a/Collect.py	(revision 30e75d3232e3463f8f3b4c1e6e66e50ba82159f8)
++++ b/Collect.py	(date 1753437575387)
+@@ -54,8 +54,8 @@
+     RD.AppendData("Robot_XYZ", Robot_XYZ)
+     time.sleep(VS.SamplingTime)
+     with lock:
+-        Vision_XYZ = [VS.Position[0]*1000, VS.Position[1]*1000, VS.Position[2]*1000]
+-        Vision_XYZ
++        Vision_XYZ = [VS.Position[0], VS.Position[1], VS.Position[2]]
++
+     RD.AppendData("Vision_XYZ", Vision_XYZ)
+     print(f"Robot:{Robot_XYZ}")
+     print(f"Robot:{Vision_XYZ}")

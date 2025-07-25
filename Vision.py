@@ -2,8 +2,8 @@ import cv2
 import threading
 import numpy as np
 import time
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.linear_model import LinearRegression
+# from sklearn.preprocessing import PolynomialFeatures
+# from sklearn.linear_model import LinearRegression
 from RealTimeData_Recorder import RealTimeData_Recorder
 
 class Vision:
@@ -32,9 +32,10 @@ class Vision:
         self.Position = [0,0,0]
 
         # Regression
-        self.degree = 3
-        self.poly = PolynomialFeatures(self.degree)
-        self.models = [LinearRegression() for _ in range(3)]  # x, y, z
+        # self.degree = 3
+        # self.poly = PolynomialFeatures(self.degree)
+        # self.models = [LinearRegression() for _ in range(3)]
+        # self.fit()
 
         print("Vision Ready!")
 
@@ -86,7 +87,6 @@ class Vision:
                       [self.Z_Offset]], dtype=np.float64)  # 이동 벡터 (3x1)
 
         self.T_World2Cam1 = np.vstack((np.hstack((R_World2Cam1, P_World2Cam1.reshape(3,1))), [[0, 0, 0, 1]]))
-        print(self.T_World2Cam1 )
 
 
 
@@ -101,11 +101,11 @@ class Vision:
 
 
 
-    def predict(self, Vision_XYZ):
+    def CorrectPosition(self, Vision_XYZ):
         """보간된 로봇 위치 예측"""
         X_poly = self.poly.transform(Vision_XYZ)
-        predicted = np.column_stack([model.predict(X_poly) for model in self.models])
-        return predicted
+        corrected = np.column_stack([model.predict(X_poly) for model in self.models])
+        return corrected
 
 
 
@@ -211,6 +211,8 @@ class Vision:
                     CurrPosition = Position
                     AvgPosition = [x / 2 + y / 2 for x, y in zip(AvgPosition, Position)]
 
+            # CorrectedPosition = self.CorrectPosition(np.array(AvgPosition).reshape(1, -1))
+            # self.VisionData.AppendData(self.DataName, CorrectedPosition[0])
             self.VisionData.AppendData(self.DataName, AvgPosition)
 
             # Threading Lock
