@@ -1,8 +1,8 @@
 import numpy as np
 import os
+from ProjectPath import PROJECT_PATH
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.linear_model import LinearRegression
-from ProjectPath import PROJECT_PATH
 
 class Calibration:
     def __init__(self):
@@ -14,13 +14,13 @@ class Calibration:
 
 
     def fit(self):
+        # Paths...
+        Calibration_path = os.path.dirname(os.path.abspath(__file__)) # .../RobotControl/ClassFiles
+        Project_path = os.path.dirname(Calibration_path) # .../RobotControl
+        Data_path = os.path.join(Project_path, 'Data', 'Calibration_Data') # .../RobotControl/Data
 
-        # Calibration.py location: ~/PycharmProjects/RobotControl
-        Base_Dir = os.path.dirname(os.path.abspath(__file__))
-        Data_Path = os.path.join(Base_Dir, 'Calibration_Data')
-
-        Vision_XYZ = np.load(Data_Path + '/Vision_XYZ.npy')
-        Robot_xyz = np.load(Data_Path + '/Robot_XYZ.npy')
+        Vision_XYZ = np.load(Data_path + '/Vision_XYZ.npy')
+        Robot_xyz = np.load(Data_path + '/Robot_XYZ.npy')
 
         X_poly = self.poly.fit_transform(Vision_XYZ)
         for i in range(3):  # x, y, z에 대해 각각 회귀

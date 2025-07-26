@@ -1,11 +1,11 @@
-from Vision import Vision
-from Control import Control
-from Arduino import Arduino
-from RealTimeData_Recorder import RealTimeData_Recorder
+from ClassFiles.Vision import Vision
+from ClassFiles.Control import Control
+from ClassFiles.Arduino import Arduino
+from ClassFiles.RealTimeData_Recorder import RealTimeData_Recorder
 import time
 import cv2
 import threading
-from ProjectPath import PROJECT_PATH
+
 
 class TotalSystem:
     def __init__(self):

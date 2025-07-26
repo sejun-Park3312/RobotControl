@@ -1,7 +1,7 @@
-from Vision import Vision
 import threading
 import time
 from ProjectPath import PROJECT_PATH
+from ClassFiles.Vision import Vision
 
 VS = Vision()
 VisionThread = threading.Thread(target=VS.Tracking, daemon=True)

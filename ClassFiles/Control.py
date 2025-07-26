@@ -1,10 +1,10 @@
-from simple_pid import PID
-from BasicMagnetFuns import BasicMagnetFuns
 import time
 import math
 import threading
 import numpy as np
 from ProjectPath import PROJECT_PATH
+from simple_pid import PID
+from ClassFiles.BasicMagnetFuns import BasicMagnetFuns
 
 class Control:
     def __init__(self):
@@ -41,7 +41,7 @@ class Control:
 
     def Array(self):
         # Coil/Magent Array
-        Data = np.load("Array_Data/Data.npz")
+        Data = np.load("../Data/Array_Data/Data.npz")
         C_Points = Data['C_Points']
         C_Angles = Data['C_Angles']
         M_Points = Data['M_Points']
