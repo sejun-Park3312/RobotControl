@@ -94,7 +94,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.ROS1_Test">
     <configuration name="ROS1_Test" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="RobotControl" />
       <option name="ENV_FILES" value="" />
