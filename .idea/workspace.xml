@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb9d1046-e9e4-45fd-a8cf-311c6b3fc451" name="Changes" comment="Fix merge conflicts">
-      <change afterPath="$PROJECT_DIR$/ProjectPath.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestScripts/VisionTest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Calibration.py" beforeDir="false" afterPath="$PROJECT_DIR$/Calibration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RealTimeData_Recorder.py" beforeDir="false" afterPath="$PROJECT_DIR$/RealTimeData_Recorder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RobotController.py" beforeDir="false" afterPath="$PROJECT_DIR$/RobotController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vision.py" beforeDir="false" afterPath="$PROJECT_DIR$/Vision.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestScripts/ArduinoTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/ArduinoTest.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +56,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.ArduinoTest.executor": "Run",
     "Python.CalibrationData.executor": "Run",
     "Python.CalibrationTest.executor": "Run",
     "Python.Collect.executor": "Run",
@@ -77,7 +73,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "TRY__0726",
-    "last_opened_file_path": "/home/msrl/catkin_ws/devel/lib/python3/dist-packages",
+    "last_opened_file_path": "/home/msrl/PycharmProjects/RobotControl",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -88,9 +84,15 @@
   }
 }]]></component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/TestScripts" />
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/TestScripts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/ClassFiles" />
+      <recent name="$PROJECT_DIR$/Data" />
+      <recent name="$PROJECT_DIR$/TestScripts" />
       <recent name="$PROJECT_DIR$/CalibrationData" />
     </key>
   </component>
@@ -135,7 +137,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RobotController.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ClassFiles/RobotController.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -188,6 +190,7 @@
       <workItem from="1753441733394" duration="889000" />
       <workItem from="1753442678883" duration="514000" />
       <workItem from="1753443242430" duration="1754000" />
+      <workItem from="1753527083396" duration="836000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
@@ -421,7 +424,31 @@
       <option name="project" value="LOCAL" />
       <updated>1753515207601</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Fix merge conflicts">
+      <option name="closed" value="true" />
+      <created>1753517322258</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1753517322258</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Fix merge conflicts">
+      <option name="closed" value="true" />
+      <created>1753517645450</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1753517645450</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Fix merge conflicts">
+      <option name="closed" value="true" />
+      <created>1753518929372</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1753518929372</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,6 +477,7 @@
     <SUITE FILE_PATH="coverage/RobotControl$Collect.coverage" NAME="Collect Coverage Results" MODIFIED="1753514750690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RobotControl$ROS1_Test.coverage" NAME="ROS1_Test Coverage Results" MODIFIED="1752745478674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RobotControl$ex.coverage" NAME="ex Coverage Results" MODIFIED="1752685079426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RobotControl$ArduinoTest.coverage" NAME="ArduinoTest Coverage Results" MODIFIED="1753527912588" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestScripts" />
     <SUITE FILE_PATH="coverage/RobotControl$dsr_ex_a0509.coverage" NAME="dsr_ex_a0509 Coverage Results" MODIFIED="1752678634899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RobotControl$RTtest.coverage" NAME="RTtest Coverage Results" MODIFIED="1753106002457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RobotControl$VisionCalibration.coverage" NAME="VisionCalibration Coverage Results" MODIFIED="1753365369033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -457,7 +485,7 @@
     <SUITE FILE_PATH="coverage/RobotControl$robot_console.coverage" NAME="robot_console Coverage Results" MODIFIED="1752684465437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RobotControl$DoosanRobot.coverage" NAME="DoosanRobot Coverage Results" MODIFIED="1752674511225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RobotControl$CalibrationTest.coverage" NAME="CalibrationTest Coverage Results" MODIFIED="1753444727601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/RobotControl$VisionTest.coverage" NAME="VisionTest Coverage Results" MODIFIED="1753516470353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RobotControl$VisionTest.coverage" NAME="VisionTest Coverage Results" MODIFIED="1753527614473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestScripts" />
     <SUITE FILE_PATH="coverage/RobotControl$RobotController.coverage" NAME="RobotController Coverage Results" MODIFIED="1752745128163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -7,7 +7,7 @@ class Arduino:
     def __init__(self):
         print("Arduino Connecting...")
         self.Running = True
-        self.ArduinoSerial = serial.Serial('COM4', 115200)
+        self.ArduinoSerial = self.ArduinoSerial = serial.Serial('/dev/ttyUSB0', 115200)
         time.sleep(2)
         print("Arduino Connected!")
 
