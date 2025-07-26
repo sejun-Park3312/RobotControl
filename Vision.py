@@ -2,8 +2,7 @@ import cv2
 import threading
 import numpy as np
 import time
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.linear_model import LinearRegression
+from Calibration import Calibration
 from RealTimeData_Recorder import RealTimeData_Recorder
 
 class Vision:
@@ -31,11 +30,8 @@ class Vision:
         self.VisionData.DefineData(self.DataName, ["X", "Y", "Z"])
         self.Position = [0,0,0]
 
-        # Regression
-        self.degree = 3
-        self.poly = PolynomialFeatures(self.degree)
-        self.models = [LinearRegression() for _ in range(3)]
-        self.fit()
+        # Calibration
+        self.Calibration = Calibration()
 
         print("Vision Ready!")
 
@@ -90,25 +86,6 @@ class Vision:
 
 
 
-    def fit(self):
-        """보간 모델 학습"""
-        Vision_XYZ = np.load("CalibrationData/Vision_XYZ.npy")
-        Robot_xyz = np.load("CalibrationData/Robot_XYZ.npy")
-
-        X_poly = self.poly.fit_transform(Vision_XYZ)
-        for i in range(3):  # x, y, z에 대해 각각 회귀
-            self.models[i].fit(X_poly, Robot_xyz[:, i])
-
-
-
-    def CorrectPosition(self, Vision_XYZ):
-        """보간된 로봇 위치 예측"""
-        X_poly = self.poly.transform(Vision_XYZ)
-        corrected = np.column_stack([model.predict(X_poly) for model in self.models])
-        return corrected
-
-
-
     def Get_Center(self, frame):
 
         hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
@@ -124,6 +101,7 @@ class Vision:
                 cy = int(M["m01"] / M["m00"])
                 return np.array([cx, cy], dtype=np.float64)
         return None
+
 
 
     def Get_Position(self):
@@ -162,7 +140,7 @@ class Vision:
             P_Cam1 = np.array([[x_Cam1], [y_Cam1], [z_Cam1], [1]])
             P_World = self.T_World2Cam1 @ P_Cam1
 
-            CorrectedPosition = self.CorrectPosition([[P_World[0][0], P_World[1][0], P_World[2][0]]])
+            CorrectedPosition = self.Calibration.CorrectPosition([[P_World[0][0], P_World[1][0], P_World[2][0]]])
             x = CorrectedPosition[0][0]
             y = CorrectedPosition[0][1]
             z = CorrectedPosition[0][2]
