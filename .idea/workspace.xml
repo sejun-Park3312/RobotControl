@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb9d1046-e9e4-45fd-a8cf-311c6b3fc451" name="Changes" comment="Fix merge conflicts">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalibrationTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/CalibrationTest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Collect.py" beforeDir="false" afterPath="$PROJECT_DIR$/Collect.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Results/Robot_XYZ.npy" beforeDir="false" afterPath="$PROJECT_DIR$/CalibrationData/Robot_XYZ.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Results/Robot_XYZ.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Results/Vision_XYZ.npy" beforeDir="false" afterPath="$PROJECT_DIR$/CalibrationData/Vision_XYZ.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Results/Vision_XYZ.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vision.py" beforeDir="false" afterPath="$PROJECT_DIR$/Vision.py" afterDir="false" />
-    </list>
+    <list default="true" id="cb9d1046-e9e4-45fd-a8cf-311c6b3fc451" name="Changes" comment="Fix merge conflicts" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -94,7 +85,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.ROS1_Test">
     <configuration name="ROS1_Test" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="RobotControl" />
       <option name="ENV_FILES" value="" />
@@ -187,7 +178,7 @@
       <workItem from="1753426446141" duration="4441000" />
       <workItem from="1753441733394" duration="889000" />
       <workItem from="1753442678883" duration="514000" />
-      <workItem from="1753443242430" duration="1675000" />
+      <workItem from="1753443242430" duration="1754000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
@@ -405,7 +396,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753443183739</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Fix merge conflicts">
+      <option name="closed" value="true" />
+      <created>1753444998620</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1753444998620</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
