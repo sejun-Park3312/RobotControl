@@ -2,6 +2,8 @@ import cv2
 import threading
 import numpy as np
 import time
+import os
+from ProjectPath import PROJECT_PATH
 from Calibration import Calibration
 from RealTimeData_Recorder import RealTimeData_Recorder
 
@@ -37,11 +39,15 @@ class Vision:
 
 
     def Ready(self):
+
+        # Vision.py location: ~/PycharmProjects/RobotControl
+        Base_Dir = os.path.dirname(os.path.abspath(__file__))
+        Data_Path = os.path.join(Base_Dir, 'Cam_Data')
         # Camera Parameter
-        self.K1 = np.load('Cam_Data/cam_K1.npy')
-        self.K2 = np.load('Cam_Data/cam_K2.npy')
-        self.D1 = np.load('Cam_Data/cam_D1.npy')
-        self.D2 = np.load('Cam_Data/cam_D2.npy')
+        self.K1 = np.load(Data_Path + '/cam_K1.npy')
+        self.K2 = np.load(Data_Path + '/cam_K2.npy')
+        self.D1 = np.load(Data_Path + '/cam_D1.npy')
+        self.D2 = np.load(Data_Path + '/cam_D2.npy')
 
         # Camera 1 to 2 Transformation Matrix
         R = np.array([[0, 0, 1],

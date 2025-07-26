@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb9d1046-e9e4-45fd-a8cf-311c6b3fc451" name="Changes" comment="Fix merge conflicts" />
+    <list default="true" id="cb9d1046-e9e4-45fd-a8cf-311c6b3fc451" name="Changes" comment="Fix merge conflicts">
+      <change afterPath="$PROJECT_DIR$/ProjectPath.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestScripts/VisionTest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calibration.py" beforeDir="false" afterPath="$PROJECT_DIR$/Calibration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RealTimeData_Recorder.py" beforeDir="false" afterPath="$PROJECT_DIR$/RealTimeData_Recorder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotController.py" beforeDir="false" afterPath="$PROJECT_DIR$/RobotController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vision.py" beforeDir="false" afterPath="$PROJECT_DIR$/Vision.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,7 +37,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -51,41 +58,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.CalibrationData.executor&quot;: &quot;Run&quot;,
-    &quot;Python.CalibrationTest.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Collect.executor&quot;: &quot;Run&quot;,
-    &quot;Python.DoosanRobot.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ROS1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ROS1_Test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.RobotController.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Vision.executor&quot;: &quot;Run&quot;,
-    &quot;Python.dsr_ex_a0509.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ex.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.robot_console.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Calibration&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/msrl/catkin_ws/devel/lib/python3/dist-packages&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.CalibrationData.executor": "Run",
+    "Python.CalibrationTest.executor": "Run",
+    "Python.Collect.executor": "Run",
+    "Python.DoosanRobot.executor": "Run",
+    "Python.ROS1.executor": "Run",
+    "Python.ROS1_Test.executor": "Run",
+    "Python.RobotController.executor": "Run",
+    "Python.Vision.executor": "Run",
+    "Python.VisionTest.executor": "Run",
+    "Python.dsr_ex_a0509.executor": "Run",
+    "Python.ex.executor": "Debug",
+    "Python.robot_console.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "TRY__0726",
+    "last_opened_file_path": "/home/msrl/catkin_ws/devel/lib/python3/dist-packages",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/CalibrationData" />
+      <recent name="$PROJECT_DIR$/TestScripts" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/CalibrationData" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.ROS1_Test">
+  <component name="RunManager">
     <configuration name="ROS1_Test" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="RobotControl" />
       <option name="ENV_FILES" value="" />
@@ -404,7 +413,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753444998620</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Fix merge conflicts">
+      <option name="closed" value="true" />
+      <created>1753515207601</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1753515207601</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,7 +447,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/RobotControl$Vision.coverage" NAME="Vision Coverage Results" MODIFIED="1753442790431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/RobotControl$Collect.coverage" NAME="Collect Coverage Results" MODIFIED="1753444927144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RobotControl$Collect.coverage" NAME="Collect Coverage Results" MODIFIED="1753514750690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RobotControl$ROS1_Test.coverage" NAME="ROS1_Test Coverage Results" MODIFIED="1752745478674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RobotControl$ex.coverage" NAME="ex Coverage Results" MODIFIED="1752685079426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RobotControl$dsr_ex_a0509.coverage" NAME="dsr_ex_a0509 Coverage Results" MODIFIED="1752678634899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -440,6 +457,7 @@
     <SUITE FILE_PATH="coverage/RobotControl$robot_console.coverage" NAME="robot_console Coverage Results" MODIFIED="1752684465437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RobotControl$DoosanRobot.coverage" NAME="DoosanRobot Coverage Results" MODIFIED="1752674511225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RobotControl$CalibrationTest.coverage" NAME="CalibrationTest Coverage Results" MODIFIED="1753444727601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RobotControl$VisionTest.coverage" NAME="VisionTest Coverage Results" MODIFIED="1753516470353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RobotControl$RobotController.coverage" NAME="RobotController Coverage Results" MODIFIED="1752745128163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

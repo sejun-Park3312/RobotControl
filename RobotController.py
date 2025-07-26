@@ -26,6 +26,7 @@
 import rospy
 import threading
 import code
+from ProjectPath import PROJECT_PATH
 from dsr_msgs.srv import MoveLine, MoveJoint, MoveHome, MoveWait, Fkin, Ikin
 from dsr_msgs.srv import GetCurrentPose, SetCurrentTcp, ConfigCreateTcp, GetCurrentTcp, ConfigDeleteTcp
 
