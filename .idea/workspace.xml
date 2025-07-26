@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cb9d1046-e9e4-45fd-a8cf-311c6b3fc451" name="Changes" comment="Fix merge conflicts">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClassFiles/Arduino.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/Arduino.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestScripts/ArduinoTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/ArduinoTest.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,36 +54,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.ArduinoTest.executor": "Run",
-    "Python.CalibrationData.executor": "Run",
-    "Python.CalibrationTest.executor": "Run",
-    "Python.Collect.executor": "Run",
-    "Python.DoosanRobot.executor": "Run",
-    "Python.ROS1.executor": "Run",
-    "Python.ROS1_Test.executor": "Run",
-    "Python.RobotController.executor": "Run",
-    "Python.Vision.executor": "Run",
-    "Python.VisionTest.executor": "Run",
-    "Python.dsr_ex_a0509.executor": "Run",
-    "Python.ex.executor": "Debug",
-    "Python.robot_console.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "TRY__0726",
-    "last_opened_file_path": "/home/msrl/PycharmProjects/RobotControl",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.ArduinoTest.executor&quot;: &quot;Run&quot;,
+    &quot;Python.CalibrationData.executor&quot;: &quot;Run&quot;,
+    &quot;Python.CalibrationTest.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Collect.executor&quot;: &quot;Run&quot;,
+    &quot;Python.DoosanRobot.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ROS1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ROS1_Test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.RobotController.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Vision.executor&quot;: &quot;Run&quot;,
+    &quot;Python.VisionTest.executor&quot;: &quot;Run&quot;,
+    &quot;Python.dsr_ex_a0509.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ex.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.robot_console.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;TRY__0726&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/msrl/PycharmProjects/RobotControl&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -191,6 +192,7 @@
       <workItem from="1753442678883" duration="514000" />
       <workItem from="1753443242430" duration="1754000" />
       <workItem from="1753527083396" duration="836000" />
+      <workItem from="1753528200117" duration="8358000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
@@ -477,7 +479,7 @@
     <SUITE FILE_PATH="coverage/RobotControl$Collect.coverage" NAME="Collect Coverage Results" MODIFIED="1753514750690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RobotControl$ROS1_Test.coverage" NAME="ROS1_Test Coverage Results" MODIFIED="1752745478674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RobotControl$ex.coverage" NAME="ex Coverage Results" MODIFIED="1752685079426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/RobotControl$ArduinoTest.coverage" NAME="ArduinoTest Coverage Results" MODIFIED="1753527912588" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestScripts" />
+    <SUITE FILE_PATH="coverage/RobotControl$ArduinoTest.coverage" NAME="ArduinoTest Coverage Results" MODIFIED="1753556201562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestScripts" />
     <SUITE FILE_PATH="coverage/RobotControl$dsr_ex_a0509.coverage" NAME="dsr_ex_a0509 Coverage Results" MODIFIED="1752678634899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RobotControl$RTtest.coverage" NAME="RTtest Coverage Results" MODIFIED="1753106002457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RobotControl$VisionCalibration.coverage" NAME="VisionCalibration Coverage Results" MODIFIED="1753365369033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

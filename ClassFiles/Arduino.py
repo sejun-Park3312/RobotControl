@@ -1,6 +1,6 @@
 import serial
 import time
-import keyboard
+from pynput import keyboard
 from ProjectPath import PROJECT_PATH
 
 class Arduino:
@@ -8,6 +8,7 @@ class Arduino:
         print("Arduino Connecting...")
         self.Running = True
         self.ArduinoSerial = self.ArduinoSerial = serial.Serial('/dev/ttyUSB0', 115200)
+        self.PWM_OnOff = False
         time.sleep(2)
         print("Arduino Connected!")
 
@@ -30,24 +31,33 @@ class Arduino:
 
 
     def ManualPWM(self):
-        PWM = 200
+
+        def PWM_On(key):
+            if key == keyboard.Key.space:
+                self.PWM_OnOff = True
+
+        def PWM_Off(key):
+            if key == keyboard.Key.space:
+                self.PWM_OnOff = False
+            elif key == keyboard.Key.esc:
+                self.Running = False
+                self.Disconnect()
+                return False  # 리스너 종료
+
+        listener = keyboard.Listener(on_press=PWM_On, on_release=PWM_Off)
+        listener.start()
+
+        PWM = 255
         OnOff = False
         try:
-            while True:
+            while self.Running:
                 # ESC 누르면 종료
-                if keyboard.is_pressed('esc'):
-                    self.Disconnect()
-                    break
-                if keyboard.is_pressed('space'):
-                    if not OnOff:
-                        OnOff = True
-                else:
-                    OnOff = False
-
-                if OnOff == True:
+                if self.PWM_OnOff:
                     self.Send_PWM(PWM)
+                    print("On")
                 else:
                     self.Send_PWM(0)
+                    print("Off")
 
                 time.sleep(50/1000)
         except KeyboardInterrupt:
