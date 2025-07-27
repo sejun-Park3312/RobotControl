@@ -13,6 +13,10 @@ from ClassFiles.RobotController import RobotController
 
 class TotalSystem:
     def __init__(self):
+        print("TotalSystem Initializing...")
+        print("-------------------------")
+        print("")
+
         self.VS = Vision()
         self.CT = Control()
         self.AD = Arduino()
@@ -22,6 +26,7 @@ class TotalSystem:
         self.RC_lock = self.RC.lock
         self.StartTime = None
         self.Running = True
+        self.PWM_ONOFF = False
 
         self.ControlData = RealTimeData_Recorder()
         self.DataName_1 = "ControlData"
@@ -35,15 +40,23 @@ class TotalSystem:
         self.DataName_3 = "RobotData"
         self.RobotData.DefineData(self.DataName_3, ["x_robot", "y_robot", "z_robot"])
 
+        print("-------------------------")
+        print("TotalSystem Ready!")
+        print("")
+        print("")
 
 
-    def VisionControl(self):
+    def Start(self):
+        # Thread
+        RobotTracking_Thread = threading.Thread(target=self.RC.Track_EE, daemon=True)
+        RobotTracking_Thread.start()
 
-        print("Waiting VisionControl...")
-        while self.VS.Running == False:
-            time.sleep(1)
+        self.VS.GUI = False
+        VisionTracking_Thread = threading.Thread(target=self.VS.Tracking, daemon=True)
+        VisionTracking_Thread.start()
 
-        print("Start VisionControl!")
+
+        print("Start TotalSystem!")
         while self.Running:
             self.StartTime = time.time()
             while self.Running:
@@ -59,21 +72,26 @@ class TotalSystem:
 
                 PWM = self.CT.Get_PWM()
 
+                if self.PWM_ONOFF:
+                    self.AD.Send_PWM(PWM)
+                else:
+                    self.AD.Send_PWM(0)
+
                 self.ControlData.AppendData(self.DataName_1,[(self.CT.Z_Reference - (self.CT.Z_System - self.CT.Z_Target)), self.CT.Z_System, self.CT.Z_Target, PWM])
 
 
 
     def Print_ZSystem(self):
-        with self.VS_lock:
+        with self.RC_lock:
             Z_System = (self.RC.EE_Position[2] - (self.RC.TCP_Offset[2] + self.RC.P_base2world[2])) / 1000
         print(f"Z_System: {round(Z_System*1000,2)}mm")
         print("")
 
 
     def Print_ZTarget(self):
-        with self.VS_lock, self.RC_lock:
-            Z_target = self.VS.Z
-        print(f"Z_Target: {round(Z_target*1000,2)}mm")
+        with self.VS_lock:
+            Z_Target = self.VS.Z
+        print(f"Z_Target: {round(Z_Target*1000,2)}mm")
         print("")
 
 
@@ -84,8 +102,14 @@ class TotalSystem:
         print("")
 
 
-    def End_Vision(self):
-        self.VS.EndVision()
+    def Print_ZError(self):
+        with self.VS_lock, self.RC_lock:
+            Z_System = (self.RC.EE_Position[2] - (self.RC.TCP_Offset[2] + self.RC.P_base2world[2])) / 1000
+            Z_Target = self.VS.Z
+        Z_Error = -Z_System + Z_Target + self.CT.Z_Reference
+        print(f"Z_Error: {round(Z_Error*1000,2)}mm")
+        print("")
+
 
 
     def TotalSystemController(self):
@@ -100,8 +124,9 @@ class TotalSystem:
 
                        'Z_Target': self.Print_ZTarget,
                        'Z_System': self.Print_ZSystem,
+                       'Z_Error': self.Print_ZError,
                        'PWM': self.Print_PWM,
-                       'End_Vision': self.End_Vision}
+                       'TS': self}
 
         code.interact(banner=banner, local=locals_dict)
 

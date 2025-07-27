@@ -212,12 +212,8 @@ class Vision:
         print("End VIsion Tracking!")
         print("")
         print("")
-        self.EndVision()
+        self.Cam1.release()
+        self.Cam2.release()
+        cv2.destroyAllWindows()
 
 
-    def EndVision(self):
-        if self.Running:
-            self.Running = False
-            self.Cam1.release()
-            self.Cam2.release()
-            cv2.destroyAllWindows()

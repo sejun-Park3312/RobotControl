@@ -8,7 +8,7 @@
 # source devel/setup.bash
 # roslaunch dsr_launcher single_robot_gazebo.launch model:=a0509 sim:=true
 # roslaunch dsr_launcher SJ_Custom.launch model:=a0509_custom sim:=true
-# roslaunch dsr_launcher SJ_Custom.launch model:=a0509_Calibration mode:=real host:=192.168.0.181 port:=12345
+# roslaunch dsr_launcher SJ_Custom.launch model:=a0509_custom mode:=real host:=192.168.0.181 port:=12345
 ## ---------------------------------------------
 
 ## <<Connection LAN>>
@@ -50,9 +50,12 @@ class RobotController:
         self.EE_Position = None
         self.EE_Rotation = None
 
-        self.Velocity = [30, 30]
-        self.Acceleration = [30, 30]
-        self.InitJoint = [11.85, -0.02, 103.74, -0.02, 75.69, 9.76]
+        self.Vel_Phi = 30
+        self.Vel_X = 20
+        self.Vel_Y = 20
+        self.Vel_Z = 3
+        self.Acceleration = [20, 20]
+        self.InitJoint = [11.859809875488281, 0.15430903434753418, 103.55863189697266, -0.00044003245420753956, 76.2871322631836, 11.859648704528809]
         self.InitPose = [210.5/1000, 42/1000, 358.0/1000]
 
         self.Ready()
@@ -98,7 +101,10 @@ class RobotController:
 
     def Move_Abs(self, X, Y, Z, Phi):
         pose = [X, Y, Z, 0, 180, Phi]
-        vel = self.Velocity
+        if Z == 0:
+            vel = [self.Vel_X, self.Vel_Phi]
+        else:
+            vel = [self.Vel_Z, self.Vel_Phi]
         acc = self.Acceleration
         time = 0
         radius = 0
@@ -123,7 +129,10 @@ class RobotController:
 
     def Move_Rel(self, X, Y, Z, Phi):
         pose = [X, Y, Z, 0, 0, Phi]
-        vel = self.Velocity
+        if Z == 0:
+            vel = [self.Vel_X, self.Vel_Phi]
+        else:
+            vel = [self.Vel_Z, self.Vel_Phi]
         acc = self.Acceleration
         time = 0
         radius = 0

@@ -23,8 +23,8 @@ class RealTimeData_Recorder:
             self.Data[DataName]['Value'] = {key: [] for key in Keys}
             self.Data[DataName]['Time'] = {'TimeStamp': [], 'StartTime': None}
 
-            print(self.Data[DataName])
-            print(f"Data Storage '{DataName}' Created!")
+            # print(self.Data[DataName])
+            # print(f"Data Storage '{DataName}' Created!")
         else:
             print(f"Data Storage '{DataName}' Already Exists!")
 
