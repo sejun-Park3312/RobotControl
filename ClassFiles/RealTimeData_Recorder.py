@@ -65,3 +65,4 @@ class RealTimeData_Recorder:
         df = pd.DataFrame(ExelData)
         df.to_excel(FullFileName, index=False)
         print(f"{FileName} Saved!")
+        print("")

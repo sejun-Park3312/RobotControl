@@ -15,7 +15,8 @@ class Vision:
         # Vision Setting
         self.Z_Offset = 3/1000
         self.SamplingTime = 20/1000
-        self.Running = True
+        self.Running = False
+        self.GUI = True
 
         # Threading
         self.lock = threading.Lock()
@@ -159,24 +160,26 @@ class Vision:
             if pt2 is not None:
                 cv2.circle(frame2_undist, tuple(pt2_orig.astype(int)), 5, (0, 255, 0), -1)
 
-            # Show XYZ
-            cv2.putText(frame1_undist, f"3D: X={x*1000:.2f} Y={y*1000:.2f} Z={z*1000:.2f}", (10, 30),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
+            if self.GUI:
+                # Show XYZ
+                cv2.putText(frame1_undist, f"3D: X={x*1000:.2f} Y={y*1000:.2f} Z={z*1000:.2f}", (10, 30),
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
 
-            # Show ROI
-            cv2.rectangle(frame1_undist, (self.ROI_1[0], self.ROI_1[1]), (self.ROI_1[0] + self.ROI_1[2], self.ROI_1[1] + self.ROI_1[3]), (255, 0, 0), 2)
-            cv2.rectangle(frame2_undist, (self.ROI_2[0], self.ROI_2[1]), (self.ROI_2[0] + self.ROI_2[2], self.ROI_2[1] + self.ROI_2[3]), (255, 0, 0), 2)
+                # Show ROI
+                cv2.rectangle(frame1_undist, (self.ROI_1[0], self.ROI_1[1]), (self.ROI_1[0] + self.ROI_1[2], self.ROI_1[1] + self.ROI_1[3]), (255, 0, 0), 2)
+                cv2.rectangle(frame2_undist, (self.ROI_2[0], self.ROI_2[1]), (self.ROI_2[0] + self.ROI_2[2], self.ROI_2[1] + self.ROI_2[3]), (255, 0, 0), 2)
 
-            # Show Image
-            cv2.imshow("Camera 1", frame1_undist)
-            cv2.imshow("Camera 2", frame2_undist)
-            cv2.waitKey(1)
+                # Show Image
+                cv2.imshow("Camera 1", frame1_undist)
+                cv2.imshow("Camera 2", frame2_undist)
+                cv2.waitKey(1)
 
             # Return
             return Position
 
 
     def Tracking(self):
+        self.Running = True
         CurrPosition = [0, 0, 0]
         CurrTime = time.time()
 
@@ -205,10 +208,11 @@ class Vision:
                 self.Position = AvgPosition
                 self.Z = AvgPosition[2]
 
+
         print("End VIsion Tracking!")
         print("")
         print("")
-        self.EndVision
+        self.EndVision()
 
 
     def EndVision(self):

@@ -52,7 +52,7 @@ class RobotController:
 
         self.Velocity = [30, 30]
         self.Acceleration = [30, 30]
-        self.InitJoint = [11.9, 4.15, 112.47, 0, 63.38, 11.9]
+        self.InitJoint = [11.85, -0.02, 103.74, -0.02, 75.69, 9.76]
         self.InitPose = [210.5/1000, 42/1000, 358.0/1000]
 
         self.Ready()
