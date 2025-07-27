@@ -33,11 +33,13 @@ from dsr_msgs.srv import GetCurrentPose, SetCurrentTcp, ConfigCreateTcp, GetCurr
 
 class RobotController:
     def __init__(self):
+        print("Robot Initializing...")
         self.Running = False
         self.lock = threading.Lock()
         self.SamplingTime = 100/1000
-        self.modelName = "a0509_Calibration"
-        self.TCP_Offset = [0,-34.5,-397.5,0,0,0]
+        self.modelName = "a0509_custom"
+        self.TCP_Offset = [0, 0, 83.5]
+        self.P_base2world = [350, 73.5, 200]
 
         self.Function_MoveWait = None
         self.Function_MoveHome = None
@@ -48,10 +50,12 @@ class RobotController:
         self.EE_Position = None
         self.EE_Rotation = None
 
-        self.Velocity = [50, 20]
-        self.Acceleration = [30, 20]
+        self.Velocity = [30, 30]
+        self.Acceleration = [30, 30]
         self.InitJoint = [11.9, 4.15, 112.47, 0, 63.38, 11.9]
         self.InitPose = [210.5/1000, 42/1000, 358.0/1000]
+
+        self.Ready()
 
 
     def Ready(self):
@@ -72,7 +76,8 @@ class RobotController:
         self.Function_GetPose = rospy.ServiceProxy('/dsr01' + modelName + '/system/get_current_pose', GetCurrentPose)
 
         self.Running = True
-        print("Ready!")
+        print("Robot Ready!")
+        print("")
         print("")
 
 
@@ -92,7 +97,7 @@ class RobotController:
 
 
     def Move_Abs(self, X, Y, Z, Phi):
-        pose = [X, Y, Z, 180, 2.7183186830370687e-06, 180 + Phi]
+        pose = [X, Y, Z, 0, 180, Phi]
         vel = self.Velocity
         acc = self.Acceleration
         time = 0
@@ -240,9 +245,25 @@ class RobotController:
 
 
 
+    def StartController(self):
+        banner = "\n Waiting Your Order..."
+        locals_dict = {"RC": self,
+                       'MoveJoint': self.Move_Joint,
+                       'MoveRel': self.Move_Rel,
+                       'MoveAbs': self.Move_Abs,
+                       'GetPose': self.Get_Pose,
+                       'GetJoint': self.Get_Joint,
+                       'HomePose': self.Move_Home,
+                       'InitPose': self.Init_Pose}
+
+        code.interact(banner=banner, local=locals_dict)
+
+        self.EndController()
+
+
+
 if __name__ == "__main__":
     RC = RobotController()
-    RC.Ready()
 
     # EE_Tracker = threading.Thread(target=RC.Track_EE, daemon=True)
     # EE_Tracker.start()

@@ -11,6 +11,8 @@ class Arduino:
         self.PWM_OnOff = False
         time.sleep(2)
         print("Arduino Connected!")
+        print("")
+        print("")
 
 
     def Send_PWM(self, PWM):
@@ -21,13 +23,14 @@ class Arduino:
 
 
     def Disconnect(self):
-        if self.Running == True:
-            self.Running = False
-            self.ArduinoSerial.write(f"{0}\n".encode())
-            self.ArduinoSerial.write(b"999\n")
-            self.ArduinoSerial.flush()
-            self.ArduinoSerial.close()
-            print("Arduino Disconnected!")
+        self.Running = False
+        self.ArduinoSerial.write(f"{0}\n".encode())
+        self.ArduinoSerial.write(b"999\n")
+        self.ArduinoSerial.flush()
+        self.ArduinoSerial.close()
+        print("Arduino Disconnected!")
+        print("")
+        print("")
 
 
     def ManualPWM(self):

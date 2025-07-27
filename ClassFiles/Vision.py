@@ -27,15 +27,14 @@ class Vision:
         self.Ready()
 
         # Data
-        self.VisionData = RealTimeData_Recorder()
-        self.DataName = "VisionData"
-        self.VisionData.DefineData(self.DataName, ["X", "Y", "Z"])
         self.Position = [0,0,0]
 
         # Calibration
         self.Calibration = Calibration()
 
         print("Vision Ready!")
+        print("")
+        print("")
 
 
     def Ready(self):
@@ -182,6 +181,8 @@ class Vision:
         CurrTime = time.time()
 
         print("Start Tracking!")
+        print("")
+        print("")
         while self.Running:
             AvgPosition = CurrPosition
             CurrTime = time.time()
@@ -198,7 +199,6 @@ class Vision:
                     CurrPosition = Position
                     AvgPosition = [x / 2 + y / 2 for x, y in zip(AvgPosition, Position)]
 
-            self.VisionData.AppendData(self.DataName, AvgPosition)
 
             # Threading Lock
             with self.lock:
@@ -206,6 +206,8 @@ class Vision:
                 self.Z = AvgPosition[2]
 
         print("End Tracking!")
+        print("")
+        print("")
         self.Cam1.release()
         self.Cam2.release()
         cv2.destroyAllWindows()
