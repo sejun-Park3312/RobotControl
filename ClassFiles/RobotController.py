@@ -7,7 +7,7 @@
 # cd ~/catkin_ws
 # source devel/setup.bash
 # roslaunch dsr_launcher single_robot_gazebo.launch model:=a0509 sim:=true
-# roslaunch dsr_launcher SJ_Custom.launch model:=a0509_Calibration sim:=true
+# roslaunch dsr_launcher SJ_Custom.launch model:=a0509_custom sim:=true
 # roslaunch dsr_launcher SJ_Custom.launch model:=a0509_Calibration mode:=real host:=192.168.0.181 port:=12345
 ## ---------------------------------------------
 
@@ -193,15 +193,17 @@ class RobotController:
 
     def Track_EE(self):
         print("Tracking...")
-        while self.Running:
-            Pose = self.Function_GetPose(1)
-            with self.lock:
-                self.EE_Position = Pose.pos[:3]
-                self.EE_Rotation = Pose.pos[3:]
-            print(f"Pose: {self.EE_Position}")
-            rospy.sleep(1)
-        print("Done!")
-        print("")
+        try:
+            while self.Running and not rospy.is_shutdown():
+                Pose = self.Function_GetPose(1)
+                with self.lock:
+                    self.EE_Position = Pose.pos[:3]
+                    self.EE_Rotation = Pose.pos[3:]
+                rospy.sleep(self.SamplingTime)
+        except rospy.ROSInterruptException:
+            print("ROS Interruped!")
+        finally:
+            print("End Tracking!")
 
 
 

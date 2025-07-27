@@ -1,7 +1,7 @@
 import time
 import cv2
 import threading
-import numpy as np
+import code
 from ProjectPath import PROJECT_PATH
 from ClassFiles.Vision import Vision
 from ClassFiles.Control import Control
@@ -29,22 +29,48 @@ class TotalSystem:
 
         self.VisionData = RealTimeData_Recorder()
         self.DataName_2 = "VisionData"
-        self.ControlData.DefineData(self.DataName_2, ["x_target", "y_target", "z_target"])
+        self.VisionData.DefineData(self.DataName_2, ["x_target", "y_target", "z_target"])
 
         self.RobotData = RealTimeData_Recorder()
         self.DataName_3 = "RobotData"
-        self.ControlData.DefineData(self.DataName_3, ["x_robot", "y_robot", "z_robot"])
+        self.RobotData.DefineData(self.DataName_3, ["x_robot", "y_robot", "z_robot"])
 
 
 
     def Start(self):
         # Thread
-        VisionTracking_Thread = threading.Thread(target=self.VS.Tracking, daemon=True)
-        VisionTracking_Thread.start()
-        RobotTracking_Thread = threading.Thread(target=self.RC.Track_EE, daemon=True)
-        RobotTracking_Thread.start()
-        RobotController_Thread = threading.Thread(target=self.RC.StartController, daemon=True)
-        RobotController_Thread.start()
+        VisionControl_Thread = threading.Thread(target=self.RC.Track_EE, daemon=True)
+        VisionControl_Thread.start()
+
+        banner = "\n Waiting Your Order..."
+        locals_dict = {"RC": self.RC,
+                       'MoveJoint': self.RC.Move_Joint,
+                       'MoveRel': self.RC.Move_Rel,
+                       'MoveAbs': self.RC.Move_Abs,
+                       'GetPose': self.RC.Get_Pose,
+                       'GetJoint': self.RC.Get_Joint,
+                       'HomePose': self.RC.Move_Home,
+                       'InitPose': self.RC.Init_Pose}
+
+        code.interact(banner=banner, local=locals_dict)
+
+        self.RC.EndController()
+        self.VS.EndVision()
+        self.AD.Disconnect()
+
+        print(".")
+        print(".")
+        print(".")
+        print("Finished!!")
+
+
+
+    def VisionControl(self):
+        # Thread
+        Vision_Thread = threading.Thread(target=self.VS.Tracking, daemon=True)
+        Vision_Thread.start()
+        Robot_Thread = threading.Thread(target=self.RC.Track_EE, daemon=True)
+        Robot_Thread.start()
 
         self.StartTime = time.time()
         while self.Running:

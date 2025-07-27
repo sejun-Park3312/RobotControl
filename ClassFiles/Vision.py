@@ -211,3 +211,9 @@ class Vision:
         self.Cam1.release()
         self.Cam2.release()
         cv2.destroyAllWindows()
+
+
+    def EndVision(self):
+        self.Cam1.release()
+        self.Cam2.release()
+        cv2.destroyAllWindows()
