@@ -15,6 +15,10 @@
 # sudo ip addr add 192.168.0.100/24 dev enx00e04f82fbd0
 # sudo ip link set enx00e04f82fbd0 up
 # ping 192.168.0.181
+
+# sudo ip addr add 192.168.0.100/24 dev enxa0cec8ac637d
+# sudo ip link set enxa0cec8ac637d up
+# ping 192.168.0.181
 ## ---------------------------------------------
 
 ## <<Console Control>>
