@@ -23,14 +23,15 @@ class Arduino:
 
 
     def Disconnect(self):
-        self.Running = False
-        self.ArduinoSerial.write(f"{0}\n".encode())
-        self.ArduinoSerial.write(b"999\n")
-        self.ArduinoSerial.flush()
-        self.ArduinoSerial.close()
-        print("Arduino Disconnected!")
-        print("")
-        print("")
+        if self.Running:
+            self.Running = False
+            self.ArduinoSerial.write(f"{0}\n".encode())
+            self.ArduinoSerial.write(b"999\n")
+            self.ArduinoSerial.flush()
+            self.ArduinoSerial.close()
+            print("Arduino Disconnected!")
+            print("")
+            print("")
 
 
     def ManualPWM(self):
@@ -43,7 +44,6 @@ class Arduino:
             if key == keyboard.Key.space:
                 self.PWM_OnOff = False
             elif key == keyboard.Key.esc:
-                self.Running = False
                 self.Disconnect()
                 return False  # 리스너 종료
 

@@ -39,44 +39,17 @@ class TotalSystem:
 
     def Start(self):
         # Thread
-        VisionControl_Thread = threading.Thread(target=self.RC.Track_EE, daemon=True)
-        VisionControl_Thread.start()
-
-        banner = "\n Waiting Your Order..."
-        locals_dict = {"RC": self.RC,
-                       'MoveJoint': self.RC.Move_Joint,
-                       'MoveRel': self.RC.Move_Rel,
-                       'MoveAbs': self.RC.Move_Abs,
-                       'GetPose': self.RC.Get_Pose,
-                       'GetJoint': self.RC.Get_Joint,
-                       'HomePose': self.RC.Move_Home,
-                       'InitPose': self.RC.Init_Pose}
-
-        code.interact(banner=banner, local=locals_dict)
-
-        self.RC.EndController()
-        self.VS.EndVision()
-        self.AD.Disconnect()
-
-        print(".")
-        print(".")
-        print(".")
-        print("Finished!!")
-
-
-
-    def VisionControl(self):
-        # Thread
-        Vision_Thread = threading.Thread(target=self.VS.Tracking, daemon=True)
-        Vision_Thread.start()
-        Robot_Thread = threading.Thread(target=self.RC.Track_EE, daemon=True)
-        Robot_Thread.start()
+        VisionTracking_Thread = threading.Thread(target=self.VS.Tracking, daemon=True)
+        VisionTracking_Thread.start()
+        RobotTracking_Thread = threading.Thread(target=self.RC.Track_EE, daemon=True)
+        RobotTracking_Thread.start()
+        RobotController_Thread = threading.Thread(target=self.RC.StartController, daemon=True)
+        RobotController_Thread.start()
 
         self.StartTime = time.time()
         while self.Running:
 
             if cv2.waitKey(1) == 27 or self.VS.Running == False:
-                self.AD.Running = False
                 self.AD.Disconnect()
                 self.Running = False
                 print("Test Stopped!")
@@ -88,7 +61,7 @@ class TotalSystem:
                 self.VisionData.AppendData(self.DataName_2,[self.VS.Position[0], self.VS.Position[1], self.VS.Position[2]])
 
             with self.RC_lock:
-                self.CT.Z_System = self.RC.EE_Position[2] - (self.RC.TCP_Offset[2] + self.RC.P_base2world[2])
+                self.CT.Z_System = (self.RC.EE_Position[2] - (self.RC.TCP_Offset[2] + self.RC.P_base2world[2]))/1000
                 self.RobotData.AppendData(self.DataName_3,[self.RC.EE_Position[0], self.RC.EE_Position[1], self.RC.EE_Position[2]])
 
             PWM = self.CT.Get_PWM()
@@ -96,10 +69,19 @@ class TotalSystem:
             self.ControlData.AppendData(self.DataName_1, [(self.CT.Z_Reference - (self.CT.Z_System - self.CT.Z_Target)),
                                                      self.CT.Z_System, self.CT.Z_Target, PWM])
 
-        self.RC.EndController()
-        self.AD.Disconnect()
-        print("TotalSystem Ended!")
+
         self.SaveResults()
+
+        self.RC.EndController()
+        self.VS.EndVision()
+        self.AD.Disconnect()
+
+
+
+        print(".")
+        print(".")
+        print(".")
+        print("Finished!!")
 
 
 
@@ -111,6 +93,6 @@ class TotalSystem:
         self.RobotData.Data[self.DataName_3]["Time"]["StartTime"] = self.StartTime
 
         # Save Data
-        self.ControlData.SaveData(self.DataName_1, self.DataName_1)
-        self.VisionData.SaveData(self.DataName_2, self.DataName_2)
-        self.RobotData.SaveData(self.DataName_3, self.DataName_3)
+        self.ControlData.SaveData(self.DataName_1, self.DataName_1, SavePath='../Data/Results')
+        self.VisionData.SaveData(self.DataName_2, self.DataName_2, SavePath='../Data/Results')
+        self.RobotData.SaveData(self.DataName_3, self.DataName_3, SavePath='../Data/Results')

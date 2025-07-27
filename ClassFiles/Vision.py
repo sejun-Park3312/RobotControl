@@ -191,7 +191,7 @@ class Vision:
 
                 Position = self.Get_Position()
                 if cv2.waitKey(1) & 0xFF == 27:  # ESC
-                    self.Running = False
+                    self.EndVision()
                     print("Vision Stopped")
                     break
 
@@ -205,15 +205,15 @@ class Vision:
                 self.Position = AvgPosition
                 self.Z = AvgPosition[2]
 
-        print("End Tracking!")
+        print("End VIsion Tracking!")
         print("")
         print("")
-        self.Cam1.release()
-        self.Cam2.release()
-        cv2.destroyAllWindows()
+        self.EndVision
 
 
     def EndVision(self):
-        self.Cam1.release()
-        self.Cam2.release()
-        cv2.destroyAllWindows()
+        if self.Running:
+            self.Running = False
+            self.Cam1.release()
+            self.Cam2.release()
+            cv2.destroyAllWindows()

@@ -21,7 +21,6 @@ StartTime = time.time()
 while Running:
 
     if cv2.waitKey(1) == 27 or VS.Running == False:
-        AD.Running = False
         AD.Disconnect()
         Running = False
         print("Test Stopped!")
