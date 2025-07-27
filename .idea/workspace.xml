@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb9d1046-e9e4-45fd-a8cf-311c6b3fc451" name="Changes" comment="Fix merge conflicts">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassFiles/RealTimeData_Recorder.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/RealTimeData_Recorder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassFiles/TotalSystem.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/TotalSystem.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassFiles/Vision.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/Vision.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestScripts/TotalSystemTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/TotalSystemTest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestScripts/VisionArduinoTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/VisionArduinoTest.py" afterDir="false" />
-    </list>
+    <list default="true" id="cb9d1046-e9e4-45fd-a8cf-311c6b3fc451" name="Changes" comment="Fix merge conflicts" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -204,7 +197,7 @@
       <workItem from="1753608457342" duration="3352000" />
       <workItem from="1753611860189" duration="787000" />
       <workItem from="1753612671872" duration="2000" />
-      <workItem from="1753612680376" duration="16123000" />
+      <workItem from="1753612680376" duration="16459000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
@@ -518,7 +511,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753625085312</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Fix merge conflicts">
+      <option name="closed" value="true" />
+      <created>1753629685564</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1753629685564</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

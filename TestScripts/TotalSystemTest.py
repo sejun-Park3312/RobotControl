@@ -17,7 +17,7 @@ TS.VS.GUI = False
 TS.VS.Tracking()
 
 TS.SaveResults()
-print("Ctl+D for End Controller")
+print("<<Ctl+D for End Controller>>")
 Controller_Thread.join()
 
 TS.RC.EndController()
