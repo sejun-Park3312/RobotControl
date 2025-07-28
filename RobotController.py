@@ -7,7 +7,7 @@
 # cd ~/catkin_ws
 # source devel/setup.bash
 # roslaunch dsr_launcher single_robot_gazebo.launch model:=a0509 sim:=true
-# roslaunch dsr_launcher SJ_Custom.launch model:=a0509_Calibration sim:=true
+# roslaunch dsr_launcher SJ_Custom.launch model:=a0509_Calibration mode:=virtual
 # roslaunch dsr_launcher SJ_Custom.launch model:=a0509_Calibration mode:=real host:=192.168.0.181 port:=12345
 ## ---------------------------------------------
 
@@ -35,7 +35,7 @@ class RobotController:
         self.Running = False
         self.lock = threading.Lock()
         self.SamplingTime = 100/1000
-        self.modelName = "a0509_Calibration"
+        self.modelName = "a0509"
         self.TCP_Offset = [0,-34.5,-397.5,0,0,0]
 
         self.Function_MoveWait = None
@@ -263,3 +263,4 @@ if __name__ == "__main__":
     code.interact(banner=banner, local=locals_dict)
 
     RC.EndController()
+rospy.get_param_names()
