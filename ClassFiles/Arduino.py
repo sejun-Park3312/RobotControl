@@ -50,7 +50,7 @@ class Arduino:
         listener = keyboard.Listener(on_press=PWM_On, on_release=PWM_Off)
         listener.start()
 
-        PWM = 255
+        PWM = 200
         OnOff = False
         try:
             while self.Running:
