@@ -2,8 +2,6 @@
 
 ## <<Before Starting, Open Gazebo>>
 ## <<Copy and Paste the Following Commands into Terminal!!>>
-## ---------------------------------------------
-
 # cd ~/catkin_ws
 # source devel/setup.bash
 # roslaunch dsr_launcher single_robot_gazebo.launch model:=a0509 sim:=true
@@ -12,10 +10,11 @@
 ## ---------------------------------------------
 
 ## <<Connection LAN>>
+# ip addr
 # sudo ip addr add 192.168.0.100/24 dev enx00e04f82fbd0
 # sudo ip link set enx00e04f82fbd0 up
 # ping 192.168.0.181
-
+## ---------------------------------------------
 # sudo ip addr add 192.168.0.100/24 dev enxa0cec8ac637d
 # sudo ip link set enxa0cec8ac637d up
 # ping 192.168.0.181

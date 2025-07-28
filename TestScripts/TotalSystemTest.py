@@ -2,7 +2,24 @@ import threading
 from ProjectPath import PROJECT_PATH
 from ClassFiles.TotalSystem import TotalSystem
 
+## <<Before Starting, Open Gazebo>>
+## <<Copy and Paste the Following Commands into Terminal!!>>
+## ---------------------------------------------
+# cd ~/catkin_ws
+# source devel/setup.bash
+# roslaunch dsr_launcher single_robot_gazebo.launch model:=a0509 sim:=true
+# roslaunch dsr_launcher SJ_Custom.launch model:=a0509_custom sim:=true
+# roslaunch dsr_launcher SJ_Custom.launch model:=a0509_custom mode:=real host:=192.168.0.181 port:=12345
+## ---------------------------------------------
+
+## <<Connection LAN>>
+# sudo ip addr add 192.168.0.100/24 dev enx00e04f82fbd0
+# sudo ip link set enx00e04f82fbd0 up
+# ping 192.168.0.181
+
 TS = TotalSystem()
+TS.RC.modelName = "a0509_custom"
+
 TotalSystem_Thread = threading.Thread(target=TS.Start, daemon=True)
 TotalSystem_Thread.start()
 
