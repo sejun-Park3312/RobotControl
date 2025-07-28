@@ -5,8 +5,17 @@
 ## ---------------------------------------------
 
 # cd ~/catkin_ws
-# source devel/setup.bash
-# roslaunch dsr_launcher single_robot_gazebo.launch model:=a0509 sim:=true
+#  source devel/setup.bash
+
+#  에뮬레이터 모델 지정하기
+#  docker run -it --rm \
+#   --name dsr01_emulator \
+#   -e ROBOT_ID=dsr01 \
+#   -e ROBOT_MODEL=a0509 \
+#   -p 12345:12345 \
+#   doosanrobot/dsr_emulator:3.0.1
+
+# roslaunch dsr_launcher single_robot_gazebo.launch model:=a0509
 # roslaunch dsr_launcher SJ_Custom.launch model:=a0509_Calibration mode:=virtual
 # roslaunch dsr_launcher SJ_Custom.launch model:=a0509_Calibration mode:=real host:=192.168.0.181 port:=12345
 ## ---------------------------------------------
@@ -91,7 +100,7 @@ class RobotController:
 
 
     def Move_Abs(self, X, Y, Z, Phi):
-        pose = [X, Y, Z, 180, 2.7183186830370687e-06, 180 + Phi]
+        pose = [X, Y, Z, 0, 180, Phi]
         vel = self.Velocity
         acc = self.Acceleration
         time = 0
