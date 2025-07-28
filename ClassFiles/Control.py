@@ -12,8 +12,8 @@ class Control:
         self.BF = BasicMagnetFuns()
 
         # Distance Offsets
-        self.Z_Reference = 80 / 1000 # system(센터 코일 높이)과 Target 사이 Reference 거리
-        self.Z_System = 70/1000 # system 높이(World 좌표계 기준)
+        self.Z_Reference = 100 / 1000 # system(센터 코일 높이)과 Target 사이 Reference 거리
+        self.Z_System = 95/1000 # system 높이(World 좌표계 기준)
         self.Z_Target = 0 # Target 높이(World 좌표계 기준)
 
         # Array
@@ -25,8 +25,8 @@ class Control:
         self.Mt = 0.0265
 
         # Mechanical Properties
-        self.F_Buoyance = 0.005146777750500
-        self.Weight = 0.006776951342543
+        self.F_Buoyance = 0.0062
+        self.Weight = 0.0065
         self.I_Max = 1.5
 
         # PID
