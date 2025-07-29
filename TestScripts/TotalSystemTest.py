@@ -23,7 +23,7 @@ from ClassFiles.TotalSystem import TotalSystem
 
 TS = TotalSystem()
 TS.RC.modelName = "a0509_custom"
-TS.CT.Kp = 1e-1/2
+TS.CT.Kp = 1e-1/3
 TS.CT.Kd = 1e-2
 TS.CT.Ki = 0
 

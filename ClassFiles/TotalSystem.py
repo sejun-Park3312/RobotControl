@@ -38,7 +38,7 @@ class TotalSystem:
 
         self.RobotData = RealTimeData_Recorder()
         self.DataName_3 = "RobotData"
-        self.RobotData.DefineData(self.DataName_3, ["x_robot", "y_robot", "z_robot"])
+        self.RobotData.DefineData(self.DataName_3, ["x_robot", "y_robot", "z_robot, rx, ry, rz"])
 
         print("-------------------------")
         print("TotalSystem Ready!")
@@ -68,7 +68,7 @@ class TotalSystem:
 
                 with self.RC_lock:
                     self.CT.Z_System = (self.RC.EE_Position[2] - (self.RC.TCP_Offset[2] + self.RC.P_base2world[2])) / 1000
-                    self.RobotData.AppendData(self.DataName_3,[self.RC.EE_Position[0], self.RC.EE_Position[1], self.RC.EE_Position[2]])
+                    self.RobotData.AppendData(self.DataName_3,[self.RC.EE_Position[0], self.RC.EE_Position[1], self.RC.EE_Position[2], self.RC.EE_Rotation[0], self.RC.EE_Rotation[1], self.RC.EE_Rotation[2]])
 
                 PWM = self.CT.Get_PWM()
 

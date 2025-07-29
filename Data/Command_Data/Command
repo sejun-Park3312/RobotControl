@@ -1,6 +1,6 @@
 InitPose()
 
-MoveRel(0,0,-10,0);Wait(2);GetPose(); Z_Error();
+MoveRel(0,0,-10,0);Wait(2);GetPose();
 TS.PWM_ONOFF = True;
 
 

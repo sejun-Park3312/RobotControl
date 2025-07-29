@@ -11,8 +11,8 @@
 
 ## <<Connection LAN>>
 # ip addr
-# sudo ip addr add 192.168.0.100/24 dev enx00e04f82fbd0
-# sudo ip link set enx00e04f82fbd0 up
+# sudo ip addr add 192.168.0.100/24 dev enp68s0
+# sudo ip link set enp68s0 up
 # ping 192.168.0.181
 ## ---------------------------------------------
 # sudo ip addr add 192.168.0.100/24 dev enxa0cec8ac637d
@@ -54,8 +54,8 @@ class RobotController:
         self.EE_Rotation = None
 
         self.Vel_Phi = 30
-        self.Vel_X = 20
-        self.Vel_Y = 20
+        self.Vel_X = 15
+        self.Vel_Y = 15
         self.Vel_Z = 3
         self.Acceleration = [20, 20]
         self.InitJoint = [11.859809875488281, -0.16671763360500336, 102.27816009521484, -0.00044004168012179434, 77.88888549804688, 11.859648704528809]
