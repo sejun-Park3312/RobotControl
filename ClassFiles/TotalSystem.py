@@ -38,7 +38,7 @@ class TotalSystem:
 
         self.RobotData = RealTimeData_Recorder()
         self.DataName_3 = "RobotData"
-        self.RobotData.DefineData(self.DataName_3, ["x_robot", "y_robot", "z_robot, rx, ry, rz"])
+        self.RobotData.DefineData(self.DataName_3, ["x_robot", "y_robot", "z_robot", 'rx', 'ry', "rz"])
 
         print("-------------------------")
         print("TotalSystem Ready!")

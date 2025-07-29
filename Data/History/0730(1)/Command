@@ -1,0 +1,13 @@
+InitPose()
+
+MoveRel(0,0,-10,0);Wait(2);GetPose();
+TS.PWM_ONOFF = True;
+
+
+
+MoveRel(0,0,7.5,0);Wait(3);GetPose();Z_Error();
+
+
+MoveRel(30, 0, 0, 0); Wait(2); MoveRel(0,0,0,90); Wait(0.5);  MoveRel(0,25,0,0); Wait(2);   MoveRel(0,0,0,-90); Wait(0.5); MoveRel(-60,0,0,0); Wait(2); MoveRel(0,0,0,90);Wait(0.5);	MoveRel(0,-50,0,-90);Wait(2);	MoveRel(30,25,0,0);Wait(3);
+
+TS.PWM_ONOFF = False;
