@@ -58,7 +58,7 @@ class RobotController:
         self.Vel_Y = 20
         self.Vel_Z = 3
         self.Acceleration = [20, 20]
-        self.InitJoint = [11.859809875488281, 0.15430903434753418, 103.55863189697266, -0.00044003245420753956, 76.2871322631836, 11.859648704528809]
+        self.InitJoint = [11.859809875488281, -0.16671763360500336, 102.27816009521484, -0.00044004168012179434, 77.88888549804688, 11.859648704528809]
         self.InitPose = [210.5/1000, 42/1000, 358.0/1000]
 
         self.Ready()
@@ -179,6 +179,11 @@ class RobotController:
                 print("Failed...")
                 print("")
 
+    def Wait(self, Time_sec):
+        print("Sleeping...")
+        rospy.sleep(Time_sec)
+        print("Waked up!")
+        print("")
 
 
     def Init_Pose(self):
@@ -294,6 +299,7 @@ if __name__ == "__main__":
                    'HomePose':RC.Move_Home,
                    'InitPose':RC.Init_Pose,
                    'SetTcp':RC.SetTCP,
+                   'Wait': RC.Wait
                    }
 
     code.interact(banner=banner, local=locals_dict)

@@ -28,11 +28,14 @@ class Control:
         self.F_Buoyance = 0.005146777750500
         self.Weight = 0.006776951342543
         self.I_Max = 1.5
+        self.alpha = 1
 
         # PID
         self.SamplingTime = 25 / 1000
-        self.PID_Gain =1e-1
-        self.pid = PID(Kp=self.PID_Gain, Kd=self.PID_Gain/10, Ki=0, setpoint = 0)
+        self.Kp =1e-1/2
+        self.Kd = 1e-2
+        self.Ki = 0
+        self.pid = PID(Kp=self.Kp, Kd=self.Kd, Ki=self.Ki, setpoint = 0)
         self.pid.sample_time = self.SamplingTime
 
         print("Controller Ready!")
@@ -88,6 +91,6 @@ class Control:
     def Get_PWM(self):
         Z_Error = self.Z_Reference - (self.Z_System - self.Z_Target)
         F_pid = self.pid(Z_Error, dt = self.SamplingTime)
-        I = (F_pid - self.MagnetArray_Force() - self.F_Buoyance + self.Weight) / self.CoilArray_ACoeff()
+        I = (F_pid - self.MagnetArray_Force() + self.alpha * (- self.F_Buoyance + self.Weight)) / self.CoilArray_ACoeff()
         PWM = round(float(np.clip(I, 0, self.I_Max) * 255 / self.I_Max))
         return PWM

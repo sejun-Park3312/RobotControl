@@ -13,12 +13,19 @@ from ClassFiles.TotalSystem import TotalSystem
 ## ---------------------------------------------
 
 ## <<Connection LAN>>
+
+# sudo ip addr add 192.168.0.100/24 dev enp68s0
+# sudo ip link set enp68s0 up; ping 192.168.0.181
+
 # sudo ip addr add 192.168.0.100/24 dev enx00e04f82fbd0
 # sudo ip link set enx00e04f82fbd0 up
 # ping 192.168.0.181
 
 TS = TotalSystem()
 TS.RC.modelName = "a0509_custom"
+TS.CT.Kp = 1e-1/2
+TS.CT.Kd = 1e-2
+TS.CT.Ki = 0
 
 TotalSystem_Thread = threading.Thread(target=TS.Start, daemon=True)
 TotalSystem_Thread.start()

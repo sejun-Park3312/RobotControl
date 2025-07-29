@@ -121,6 +121,7 @@ class TotalSystem:
                        'GetJoint': self.RC.Get_Joint,
                        'HomePose': self.RC.Move_Home,
                        'InitPose': self.RC.Init_Pose,
+                       'Wait': self.RC.Wait,
 
                        'Z_Target': self.Print_ZTarget,
                        'Z_System': self.Print_ZSystem,

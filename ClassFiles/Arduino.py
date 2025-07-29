@@ -9,6 +9,7 @@ class Arduino:
         self.Running = True
         self.ArduinoSerial = self.ArduinoSerial = serial.Serial('/dev/ttyUSB0', 115200)
         self.PWM_OnOff = False
+        self.ManualPWM_Value = 255
         time.sleep(2)
         print("Arduino Connected!")
         print("")
@@ -50,7 +51,7 @@ class Arduino:
         listener = keyboard.Listener(on_press=PWM_On, on_release=PWM_Off)
         listener.start()
 
-        PWM = 200
+        PWM = self.ManualPWM_Value
         OnOff = False
         try:
             while self.Running:
