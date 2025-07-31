@@ -13,8 +13,8 @@ class Control:
 
         # Distance Offsets
         self.Z_Reference = 80 / 1000 # system(센터 코일 높이)과 Target 사이 Reference 거리
-        self.Z_System = 70/1000 # system 높이(World 좌표계 기준)
-        self.Z_Target = 0 # Target 높이(World 좌표계 기준)
+        self.SystemPose = [0,0,70/1000] # system 높이(World 좌표계 기준)
+        self.TargetPose = [0,0,0] # Target 높이(World 좌표계 기준)
 
         # Array
         self.C_Points, self.C_Angles, self.M_Points, self.M_Angles = self.Array()
@@ -68,7 +68,7 @@ class Control:
         for i in range(self.M_Points.shape[0]):
             m_source = self.Angle2Direction(self.M_Angles[i, :]) * self.Ms
             # World 좌표계 기준
-            r_source2target = np.array([[0, 0, self.Z_Target]]) - (self.M_Points[i, :] + np.array([0, 0, self.Z_System + 40/1000]))
+            r_source2target = np.array([[self.TargetPose[0], self.TargetPose[1], self.TargetPose[2]]]) - (self.M_Points[i, :] + np.array([self.SystemPose[0], self.SystemPose[1], self.SystemPose[2] + 40/1000]))
             F = F + self.BF.Cal_MagnetForce(r_source2target, m_source, m_target)
 
         Fz = F[2]
@@ -81,15 +81,15 @@ class Control:
         for i in range(self.C_Points.shape[0]):
             m_source_i = self.Angle2Direction(self.C_Angles[i, :]) * self.Mc
             # World 좌표계 기준
-            r_source2target = np.array([[0, 0, self.Z_Target]]) - (self.C_Points[i, :] + np.array([0, 0, self.Z_System]))
+            r_source2target = np.array([[self.TargetPose[0], self.TargetPose[1], self.TargetPose[2]]]) - (self.C_Points[i, :] + np.array([self.SystemPose[0], self.SystemPose[1], self.SystemPose[2]]))
             A_vec = A_vec + self.BF.Cal_MagnetForce(r_source2target, m_source_i, m_target)
 
         Az_Coeff = A_vec[2]
         return Az_Coeff
 
 
-    def Get_PWM(self, x, y, z):
-        Z_Error = self.Z_Reference - (self.Z_System - self.Z_Target)
+    def Get_PWM(self):
+        Z_Error = self.Z_Reference - (self.SystemPose[2] - self.TargetPose[2])
         F_pid = self.pid(Z_Error, dt = self.SamplingTime)
         I = (F_pid - self.MagnetArray_Force() + self.alpha * (- self.F_Buoyance + self.Weight)) / self.CoilArray_ACoeff()
         PWM = round(float(np.clip(I, 0, self.I_Max) * 255 / self.I_Max))
