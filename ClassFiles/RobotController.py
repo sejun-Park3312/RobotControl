@@ -16,8 +16,9 @@ class RobotController:
         self.lock = threading.Lock()
         self.SamplingTime = 100/1000
         self.launcher_model = "a0509_custom"
-        self.TCP_Offset = [0, 0, 83.5]
+        self.System_Offset = [0, 0, 83.5]
         self.P_base2world = [350, 73.5, 200]
+        self.Target_Offset = [5, -1.8, 0, 0, 0, 0]
 
         self.Function_MoveWait = None
         self.Function_MoveHome = None
@@ -188,7 +189,7 @@ class RobotController:
     # Manual Mode에서 가능
     def SetTCP(self, TCPName = "SJ_TCP", TCP_OFFSET = None):
         if TCP_OFFSET == None:
-            TCP_OFFSET = self.TCP_Offset
+            TCP_OFFSET = self.Target_Offset
 
         Result1 = self.Function_CreateTCP(TCPName, TCP_OFFSET)
         Result2 = self.Function_SetTCP(TCPName)

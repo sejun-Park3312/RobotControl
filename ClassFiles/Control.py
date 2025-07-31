@@ -88,7 +88,7 @@ class Control:
         return Az_Coeff
 
 
-    def Get_PWM(self):
+    def Get_PWM(self, x, y, z):
         Z_Error = self.Z_Reference - (self.Z_System - self.Z_Target)
         F_pid = self.pid(Z_Error, dt = self.SamplingTime)
         I = (F_pid - self.MagnetArray_Force() + self.alpha * (- self.F_Buoyance + self.Weight)) / self.CoilArray_ACoeff()

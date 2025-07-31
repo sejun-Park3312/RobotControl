@@ -1,5 +1,5 @@
 import threading
-import subprocess
+import code
 from ProjectPath import PROJECT_PATH
 from ClassFiles.TotalSystem import TotalSystem
 from ClassFiles.GazeboSimulator import GazeboSimulator
@@ -28,7 +28,22 @@ TS.CT.Ki = 0
 TotalSystem_Thread = threading.Thread(target=TS.Start, daemon=True)
 TotalSystem_Thread.start()
 
-TS.TotalSystemController()
+banner = "\n Waiting Your Order..."
+locals_dict = {'MoveJoint': TS.RC.Move_Joint,
+               'MoveRel': TS.RC.Move_Rel,
+               'MoveAbs': TS.RC.Move_Abs,
+               'GetPose': TS.RC.Get_Pose,
+               'GetJoint': TS.RC.Get_Joint,
+               'HomePose': TS.RC.Move_Home,
+               'InitPose': TS.RC.Init_Pose,
+               'Wait': TS.RC.Wait,
+
+               'Z_Target': TS.Print_ZTarget,
+               'Z_System': TS.Print_ZSystem,
+               'Z_Error': TS.Print_ZError,
+               'PWM': TS.Print_PWM,
+               'TS': TS}
+code.interact(banner=banner, local=locals_dict)
 
 
 ## << Closing... >>

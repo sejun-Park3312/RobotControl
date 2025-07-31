@@ -67,7 +67,7 @@ class TotalSystem:
                     self.VisionData.AppendData(self.DataName_2,[self.VS.Position[0], self.VS.Position[1], self.VS.Position[2]])
 
                 with self.RC_lock:
-                    self.CT.Z_System = (self.RC.EE_Position[2] - (self.RC.TCP_Offset[2] + self.RC.P_base2world[2])) / 1000
+                    self.CT.Z_System = (self.RC.EE_Position[2] - (self.RC.System_Offset[2] + self.RC.P_base2world[2])) / 1000
                     self.RobotData.AppendData(self.DataName_3,[self.RC.EE_Position[0], self.RC.EE_Position[1], self.RC.EE_Position[2], self.RC.EE_Rotation[0], self.RC.EE_Rotation[1], self.RC.EE_Rotation[2]])
 
                 PWM = self.CT.Get_PWM()
@@ -81,17 +81,22 @@ class TotalSystem:
 
 
 
-    def Print_ZSystem(self):
+    def Print_SystemPose(self):
         with self.RC_lock:
-            Z_System = (self.RC.EE_Position[2] - (self.RC.TCP_Offset[2] + self.RC.P_base2world[2])) / 1000
-        print(f"Z_System: {round(Z_System*1000,2)}mm")
+            SystemX = (self.RC.EE_Position[0] - (self.RC.System_Offset[0] + self.RC.P_base2world[0]))
+            SystemY = (self.RC.EE_Position[1] - (self.RC.System_Offset[1] + self.RC.P_base2world[1]))
+            SystemZ = (self.RC.EE_Position[2] - (self.RC.System_Offset[2] + self.RC.P_base2world[2]))
+        print(f"System: {round(SystemX,2)}mm, {round(SystemY,2)}mm, {round(SystemZ,2)}mm")
         print("")
 
 
-    def Print_ZTarget(self):
+    def Print_TargetPose(self):
         with self.VS_lock:
-            Z_Target = self.VS.Z
-        print(f"Z_Target: {round(Z_Target*1000,2)}mm")
+            TargetX = self.VS.Position[0]
+            TargetY = self.VS.Position[1]
+            TargetZ = self.VS.Position[2]
+
+        print(f"Target: {round(TargetX*1000,2)}mm, {round(TargetY*1000,2)}mm, {round(TargetZ*1000,2)}mm")
         print("")
 
 
@@ -102,12 +107,21 @@ class TotalSystem:
         print("")
 
 
-    def Print_ZError(self):
-        with self.VS_lock, self.RC_lock:
-            Z_System = (self.RC.EE_Position[2] - (self.RC.TCP_Offset[2] + self.RC.P_base2world[2])) / 1000
-            Z_Target = self.VS.Z
-        Z_Error = -Z_System + Z_Target + self.CT.Z_Reference
-        print(f"Z_Error: {round(Z_Error*1000,2)}mm")
+    def Print_Error(self):
+        with self.RC_lock, self.VS_lock:
+            SystemX = (self.RC.EE_Position[0] - (self.RC.System_Offset[0] + self.RC.P_base2world[0])) / 1000
+            SystemY = (self.RC.EE_Position[1] - (self.RC.System_Offset[1] + self.RC.P_base2world[1])) / 1000
+            SystemZ = (self.RC.EE_Position[2] - (self.RC.System_Offset[2] + self.RC.P_base2world[2])) / 1000
+
+            TargetX = self.VS.Position[0]
+            TargetY = self.VS.Position[1]
+            TargetZ = self.VS.Position[2]
+
+        ErrorX = -SystemX + TargetX
+        ErrorY = -SystemY + TargetY
+        ErrorZ = -SystemZ + TargetZ + self.CT.Z_Reference
+
+        print(f"Error: {round(ErrorX*1000,2)}mm, {round(ErrorY*1000,2)}mm, {round(ErrorZ*1000,2)}mm")
         print("")
 
 
@@ -123,9 +137,9 @@ class TotalSystem:
                        'InitPose': self.RC.Init_Pose,
                        'Wait': self.RC.Wait,
 
-                       'Z_Target': self.Print_ZTarget,
-                       'Z_System': self.Print_ZSystem,
-                       'Z_Error': self.Print_ZError,
+                       'Target': self.Print_TargetPose,
+                       'System': self.Print_SystemPose,
+                       'Error': self.Print_Error,
                        'PWM': self.Print_PWM,
                        'TS': self}
 
