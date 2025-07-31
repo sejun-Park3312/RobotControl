@@ -16,7 +16,8 @@ class RobotController:
         self.lock = threading.Lock()
         self.SamplingTime = 100/1000
         self.launcher_model = "a0509_custom"
-        self.TCP_Offset = [0,5,0,0,0,0]
+        self.TCP_Offset = [0, 0, 83.5]
+        self.P_base2world = [350, 73.5, 200]
 
         self.Function_MoveWait = None
         self.Function_MoveHome = None
