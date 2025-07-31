@@ -17,10 +17,9 @@ TS.RC.Ready()
 ## << Parameter Setting >>
 ## --------------------------------------------------------------------
 # PID Gain
-TS.CT.Kp = 1e-1/3
+TS.CT.Kp = 1e-1/1.5
 TS.CT.Kd = 1e-2
 TS.CT.Ki = 0
-
 
 
 ## << Start! >>
@@ -34,14 +33,16 @@ locals_dict = {'MoveJoint': TS.RC.Move_Joint,
                'MoveAbs': TS.RC.Move_Abs,
                'GetPose': TS.RC.Get_Pose,
                'GetJoint': TS.RC.Get_Joint,
-               'HomePose': TS.RC.Move_Home,
                'InitPose': TS.RC.Init_Pose,
+               'GetTcp': TS.RC.GetTCP,
+               'SetTcp': TS.RC.SetTCP,
+               'DeleteTcp': TS.RC.DeleteTCP,
                'Wait': TS.RC.Wait,
 
-               'Z_Target': TS.Print_ZTarget,
-               'Z_System': TS.Print_ZSystem,
-               'Z_Error': TS.Print_ZError,
-               'PWM': TS.Print_PWM,
+               'Target': TS.Print_TargetPose,
+               'System': TS.Print_SystemPose,
+               'Error': TS.Print_Error,
+               'PWM': TS.PWM_Switch,
                'TS': TS}
 code.interact(banner=banner, local=locals_dict)
 

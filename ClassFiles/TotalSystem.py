@@ -63,12 +63,16 @@ class TotalSystem:
 
                 time.sleep(self.CT.SamplingTime)
                 with self.VS_lock:
-                    self.CT.Z_Target = self.VS.Z
+                    self.CT.TargetPose = [self.VS.Position[0] * 0, self.VS.Position[1] * 0, self.VS.Position[2]]
                     self.VisionData.AppendData(self.DataName_2,[self.VS.Position[0], self.VS.Position[1], self.VS.Position[2]])
 
                 with self.RC_lock:
-                    self.CT.Z_System = (self.RC.EE_Position[2] - (self.RC.System_Offset[2] + self.RC.P_base2world[2])) / 1000
-                    self.RobotData.AppendData(self.DataName_3,[self.RC.EE_Position[0], self.RC.EE_Position[1], self.RC.EE_Position[2], self.RC.EE_Rotation[0], self.RC.EE_Rotation[1], self.RC.EE_Rotation[2]])
+                    world2SystemX = self.RC.EE_Position[0] - self.RC.P_base2world[0]
+                    world2SystemY = self.RC.EE_Position[1] - self.RC.P_base2world[1]
+                    world2SystemZ = self.RC.EE_Position[2] - self.RC.P_base2world[2] - self.RC.System_Offset[2]
+
+                    self.CT.SystemPose = [world2SystemX/1000 * 0, world2SystemY/1000 * 0, world2SystemZ/1000]
+                    self.RobotData.AppendData(self.DataName_3,[world2SystemX, world2SystemY, world2SystemZ, self.RC.EE_Rotation[0], self.RC.EE_Rotation[1], self.RC.EE_Rotation[2]])
 
                 PWM = self.CT.Get_PWM()
 
@@ -77,7 +81,7 @@ class TotalSystem:
                 else:
                     self.AD.Send_PWM(0)
 
-                self.ControlData.AppendData(self.DataName_1,[(self.CT.Z_Reference - (self.CT.Z_System - self.CT.Z_Target)), self.CT.Z_System, self.CT.Z_Target, PWM])
+                self.ControlData.AppendData(self.DataName_1,[(self.CT.Z_Reference - (self.CT.SystemPose[2] - self.CT.TargetPose[2])), self.CT.SystemPose[2], self.CT.TargetPose[2], PWM])
 
 
 
@@ -100,12 +104,6 @@ class TotalSystem:
         print("")
 
 
-    def Print_PWM(self):
-        with self.VS_lock, self.RC_lock:
-            PWM = self.CT.Get_PWM()
-        print(f"PWM: {round(PWM)}")
-        print("")
-
 
     def Print_Error(self):
         with self.RC_lock, self.VS_lock:
@@ -126,6 +124,26 @@ class TotalSystem:
 
 
 
+    def PWM_Switch(self, Value = None):
+        if Value == None:
+            with self.VS_lock, self.RC_lock:
+                PWM = self.CT.Get_PWM()
+            print(f"PWM: {round(PWM)}")
+            print("")
+
+        elif Value == 0:
+            self.PWM_ONOFF = False
+            print("PWM OFF")
+            print("")
+
+        else:
+            self.PWM_ONOFF = True
+            print("PWM ON")
+            print("")
+
+
+
+
     def TotalSystemController(self):
         banner = "\n Waiting Your Order..."
         locals_dict = {'MoveJoint': self.RC.Move_Joint,
@@ -140,7 +158,7 @@ class TotalSystem:
                        'Target': self.Print_TargetPose,
                        'System': self.Print_SystemPose,
                        'Error': self.Print_Error,
-                       'PWM': self.Print_PWM,
+                       'PWM': self.PWM_Switch,
                        'TS': self}
 
         code.interact(banner=banner, local=locals_dict)

@@ -53,7 +53,7 @@ class RobotController:
         self.Function_CreateTCP = rospy.ServiceProxy('/dsr01' + modelName + '/tcp/config_create_tcp', ConfigCreateTcp)
         self.Function_SetTCP = rospy.ServiceProxy('/dsr01' + modelName + '/tcp/set_current_tcp', SetCurrentTcp)
         self.Function_GetTCP = rospy.ServiceProxy('/dsr01' + modelName + '/tcp/get_current_tcp', GetCurrentTcp)
-        self.Function_DeletTCP = rospy.ServiceProxy('/dsr01' + modelName + '/tcp/config_delete_tcp', ConfigDeleteTcp)
+        self.Function_DeleteTCP = rospy.ServiceProxy('/dsr01' + modelName + '/tcp/config_delete_tcp', ConfigDeleteTcp)
         self.Function_SetRobotMode = rospy.ServiceProxy('/dsr01' + modelName + '/system/set_robot_mode', SetRobotMode)
 
         self.Running = True
@@ -206,9 +206,9 @@ class RobotController:
 
 
 
-    def DeletTCP(self):
-        DeletTCP = rospy.ServiceProxy('/dsr01' + self.launcher_model + '/tcp/config_delete_tcp', ConfigDeleteTcp)
-        Result = DeletTCP(name="SJ_TCP")
+    def DeleteTCP(self):
+        DeleteTCP = rospy.ServiceProxy('/dsr01' + self.launcher_model + '/tcp/config_delete_tcp', ConfigDeleteTcp)
+        Result = DeleteTCP(name="SJ_TCP")
         if Result.success == True:
             print("TCP Deleting Done!")
             print("")
@@ -247,12 +247,12 @@ class RobotController:
 
 
 
-    def DeletTCP(self, TCPName = None):
+    def DeleteTCP(self, TCPName = None):
 
         if TCPName == None:
             TCPName = self.Function_GetTCP()
 
-        Result = self.Function_DeletTCP(TCPName.info)
+        Result = self.Function_DeleteTCP(TCPName.info)
         if Result.success == True:
             print("TCP Named " + TCPName.info + " Deleted!")
             print("")
@@ -275,7 +275,7 @@ class RobotController:
                        'InitPose': self.Init_Pose,
                        'SetTcp': self.SetTCP,
                        "GetTcp": self.GetTCP,
-                       "DeletTcp": self.DeletTCP,
+                       "DeleteTcp": self.DeleteTCP,
                        "SetRobotMode": self.SetRobotMode,
                        'Wait': self.Wait}
 
@@ -308,7 +308,7 @@ if __name__ == "__main__":
                    'InitPose':RC.Init_Pose,
                    'SetTcp':RC.SetTCP,
                    "GetTcp": RC.GetTCP,
-                   "DeletTcp": RC.DeletTCP,
+                   "DeleteTcp": RC.DeleteTCP,
                    "SetRobotMode": RC.SetRobotMode,
                    'Wait': RC.Wait}
 
