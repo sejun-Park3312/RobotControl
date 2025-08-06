@@ -12,8 +12,8 @@ from ClassFiles.Control import Control
 VS = Vision()
 AD = Arduino()
 CT = Control()
-CT.alpha = 1
-CT.Kp = 1e-1/2
+CT.alpha = 0.65
+CT.Kp = 1e-1/1.5
 CT.Kd = 1e-2
 CT.Ki = 0
 CT.pid = PID(Kp=CT.Kp, Kd=CT.Kd, Ki=CT.Ki, setpoint = 0)

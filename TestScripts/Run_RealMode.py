@@ -23,7 +23,7 @@ from ClassFiles.RobotController import RobotController
 
 Gazebo = GazeboSimulator()
 Gazebo.launcher_name = "SJ_Custom" # or single_robot_gazebo/SJ_Custom
-Gazebo.launcher_model = "a0509_Calibration" # or a0509/a0509_Calibration/a0509_custom
+Gazebo.launcher_model = "a0509_custom" # or a0509/a0509_Calibration/a0509_custom
 Gazebo.RealMode()
 
 # RC = RobotController()
