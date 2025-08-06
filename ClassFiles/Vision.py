@@ -69,13 +69,13 @@ class Vision:
         self.P2 = self.K2 @ np.hstack((R, T.reshape(3, 1)))
 
         # Open Camera
-        self.Cam1 = cv2.VideoCapture('/dev/video0', cv2.CAP_V4L2)  # USB 캠 1
+        self.Cam1 = cv2.VideoCapture('/dev/video2', cv2.CAP_V4L2)  # USB 캠 1
         self.Cam1.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG'))
         self.Cam1.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
         self.Cam1.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
         self.Cam1.set(cv2.CAP_PROP_FPS, 100)
 
-        self.Cam2 = cv2.VideoCapture('/dev/video2', cv2.CAP_V4L2)  # USB 캠 2
+        self.Cam2 = cv2.VideoCapture('/dev/video4', cv2.CAP_V4L2)  # USB 캠 2
         self.Cam2.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG'))
         self.Cam2.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
         self.Cam2.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)

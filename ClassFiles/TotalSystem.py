@@ -21,6 +21,7 @@ class TotalSystem:
         self.CT = Control()
         self.AD = Arduino()
         self.RC = RobotController()
+        self.beta = 0
 
         self.VS_lock = self.VS.lock
         self.RC_lock = self.RC.lock
@@ -63,7 +64,7 @@ class TotalSystem:
 
                 time.sleep(self.CT.SamplingTime)
                 with self.VS_lock:
-                    self.CT.TargetPose = [self.VS.Position[0] * 0, self.VS.Position[1] * 0, self.VS.Position[2]]
+                    self.CT.TargetPose = [self.VS.Position[0] * self.beta, self.VS.Position[1] * self.beta, self.VS.Position[2]]
                     self.VisionData.AppendData(self.DataName_2,[self.VS.Position[0], self.VS.Position[1], self.VS.Position[2]])
 
                 with self.RC_lock:
@@ -71,7 +72,7 @@ class TotalSystem:
                     world2SystemY = self.RC.EE_Position[1] - self.RC.P_base2world[1]
                     world2SystemZ = self.RC.EE_Position[2] - self.RC.P_base2world[2] - self.RC.System_Offset[2]
 
-                    self.CT.SystemPose = [world2SystemX/1000 * 0, world2SystemY/1000 * 0, world2SystemZ/1000]
+                    self.CT.SystemPose = [world2SystemX/1000 * self.beta, world2SystemY/1000 * self.beta, world2SystemZ/1000]
                     self.RobotData.AppendData(self.DataName_3,[world2SystemX, world2SystemY, world2SystemZ, self.RC.EE_Rotation[0], self.RC.EE_Rotation[1], self.RC.EE_Rotation[2]])
 
                 PWM = self.CT.Get_PWM()

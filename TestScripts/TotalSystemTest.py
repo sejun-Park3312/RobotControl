@@ -12,6 +12,8 @@ from ClassFiles.GazeboSimulator import GazeboSimulator
 TS = TotalSystem()
 TS.RC.launcher_model = "a0509_custom"
 TS.RC.Ready()
+TS.beta = 0.45
+TS.CT.alpha = 0.65
 
 
 ## << Parameter Setting >>
@@ -38,6 +40,7 @@ locals_dict = {'MoveJoint': TS.RC.Move_Joint,
                'SetTcp': TS.RC.SetTCP,
                'DeleteTcp': TS.RC.DeleteTCP,
                'Wait': TS.RC.Wait,
+               'SetRobotMode': TS.RC.SetRobotMode,
 
                'Target': TS.Print_TargetPose,
                'System': TS.Print_SystemPose,
@@ -81,3 +84,5 @@ print("THE END!")
 # sudo ip addr flush dev enp68s0
 # sudo ip addr add 192.168.0.100/24 dev enp68s0
 # sudo ip link set enp68s0 up
+
+# ping 192.168.0.181
