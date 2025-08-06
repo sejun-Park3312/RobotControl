@@ -36,6 +36,7 @@ class Vision:
 
         # Calibration
         self.Calibration = Calibration()
+        self.Calibration_ONOFF = True
 
         print("Vision Ready!")
         print("")
@@ -152,10 +153,17 @@ class Vision:
             P_Cam1 = np.array([[x_Cam1], [y_Cam1], [z_Cam1], [1]])
             P_World = self.T_World2Cam1 @ P_Cam1
 
-            CorrectedPosition = self.Calibration.CorrectPosition([[P_World[0][0], P_World[1][0], P_World[2][0]]])
-            x = CorrectedPosition[0][0]
-            y = CorrectedPosition[0][1]
-            z = CorrectedPosition[0][2]
+            # Calibration
+            if self.Calibration_ONOFF == True:
+                CorrectedPosition = self.Calibration.CorrectPosition([[P_World[0][0], P_World[1][0], P_World[2][0]]])
+                x = CorrectedPosition[0][0]
+                y = CorrectedPosition[0][1]
+                z = CorrectedPosition[0][2]
+            else:
+                x = P_World[0][0]
+                y = P_World[1][0]
+                z = P_World[2][0]
+
             Position = [x, y, z]
 
             # Visualization

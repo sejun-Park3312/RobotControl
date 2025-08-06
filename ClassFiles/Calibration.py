@@ -17,7 +17,7 @@ class Calibration:
         # Paths...
         Calibration_path = os.path.dirname(os.path.abspath(__file__)) # .../RobotControl/ClassFiles
         Project_path = os.path.dirname(Calibration_path) # .../RobotControl
-        Data_path = os.path.join(Project_path, 'Data', 'Calibration_Data') # .../RobotControl/Data
+        Data_path = os.path.join(Project_path, 'Data', 'Calibration_Data/Ref_Data') # .../RobotControl/Data
 
         Vision_XYZ = np.load(Data_path + '/Vision_XYZ.npy')
         Robot_xyz = np.load(Data_path + '/Robot_XYZ.npy')

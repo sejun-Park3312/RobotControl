@@ -18,7 +18,7 @@ class RobotController:
         self.launcher_model = "a0509_custom"
         self.System_Offset = [0, 0, 83.5]
         self.P_base2world = [350, 73.5, 200]
-        self.Target_Offset = [5, -1.8, 0, 0, 0, 0]
+        self.Target_Offset = [2.5, 2.8, 0, 0, 0, 0]
 
         self.Function_MoveWait = None
         self.Function_MoveHome = None
