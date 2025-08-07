@@ -12,14 +12,15 @@ from ClassFiles.GazeboSimulator import GazeboSimulator
 TS = TotalSystem()
 TS.RC.launcher_model = "a0509_custom"
 TS.RC.Ready()
-TS.beta = 0.4
-TS.CT.alpha = 0.65
+TS.beta = 0
+TS.CT.alpha = 0.8
+
 
 
 ## << Parameter Setting >>
 ## --------------------------------------------------------------------
 # PID Gain
-TS.CT.Kp = 1e-1/1.5
+TS.CT.Kp = 1e-1/2
 TS.CT.Kd = 1e-2
 TS.CT.Ki = 0
 

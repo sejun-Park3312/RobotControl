@@ -29,8 +29,8 @@ class RobotController:
         self.EE_Position = None
         self.EE_Rotation = None
 
-        self.Velocity = [50, 20]
-        self.Acceleration = [30, 20]
+        self.Velocity = [5, 5]
+        self.Acceleration = [2, 2]
         self.InitJoint = [11.859779357910156, -0.6888203024864197, 99.6191177368164, -1.7431619358347097e-15, 81.0697021484375, 11.859779357910159]
         self.InitPose = [350/1000, 73.5/1000, 383.5/1000, 0]
 
