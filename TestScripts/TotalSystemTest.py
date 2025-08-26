@@ -13,7 +13,7 @@ TS = TotalSystem()
 TS.RC.launcher_model = "a0509_custom"
 TS.RC.Ready()
 TS.beta = 0
-TS.CT.alpha = 0.6
+TS.CT.alpha = 0.65
 TS.CT.theta = 0
 
 
