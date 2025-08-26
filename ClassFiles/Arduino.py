@@ -9,16 +9,21 @@ class Arduino:
         self.Running = True
         self.ArduinoSerial = self.ArduinoSerial = serial.Serial('/dev/ttyUSB0', 115200)
         self.PWM_OnOff = False
-        self.ManualPWM_Value = 255
+        self.ManualPWM_Value = [255, 255, 255]
         time.sleep(2)
         print("Arduino Connected!")
         print("")
         print("")
 
 
-    def Send_PWM(self, PWM):
-        if self.Running == True:
-            self.ArduinoSerial.write(f"{PWM}\n".encode())
+    def Send_PWM(self, PWM_list):
+        """
+        PWM_list: [pwm_px, pwm_nx, pwm_center]
+        """
+        if self.Running:
+            # 리스트를 문자열 "val1,val2,val3\n"로 변환
+            msg = ",".join(str(int(pwm)) for pwm in PWM_list) + "\n"
+            self.ArduinoSerial.write(msg.encode())
         else:
             self.Disconnect()
 
@@ -26,8 +31,8 @@ class Arduino:
     def Disconnect(self):
         if self.Running:
             self.Running = False
-            self.ArduinoSerial.write(f"{0}\n".encode())
-            self.ArduinoSerial.write(b"999\n")
+            self.Send_PWM([0,0,0])
+            self.ArduinoSerial.write(b"999,999,999\n")
             self.ArduinoSerial.flush()
             self.ArduinoSerial.close()
             print("Arduino Disconnected!")
@@ -58,9 +63,9 @@ class Arduino:
                 # ESC 누르면 종료
                 if self.PWM_OnOff:
                     self.Send_PWM(PWM)
-                    print("On")
+                    print(f"On:{PWM}")
                 else:
-                    self.Send_PWM(0)
+                    self.Send_PWM([0,0,0])
                     print("Off")
 
                 time.sleep(50/1000)
