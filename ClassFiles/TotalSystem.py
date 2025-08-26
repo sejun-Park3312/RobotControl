@@ -80,7 +80,7 @@ class TotalSystem:
                 if self.PWM_ONOFF:
                     self.AD.Send_PWM(PWM)
                 else:
-                    self.AD.Send_PWM(0)
+                    self.AD.Send_PWM([0,0,0])
 
                 self.ControlData.AppendData(self.DataName_1,[(self.CT.Z_Reference - (self.CT.SystemPose[2] - self.CT.TargetPose[2])), self.CT.SystemPose[2], self.CT.TargetPose[2], PWM])
 
@@ -129,7 +129,7 @@ class TotalSystem:
         if Value == None:
             with self.VS_lock, self.RC_lock:
                 PWM = self.CT.Get_PWM()
-            print(f"PWM: {round(PWM)}")
+            print(f"PWM: {[round(PWM[0]), round(PWM[1]), round(PWM[2])]}")
             print("")
 
         elif Value == 0:
