@@ -22,7 +22,7 @@ class Control:
         # DipoleMoment Magnitude
         self.Ms = 2
         self.Mc = 0.92 # NA
-        self.Mt = 0.0265
+        self.Mt = 0.024
 
         # Mechanical Properties
         self.F_Buoyance = 0.005146777750500
