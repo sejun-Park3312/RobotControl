@@ -6,7 +6,8 @@ from ClassFiles.Arduino import Arduino
 
 VS = Vision()
 AD = Arduino()
-
+pwm = -255
+AD.ManualPWM_Value = [pwm, pwm, pwm]
 
 ArduinoThread = threading.Thread(target=AD.ManualPWM, daemon=True)
 ArduinoThread.start()

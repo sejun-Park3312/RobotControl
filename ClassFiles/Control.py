@@ -120,7 +120,7 @@ class Control:
         Z_Error = self.Z_Reference - (self.SystemPose[2] - self.TargetPose[2])
         F_pid = self.pid(Z_Error, dt = self.SamplingTime)
         I = (F_pid - self.MagnetArray_Force() + self.alpha * (- self.F_Buoyance + self.Weight)) / self.CoilArray_ACoeff()
-        PWM = round(float(np.clip(I, 0, self.I_Max) * 255 / self.I_Max))
+        PWM = round(float(np.clip(I, -0.5, self.I_Max) * 255 / self.I_Max))
 
         theta = np.clip(self.theta, -1, 1)
         PWM_List = [round((1-theta)*PWM),round((1+theta)*PWM),round(PWM)]

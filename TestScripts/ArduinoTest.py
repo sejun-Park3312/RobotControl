@@ -3,6 +3,6 @@ from ClassFiles.Arduino import Arduino
 
 AD = Arduino()
 alpha = 0
-pwm = 70
+pwm = 130
 AD.ManualPWM_Value = [pwm * (1-alpha),pwm * (1+alpha),pwm]
 AD.ManualPWM()

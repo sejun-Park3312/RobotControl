@@ -23,6 +23,7 @@ class Arduino:
         if self.Running:
             # 리스트를 문자열 "val1,val2,val3\n"로 변환
             msg = ",".join(str(int(pwm)) for pwm in PWM_list) + "\n"
+            # print(msg)
             self.ArduinoSerial.write(msg.encode())
         else:
             self.Disconnect()
