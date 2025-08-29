@@ -13,10 +13,10 @@ TS = TotalSystem()
 TS.RC.launcher_model = "a0509_custom"
 TS.RC.Ready()
 TS.beta = 0
-TS.CT.alpha = 0.6
+TS.CT.alpha = 0.55
 TS.CT.theta = 0
 
-TS.RC.Velocity = [20, 20]
+TS.RC.Velocity = [15, 15]
 TS.RC.Acceleration = [10,10]
 
 ## << Parameter Setting >>
