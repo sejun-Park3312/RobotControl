@@ -22,7 +22,7 @@ class Control:
         # DipoleMoment Magnitude
         self.Ms = 2
         self.Mc = 0.92 # NA
-        self.Mt = 0.024
+        self.Mt = 0.0265
 
         # Mechanical Properties
         self.F_Buoyance = 0.005146777750500
@@ -30,18 +30,27 @@ class Control:
         self.I_Max = 1.5
         self.alpha = 1
         self.theta = 0
+        self.F_pid = 0
+        self.a = 1
+        self.b = 1
+
 
         # PID
         self.SamplingTime = 25 / 1000
         self.Kp = 1e-1/2
         self.Kd = 1e-2
         self.Ki = 0
-        self.pid = PID(Kp=self.Kp, Kd=self.Kd, Ki=self.Ki, setpoint = 0)
-        self.pid.sample_time = self.SamplingTime
+        self.pid = None
+        self.setPID()
+
 
         print("Controller Ready!")
         print("")
         print("")
+
+    def setPID(self):
+        self.pid = PID(Kp=self.Kp, Kd=self.Kd, Ki=self.Ki, setpoint=0)
+        self.pid.sample_time = self.SamplingTime
 
 
 
@@ -76,52 +85,54 @@ class Control:
         return Fz
 
 
+    def CoilArray_ACoeff(self):
+        m_target = np.array([1, 0, 0]) * self.Mt
+        A_vec = np.array([[0], [0], [0]])
+        for i in range(self.C_Points.shape[0]):
+            m_source_i = self.Angle2Direction(self.C_Angles[i, :]) * self.Mc
+            # World 좌표계 기준
+            r_source2target = np.array([[self.TargetPose[0], self.TargetPose[1], self.TargetPose[2]]]) - (self.C_Points[i, :] + np.array([self.SystemPose[0], self.SystemPose[1], self.SystemPose[2]]))
+            A_vec = A_vec + self.BF.Cal_MagnetForce(r_source2target, m_source_i, m_target)
+
+        Az_Coeff = A_vec[2]
+        return Az_Coeff
+
     # def CoilArray_ACoeff(self):
     #     m_target = np.array([1, 0, 0]) * self.Mt
-    #     A_vec = np.array([[0], [0], [0]])
-    #     for i in range(self.C_Points.shape[0]):
+    #     A_vec_px = np.array([[0], [0], [0]])
+    #     for i in [0,3,4]:
     #         m_source_i = self.Angle2Direction(self.C_Angles[i, :]) * self.Mc
     #         # World 좌표계 기준
     #         r_source2target = np.array([[self.TargetPose[0], self.TargetPose[1], self.TargetPose[2]]]) - (self.C_Points[i, :] + np.array([self.SystemPose[0], self.SystemPose[1], self.SystemPose[2]]))
-    #         A_vec = A_vec + self.BF.Cal_MagnetForce(r_source2target, m_source_i, m_target)
+    #         A_vec_px = A_vec_px + self.BF.Cal_MagnetForce(r_source2target, m_source_i, m_target)
     #
-    #     Az_Coeff = A_vec[2]
+    #     A_vec_nx = np.array([[0], [0], [0]])
+    #     for i in [1,2,5]:
+    #         m_source_i = self.Angle2Direction(self.C_Angles[i, :]) * self.Mc
+    #         # World 좌표계 기준
+    #         r_source2target = np.array([[self.TargetPose[0], self.TargetPose[1], self.TargetPose[2]]]) - (self.C_Points[i, :] + np.array([self.SystemPose[0], self.SystemPose[1], self.SystemPose[2]]))
+    #         A_vec_nx = A_vec_nx + self.BF.Cal_MagnetForce(r_source2target, m_source_i, m_target)
+    #
+    #     A_vec_center = np.array([[0], [0], [0]])
+    #     for i in [6,7,8]:
+    #         m_source_i = self.Angle2Direction(self.C_Angles[i, :]) * self.Mc
+    #         # World 좌표계 기준
+    #         r_source2target = np.array([[self.TargetPose[0], self.TargetPose[1], self.TargetPose[2]]]) - (self.C_Points[i, :] + np.array([self.SystemPose[0], self.SystemPose[1], self.SystemPose[2]]))
+    #         A_vec_center = A_vec_center + self.BF.Cal_MagnetForce(r_source2target, m_source_i, m_target)
+    #
+    #     theta = np.clip(self.theta, -1, 1)
+    #     Az_Coeff = (1-theta)*A_vec_px[2] + (1+theta)*A_vec_nx[2] + A_vec_center[2]
     #     return Az_Coeff
-
-    def CoilArray_ACoeff(self):
-        m_target = np.array([1, 0, 0]) * self.Mt
-        A_vec_px = np.array([[0], [0], [0]])
-        for i in [0,3,4]:
-            m_source_i = self.Angle2Direction(self.C_Angles[i, :]) * self.Mc
-            # World 좌표계 기준
-            r_source2target = np.array([[self.TargetPose[0], self.TargetPose[1], self.TargetPose[2]]]) - (self.C_Points[i, :] + np.array([self.SystemPose[0], self.SystemPose[1], self.SystemPose[2]]))
-            A_vec_px = A_vec_px + self.BF.Cal_MagnetForce(r_source2target, m_source_i, m_target)
-
-        A_vec_nx = np.array([[0], [0], [0]])
-        for i in [1,2,5]:
-            m_source_i = self.Angle2Direction(self.C_Angles[i, :]) * self.Mc
-            # World 좌표계 기준
-            r_source2target = np.array([[self.TargetPose[0], self.TargetPose[1], self.TargetPose[2]]]) - (self.C_Points[i, :] + np.array([self.SystemPose[0], self.SystemPose[1], self.SystemPose[2]]))
-            A_vec_nx = A_vec_nx + self.BF.Cal_MagnetForce(r_source2target, m_source_i, m_target)
-
-        A_vec_center = np.array([[0], [0], [0]])
-        for i in [6,7,8]:
-            m_source_i = self.Angle2Direction(self.C_Angles[i, :]) * self.Mc
-            # World 좌표계 기준
-            r_source2target = np.array([[self.TargetPose[0], self.TargetPose[1], self.TargetPose[2]]]) - (self.C_Points[i, :] + np.array([self.SystemPose[0], self.SystemPose[1], self.SystemPose[2]]))
-            A_vec_center = A_vec_center + self.BF.Cal_MagnetForce(r_source2target, m_source_i, m_target)
-
-        theta = np.clip(self.theta, -1, 1)
-        Az_Coeff = (1-theta)*A_vec_px[2] + (1+theta)*A_vec_nx[2] + A_vec_center[2]
-        return Az_Coeff
 
 
     def Get_PWM(self):
         Z_Error = self.Z_Reference - (self.SystemPose[2] - self.TargetPose[2])
         F_pid = self.pid(Z_Error, dt = self.SamplingTime)
-        I = (F_pid - self.MagnetArray_Force() + self.alpha * (- self.F_Buoyance + self.Weight)) / self.CoilArray_ACoeff()
-        PWM = round(float(np.clip(I, -0.5, self.I_Max) * 255 / self.I_Max))
+        self.F_pid = F_pid *1000
+
+        PWM = round(float(np.clip(90 + F_pid, 0, 255)))
 
         theta = np.clip(self.theta, -1, 1)
         PWM_List = [round((1-theta)*PWM),round((1+theta)*PWM),round(PWM)]
+
         return PWM_List

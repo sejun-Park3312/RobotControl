@@ -13,7 +13,7 @@ TS = TotalSystem()
 TS.RC.launcher_model = "a0509_custom"
 TS.RC.Ready()
 TS.beta = 0
-TS.CT.alpha = 0.25
+TS.CT.alpha = 0.8
 TS.CT.theta = 0
 
 TS.RC.Velocity = [3, 3]
@@ -22,9 +22,9 @@ TS.RC.Acceleration = [3,3]
 ## << Parameter Setting >>
 ## --------------------------------------------------------------------
 # PID Gain
-TS.CT.Kp = 1e-3
-TS.CT.Kd = 1e-3
-TS.CT.Ki = 0
+TS.CT.Kp = 1.5e4
+TS.CT.Kd = 3e3
+TS.CT.setPID()
 
 
 ## << Start! >>

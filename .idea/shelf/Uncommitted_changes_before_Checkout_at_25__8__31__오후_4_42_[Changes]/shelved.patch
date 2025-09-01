@@ -1,0 +1,19 @@
+Index: TestScripts/ArduinoTest.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from ProjectPath import PROJECT_PATH\nfrom ClassFiles.Arduino import Arduino\n\nAD = Arduino()\nalpha = 0\npwm = 130\nAD.ManualPWM_Value = [pwm * (1-alpha),pwm * (1+alpha),pwm]\nAD.ManualPWM()
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/TestScripts/ArduinoTest.py b/TestScripts/ArduinoTest.py
+--- a/TestScripts/ArduinoTest.py	(revision 0e39327d734e489f5a376180247e606adb374197)
++++ b/TestScripts/ArduinoTest.py	(date 1756440436458)
+@@ -3,6 +3,6 @@
+ 
+ AD = Arduino()
+ alpha = 0
+-pwm = 130
++pwm = 145
+ AD.ManualPWM_Value = [pwm * (1-alpha),pwm * (1+alpha),pwm]
+ AD.ManualPWM()
+\ No newline at end of file
