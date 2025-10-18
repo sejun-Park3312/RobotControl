@@ -5,34 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb9d1046-e9e4-45fd-a8cf-311c6b3fc451" name="Changes" comment="Fix merge conflicts">
-      <change afterPath="$PROJECT_DIR$/ClassFiles/MagnetFieldSensor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestScripts/CollectMagneticField.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestScripts/Sensor_Test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gdx/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gdx/gdx.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gdx/gdx_vpython.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gdx/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_12_24_[Changes]/ControlData.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_12_24_[Changes]/RobotData.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_12_24_[Changes]/VisionData.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_12_24_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_12_25_[Changes]/ControlData.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_12_25_[Changes]/RobotData.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_12_25_[Changes]/VisionData.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_12_25_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_12_26_[Changes]/ControlData.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_12_26_[Changes]/RobotData.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_12_26_[Changes]/VisionData.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_12_26_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_1_04_[Changes]1/ControlData.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_1_04_[Changes]1/RobotData.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_1_04_[Changes]1/VisionData.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_1_04_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__31__오후_4_42_[Changes]2/shelved.patch" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClassFiles/ManualController.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/MagneticField/251018_data1/MagneticField.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/MagneticField/251018_data1/SystemPosition.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/MagneticField/251018_data2/MagneticField.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/MagneticField/251018_data2/SystemPosition.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/MagneticField/251018_pwm50_data1/MagneticField.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/MagneticField/251018_pwm50_data1/SystemPosition.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/MagneticField/251018_pwm50_data2/MagneticField.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/MagneticField/251018_pwm50_data2/SystemPosition.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassFiles/RealTimeData_Recorder.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/RealTimeData_Recorder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassFiles/RobotController.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/RobotController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestScripts/Run_VirtualMode.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/Run_VirtualMode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClassFiles/Arduino.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/Arduino.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClassFiles/GazeboSimulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/GazeboSimulator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClassFiles/MagnetFieldSensor.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/MagnetFieldSensor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestScripts/CollectMagneticField.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/CollectMagneticField.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestScripts/Results/MagneticField.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestScripts/Results/SystemPosition.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestScripts/Run_RealMode.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/Run_RealMode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestScripts/Sensor_Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/Sensor_Test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +89,7 @@
     "Python.Run_VirtualMode.executor": "Run",
     "Python.Sensor.executor": "Run",
     "Python.Sensor_Test.executor": "Run",
+    "Python.Sensor_Test2.executor": "Run",
     "Python.TotalSystem.executor": "Run",
     "Python.TotalSystemTest.executor": "Run",
     "Python.Vision.executor": "Run",
@@ -114,7 +105,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "MagnetFieldMeasure",
-    "last_opened_file_path": "/home/msrl/PycharmProjects/RobotControl/Data",
+    "last_opened_file_path": "/home/msrl/PycharmProjects/RobotControl/Data/MagneticField/251018_pwm100_data1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -126,18 +117,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Data/MagneticField/251018_pwm100_data1" />
+      <recent name="$PROJECT_DIR$/Data/MagneticField/251018_pwm50_data2" />
+      <recent name="$PROJECT_DIR$/Data/MagneticField/251018_data1_pwm50" />
+      <recent name="$PROJECT_DIR$/Data/MagneticField/251018_data1" />
       <recent name="$PROJECT_DIR$/Data" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/Data/History/0902" />
-      <recent name="$PROJECT_DIR$/Data/History/0901" />
-      <recent name="$PROJECT_DIR$/Data/History/0730(2)" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Data/MagneticField" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/godirect-examples-main/python" />
       <recent name="$PROJECT_DIR$/godirect-examples-main" />
       <recent name="$PROJECT_DIR$/Data/History/0730" />
-      <recent name="$PROJECT_DIR$/ClassFiles" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -195,22 +186,6 @@
       <workItem from="1754025973488" duration="8000" />
       <workItem from="1754040648055" duration="1954000" />
       <workItem from="1754442312917" duration="1736000" />
-    </task>
-    <task id="LOCAL-00010" summary="First commit">
-      <option name="closed" value="true" />
-      <created>1752688203571</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1752688203571</updated>
-    </task>
-    <task id="LOCAL-00011" summary="First commit">
-      <option name="closed" value="true" />
-      <created>1752734840020</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1752734840020</updated>
     </task>
     <task id="LOCAL-00012" summary="First commit">
       <option name="closed" value="true" />
@@ -588,7 +563,23 @@
       <option name="project" value="LOCAL" />
       <updated>1756784755110</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Fix merge conflicts">
+      <option name="closed" value="true" />
+      <created>1760775939109</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1760775939109</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Fix merge conflicts">
+      <option name="closed" value="true" />
+      <created>1760775964976</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1760775964976</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

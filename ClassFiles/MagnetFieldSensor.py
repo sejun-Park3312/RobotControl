@@ -31,6 +31,7 @@ class MagnetFieldSensor():
 
     def Measure(self):
 
+        # print("Sensing...")
         time.sleep(self.WaitingTime)
         self.Sensor.start(self.MeasureTimeGap*1000)
         data = []
@@ -45,6 +46,8 @@ class MagnetFieldSensor():
 
         self.Sensor.stop()
         avg_data = [sum(m[i] for m in data) / NumData for i in range(3)]
+        # print(f"Data : {[round(x,3) for x in avg_data]}")
+        # print("")
 
         return avg_data
 

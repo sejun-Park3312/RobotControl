@@ -11,6 +11,7 @@ GDX = MagnetFieldSensor()
 from ClassFiles.GazeboSimulator import GazeboSimulator
 from ClassFiles.RobotController import RobotController
 from ClassFiles.RealTimeData_Recorder import RealTimeData_Recorder
+from ClassFiles.Arduino import Arduino
 
 # Gazebo Simulator
 Gazebo = GazeboSimulator()
@@ -29,9 +30,13 @@ RC.InitJoint = [3.6749961376190186, 11.92389965057373, 81.28993225097656, -3.941
 RC.InitPose = [450, 28.903, 241.1+80+80]
 RC.Init_Pose()
 
+# Arduino
+AD = Arduino()
+PWM = 100
+
 # Real Time Data Recorder
 RD = RealTimeData_Recorder()
-RD.DefineData("SystemPosition", ['x', 'y', 'z', 'phi'])
+RD.DefineData("SystemPosition", ['x', 'y', 'z'])
 RD.DefineData("MagneticField", ['Bx', 'By', 'Bz'])
 
 # ============================================================================================
@@ -47,9 +52,9 @@ y_range = (-10, 10)
 z_range = (-10, 10)
 
 # 축별 샘플링 개수 (자유롭게 조절 가능)
-nx = 1
-ny = 1
-nz = 2
+nx = 3
+ny = 3
+nz = 4
 
 # linspace로 균일 분포 점 생성
 x_vals = np.linspace(x_range[0], x_range[1], nx)
@@ -81,13 +86,15 @@ for point in SamplingPoints:
 SystemPosition = np.zeros((nx*ny*nz, 3), dtype=np.float64)
 MagneticField = np.zeros((nx*ny*nz, 3), dtype=np.float64)
 
+# Start PWM
+AD.Send_PWM([PWM, PWM, PWM])
 i = 0
 for move in rel_motion:
     RC.Move_Rel(move[0], move[1], move[2], 0)
     time.sleep(2)
 
     Pose = RC.Get_Pose()
-    SystemPosition = [Pose[0], Pose[1], Pose[2], Pose[3]]
+    SystemPosition = [Pose[0], Pose[1], Pose[2]]
 
     RD.AppendData("SystemPosition", SystemPosition)
 
@@ -104,6 +111,7 @@ for move in rel_motion:
 
     i += 1
 
+AD.Send_PWM([0, 0, 0])
 RC.Init_Pose()
 # ============================================================================================
 # </Main Loop>

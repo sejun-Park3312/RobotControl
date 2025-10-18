@@ -29,6 +29,7 @@ class Arduino:
             self.Disconnect()
 
 
+
     def Disconnect(self):
         if self.Running:
             self.Running = False

@@ -109,11 +109,11 @@ class GazeboSimulator:
 
     ### <<<Real Mode>>>
     ## ---------------------------------------------
-
         ## <<Connect LAN>>
+            # enxa0cec8ac637d/enx00e04f82fbd0
             # ip addr show (보통 enp(유선)/enx(어댑터)로 시작한다함)
-            # sudo ip addr add 192.168.0.100/24 dev enx00e04f82fbd0
-            # sudo ip link set enx00e04f82fbd0 up
+            # sudo ip addr add 192.168.0.100/24 dev enxa0cec8ac637d
+            # sudo ip link set enxa0cec8ac637d up
             # ping 192.168.0.181
 
         ## <<Open Gazebo>>
