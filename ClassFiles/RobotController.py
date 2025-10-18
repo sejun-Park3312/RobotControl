@@ -11,7 +11,7 @@ from dsr_msgs.srv import SetRobotMode
 
 
 class RobotController:
-    def __init__(self):
+    def __init__(self, Controller = True):
         self.Running = False
         self.lock = threading.Lock()
         self.SamplingTime = 100/1000
@@ -126,8 +126,8 @@ class RobotController:
 
 
     def Move_Joint(self, q):
-        vel = 20
-        acc = 20
+        vel = 10
+        acc = 10
         time = 0
         radius = 0
         mode = 0
@@ -263,7 +263,7 @@ class RobotController:
 
 
 
-    def Controller(self):
+    def GetController(self):
         banner = "\n Waiting Your Order..."
         locals_dict = {"RC": self,
                        'MoveJoint': self.Move_Joint,
@@ -287,31 +287,3 @@ class RobotController:
     def EndController(self):
         self.Running = False
 
-
-if __name__ == "__main__":
-    RC = RobotController()
-    RC.Ready()
-
-    # EE_Tracker = threading.Thread(target=RC.Track_EE, daemon=True)
-    # EE_Tracker.start()
-
-    # RC.Move_Home()
-
-    banner = "\n Waiting Your Order..."
-    locals_dict = {"RC":RC,
-                   'MoveJoint':RC.Move_Joint,
-                   'MoveRel':RC.Move_Rel,
-                   'MoveAbs':RC.Move_Abs,
-                   'GetPose':RC.Get_Pose,
-                   'GetJoint':RC.Get_Joint,
-                   'HomePose':RC.Move_Home,
-                   'InitPose':RC.Init_Pose,
-                   'SetTcp':RC.SetTCP,
-                   "GetTcp": RC.GetTCP,
-                   "DeleteTcp": RC.DeleteTCP,
-                   "SetRobotMode": RC.SetRobotMode,
-                   'Wait': RC.Wait}
-
-    code.interact(banner=banner, local=locals_dict)
-
-    RC.EndController()

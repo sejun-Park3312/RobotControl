@@ -5,15 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb9d1046-e9e4-45fd-a8cf-311c6b3fc451" name="Changes" comment="Fix merge conflicts">
+      <change afterPath="$PROJECT_DIR$/ClassFiles/MagnetFieldSensor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestScripts/CollectMagneticField.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestScripts/Sensor_Test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gdx/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gdx/gdx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gdx/gdx_vpython.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gdx/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_12_24_[Changes]/ControlData.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_12_24_[Changes]/RobotData.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_12_24_[Changes]/VisionData.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_12_24_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_12_25_[Changes]/ControlData.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_12_25_[Changes]/RobotData.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_12_25_[Changes]/VisionData.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_12_25_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_12_26_[Changes]/ControlData.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_12_26_[Changes]/RobotData.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_12_26_[Changes]/VisionData.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_12_26_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_1_04_[Changes]1/ControlData.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_1_04_[Changes]1/RobotData.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_1_04_[Changes]1/VisionData.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__29__오후_1_04_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__8__31__오후_4_42_[Changes]2/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassFiles/Control.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/Control.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassFiles/TotalSystem.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/TotalSystem.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassFiles/Vision.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/Vision.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Command_Data/Command" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Command_Data/Command" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Results/ControlData.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Results/ControlData.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Results/RobotData.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Results/RobotData.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Results/VisionData.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Results/VisionData.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestScripts/TotalSystemTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/TotalSystemTest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClassFiles/RealTimeData_Recorder.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/RealTimeData_Recorder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClassFiles/RobotController.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/RobotController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestScripts/Run_VirtualMode.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/Run_VirtualMode.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +54,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Laptop_ver" />
+        <entry key="$PROJECT_DIR$" value="water" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,7 +68,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/sejun-Park3312/RobotControl.git&quot;,
-    &quot;accountId&quot;: &quot;4ae56b57-24f1-4df4-8a54-73af6f68bdfb&quot;
+    &quot;accountId&quot;: &quot;e522d249-37d0-46ca-897a-7cdfe1e3737a&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -60,60 +79,70 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.Arduino.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ArduinoTest.executor&quot;: &quot;Run&quot;,
-    &quot;Python.CalibrationData.executor&quot;: &quot;Run&quot;,
-    &quot;Python.CalibrationTest.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Collect.executor&quot;: &quot;Run&quot;,
-    &quot;Python.DoosanRobot.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ROS1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ROS1_Test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.RobotController.executor&quot;: &quot;Run&quot;,
-    &quot;Python.TotalSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Python.TotalSystemTest.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Vision.executor&quot;: &quot;Run&quot;,
-    &quot;Python.VisionArduinoTest.executor&quot;: &quot;Run&quot;,
-    &quot;Python.VisionControlTest.executor&quot;: &quot;Run&quot;,
-    &quot;Python.VisionTest.executor&quot;: &quot;Run&quot;,
-    &quot;Python.dsr_ex_a0509.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ex.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.robot_console.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;TRY__0731&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/msrl/PycharmProjects/RobotControl/Data/History/0730(2)&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.Arduino.executor": "Run",
+    "Python.ArduinoTest.executor": "Run",
+    "Python.CalibrationData.executor": "Run",
+    "Python.CalibrationTest.executor": "Run",
+    "Python.Calibration_Collect.executor": "Run",
+    "Python.Collect.executor": "Run",
+    "Python.CollectMagneticField.executor": "Run",
+    "Python.DoosanRobot.executor": "Run",
+    "Python.MagnetFieldSensor.executor": "Run",
+    "Python.MeasureMagnetField_Automatically.executor": "Run",
+    "Python.ROS1.executor": "Run",
+    "Python.ROS1_Test.executor": "Run",
+    "Python.RobotController.executor": "Run",
+    "Python.Run_RealMode.executor": "Run",
+    "Python.Run_VirtualMode.executor": "Run",
+    "Python.Sensor.executor": "Run",
+    "Python.Sensor_Test.executor": "Run",
+    "Python.TotalSystem.executor": "Run",
+    "Python.TotalSystemTest.executor": "Run",
+    "Python.Vision.executor": "Run",
+    "Python.VisionArduinoTest.executor": "Run",
+    "Python.VisionControlTest.executor": "Run",
+    "Python.VisionTest.executor": "Run",
+    "Python.dsr_ex_a0509.executor": "Run",
+    "Python.ex.executor": "Debug",
+    "Python.robot_console.executor": "Run",
+    "Python.sensor test.executor": "Run",
+    "Python.ttttt_jh.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "MagnetFieldMeasure",
+    "last_opened_file_path": "/home/msrl/PycharmProjects/RobotControl/Data",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Data/History/0730(2)" />
-      <recent name="$PROJECT_DIR$/Data/DataStore" />
+      <recent name="$PROJECT_DIR$/Data" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/TestScripts" />
+      <recent name="$PROJECT_DIR$/Data/History/0902" />
+      <recent name="$PROJECT_DIR$/Data/History/0901" />
+      <recent name="$PROJECT_DIR$/Data/History/0730(2)" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/godirect-examples-main/python" />
+      <recent name="$PROJECT_DIR$/godirect-examples-main" />
       <recent name="$PROJECT_DIR$/Data/History/0730" />
       <recent name="$PROJECT_DIR$/ClassFiles" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/TestScripts" />
-      <recent name="$PROJECT_DIR$/Data" />
     </key>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-PY-251.26927.90" />
         <option value="bundled-python-sdk-41e8cd69c857-64d779b69b7a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.26927.90" />
       </set>
     </attachedChunks>
@@ -166,78 +195,6 @@
       <workItem from="1754025973488" duration="8000" />
       <workItem from="1754040648055" duration="1954000" />
       <workItem from="1754442312917" duration="1736000" />
-    </task>
-    <task id="LOCAL-00001" summary=".">
-      <option name="closed" value="true" />
-      <created>1752220145426</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1752220145426</updated>
-    </task>
-    <task id="LOCAL-00002" summary=".">
-      <option name="closed" value="true" />
-      <created>1752220327578</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1752220327578</updated>
-    </task>
-    <task id="LOCAL-00003" summary="First commit">
-      <option name="closed" value="true" />
-      <created>1752220982177</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1752220982177</updated>
-    </task>
-    <task id="LOCAL-00004" summary="First commit">
-      <option name="closed" value="true" />
-      <created>1752670853961</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1752670853961</updated>
-    </task>
-    <task id="LOCAL-00005" summary="First commit">
-      <option name="closed" value="true" />
-      <created>1752675667671</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1752675667671</updated>
-    </task>
-    <task id="LOCAL-00006" summary="First commit">
-      <option name="closed" value="true" />
-      <created>1752681912407</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1752681912407</updated>
-    </task>
-    <task id="LOCAL-00007" summary="First commit">
-      <option name="closed" value="true" />
-      <created>1752683409411</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1752683409411</updated>
-    </task>
-    <task id="LOCAL-00008" summary="First commit">
-      <option name="closed" value="true" />
-      <created>1752683423347</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1752683423347</updated>
-    </task>
-    <task id="LOCAL-00009" summary="First commit">
-      <option name="closed" value="true" />
-      <created>1752688032347</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1752688032347</updated>
     </task>
     <task id="LOCAL-00010" summary="First commit">
       <option name="closed" value="true" />
@@ -559,7 +516,79 @@
       <option name="project" value="LOCAL" />
       <updated>1753818727207</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Fix merge conflicts">
+      <option name="closed" value="true" />
+      <created>1756213974690</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1756213974690</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Fix merge conflicts">
+      <option name="closed" value="true" />
+      <created>1756220200579</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1756220200579</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Fix merge conflicts">
+      <option name="closed" value="true" />
+      <created>1756220211448</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1756220211448</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Fix merge conflicts">
+      <option name="closed" value="true" />
+      <created>1756431881221</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1756431881221</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Fix merge conflicts">
+      <option name="closed" value="true" />
+      <created>1756435764407</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1756435764407</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Fix merge conflicts">
+      <option name="closed" value="true" />
+      <created>1756437617224</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1756437617224</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Fix merge conflicts">
+      <option name="closed" value="true" />
+      <created>1756440406036</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1756440406036</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Fix merge conflicts">
+      <option name="closed" value="true" />
+      <created>1756718108969</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1756718108969</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Fix merge conflicts">
+      <option name="closed" value="true" />
+      <created>1756784755110</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1756784755110</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

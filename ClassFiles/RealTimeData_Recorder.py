@@ -59,7 +59,9 @@ class RealTimeData_Recorder:
         Value = Data["Value"]
 
         ExelData = {'Time': TimeStamp}
-        for key in Value:
+
+        Keys = list(self.Data[DataName]['Value'].keys())
+        for key in Keys:
             ExelData[key] = Value[key]
 
         df = pd.DataFrame(ExelData)
