@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb9d1046-e9e4-45fd-a8cf-311c6b3fc451" name="Changes" comment="Fix merge conflicts">
+      <change afterPath="$PROJECT_DIR$/Data/MagneticField/251020_data1/MagneticField.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/MagneticField/251020_data1/SystemPosition.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestScripts/CollectMagneticField.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/CollectMagneticField.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestScripts/Results/MagneticField.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/Results/MagneticField.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestScripts/Results/SystemPosition.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/Results/SystemPosition.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestScripts/Run_RealMode.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/Run_RealMode.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +94,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "MagnetFieldMeasure",
-    "last_opened_file_path": "/home/msrl/PycharmProjects/RobotControl/Data/MagneticField/251018_pwm100_data1",
+    "last_opened_file_path": "/home/msrl/PycharmProjects/RobotControl/Data/MagneticField/20251020_data2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -102,11 +106,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Data/MagneticField/20251020_data2" />
+      <recent name="$PROJECT_DIR$/Data/MagneticField/251020_data1" />
+      <recent name="$PROJECT_DIR$/Data/MagneticField/251018_pwm100_data2" />
       <recent name="$PROJECT_DIR$/Data/MagneticField/251018_pwm100_data1" />
       <recent name="$PROJECT_DIR$/Data/MagneticField/251018_pwm50_data2" />
-      <recent name="$PROJECT_DIR$/Data/MagneticField/251018_data1_pwm50" />
-      <recent name="$PROJECT_DIR$/Data/MagneticField/251018_data1" />
-      <recent name="$PROJECT_DIR$/Data" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Data/MagneticField" />
@@ -171,14 +175,6 @@
       <workItem from="1754025973488" duration="8000" />
       <workItem from="1754040648055" duration="1954000" />
       <workItem from="1754442312917" duration="1736000" />
-    </task>
-    <task id="LOCAL-00014" summary="Merge remote-tracking branch 'origin/main' into main&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;RobotController.py">
-      <option name="closed" value="true" />
-      <created>1752992378307</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1752992378307</updated>
     </task>
     <task id="LOCAL-00015" summary="Merge remote-tracking branch 'origin/main' into main&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;RobotController.py">
       <option name="closed" value="true" />
@@ -564,7 +560,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760790990103</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Fix merge conflicts">
+      <option name="closed" value="true" />
+      <created>1760792971953</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1760792971953</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

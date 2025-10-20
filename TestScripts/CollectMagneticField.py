@@ -26,13 +26,13 @@ RC.launcher_model = Gazebo.launcher_model
 RC.Ready()
 RC.Velocity = [20, 20]
 RC.Acceleration = [20, 20]
-RC.InitJoint = [3.6749961376190186, 11.92389965057373, 81.28993225097656, -3.941812080346716e-16, 86.78617095947266, 3.6749961376190186]
-RC.InitPose = [450, 28.903, 241.1+80+80]
+RC.InitJoint = [3.675039052963257, 12.106164932250977, 83.64900970458984, -1.4706561159982812e-06, 84.24444580078125, 3.674999952316284]
+RC.InitPose = [450, 28.903, 241.1+83.5+ 70]
 RC.Init_Pose()
 
 # Arduino
-AD = Arduino()
-PWM = 100
+# AD = Arduino()
+# PWM = 0
 
 # Real Time Data Recorder
 RD = RealTimeData_Recorder()
@@ -49,12 +49,12 @@ RD.DefineData("MagneticField", ['Bx', 'By', 'Bz'])
 # 각 축의 범위
 x_range = (-10, 10)
 y_range = (-10, 10)
-z_range = (-10, 10)
+z_range = (-30, 10)
 
 # 축별 샘플링 개수 (자유롭게 조절 가능)
 nx = 3
 ny = 3
-nz = 4
+nz = 5
 
 # linspace로 균일 분포 점 생성
 x_vals = np.linspace(x_range[0], x_range[1], nx)
@@ -87,7 +87,7 @@ SystemPosition = np.zeros((nx*ny*nz, 3), dtype=np.float64)
 MagneticField = np.zeros((nx*ny*nz, 3), dtype=np.float64)
 
 # Start PWM
-AD.Send_PWM([PWM, PWM, PWM])
+# AD.Send_PWM([PWM, PWM, PWM])
 i = 0
 for move in rel_motion:
     RC.Move_Rel(move[0], move[1], move[2], 0)
@@ -111,7 +111,7 @@ for move in rel_motion:
 
     i += 1
 
-AD.Send_PWM([0, 0, 0])
+# AD.Send_PWM([0, 0, 0])
 RC.Init_Pose()
 # ============================================================================================
 # </Main Loop>
