@@ -35,6 +35,7 @@ class Vision:
         self.Position = [0,0,0]
 
         # Calibration
+        self.Calibration_ONOFF = True
         self.Calibration = Calibration()
 
         print("Vision Ready!")
@@ -60,22 +61,22 @@ class Vision:
                       [0, 1, 0],
                       [-1, 0, 0]], dtype=np.float64)
 
-        T = np.array([[-200/1000],
+        T = np.array([[-240/1000],
                       [0],
-                      [200/1000]], dtype=np.float64)  # 이동 벡터 (3x1)
+                      [240/1000]], dtype=np.float64)  # 이동 벡터 (3x1)
 
         # Projection Matrix
         self.P1 = self.K1 @ np.hstack((np.eye(3), np.zeros((3, 1))))
         self.P2 = self.K2 @ np.hstack((R, T.reshape(3, 1)))
 
         # Open Camera
-        self.Cam1 = cv2.VideoCapture('/dev/video2', cv2.CAP_V4L2)  # USB 캠 1
+        self.Cam1 = cv2.VideoCapture('/dev/video4', cv2.CAP_V4L2)  # USB 캠 1
         self.Cam1.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG'))
         self.Cam1.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
         self.Cam1.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
         self.Cam1.set(cv2.CAP_PROP_FPS, 100)
 
-        self.Cam2 = cv2.VideoCapture('/dev/video0', cv2.CAP_V4L2)  # USB 캠 2
+        self.Cam2 = cv2.VideoCapture('/dev/video2', cv2.CAP_V4L2)  # USB 캠 2
         self.Cam2.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG'))
         self.Cam2.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
         self.Cam2.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
@@ -91,7 +92,7 @@ class Vision:
                       [0, 0, 1],
                       [0, -1, 0]], dtype=np.float64)
         P_World2Cam1 = np.array([[0],
-                      [-200/1000],
+                      [-240/1000],
                       [self.Z_Offset]], dtype=np.float64)  # 이동 벡터 (3x1)
 
         self.T_World2Cam1 = np.vstack((np.hstack((R_World2Cam1, P_World2Cam1.reshape(3,1))), [[0, 0, 0, 1]]))
@@ -152,11 +153,16 @@ class Vision:
             P_Cam1 = np.array([[x_Cam1], [y_Cam1], [z_Cam1], [1]])
             P_World = self.T_World2Cam1 @ P_Cam1
 
-            CorrectedPosition = self.Calibration.CorrectPosition([[P_World[0][0], P_World[1][0], P_World[2][0]]])
-            x = CorrectedPosition[0][0]
-            y = CorrectedPosition[0][1]
-            z = CorrectedPosition[0][2]
-            Position = [x, y, z]
+            if self.Calibration_ONOFF:
+                CorrectedPosition = self.Calibration.CorrectPosition([[P_World[0][0], P_World[1][0], P_World[2][0]]])
+                x = CorrectedPosition[0][0]
+                y = CorrectedPosition[0][1]
+                z = CorrectedPosition[0][2]
+            else:
+                x = P_World[0][0]
+                y = P_World[1][0]
+                z = P_World[2][0]
+            Position = [x,y,z]
 
             # Visualization
             if pt1 is not None:

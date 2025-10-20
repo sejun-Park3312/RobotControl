@@ -25,7 +25,7 @@ from ClassFiles.RobotController import RobotController
 
 Gazebo = GazeboSimulator()
 Gazebo.launcher_name = "SJ_Custom" # or single_robot_gazebo/SJ_Custom
-Gazebo.launcher_model = "a0509_Sensor" # or a0509/a0509_Calibration/a0509_custom
+Gazebo.launcher_model = "a0509_custom2" # or a0509/a0509_Calibration/a0509_Calibration2/a0509_custom/a0509_custom2
 Gazebo.RealMode()
 
 RC = RobotController()
@@ -35,8 +35,8 @@ RC.Ready()
 
 RC.Velocity = [20, 20]
 RC.Acceleration = [20, 20]
-RC.InitJoint = [3.675039052963257, 12.106164932250977, 83.64900970458984, -1.4706561159982812e-06, 84.24444580078125, 3.674999952316284]
-RC.InitPose = [450, 28.903, 241.1+83.5+70]
+RC.InitJoint = [3.179781198501587, 15.046290397644043, 95.11274719238281, -1.387559109389258e-06, 69.84093475341797, 3.1798245906829834]
+RC.InitPose = [450, 25, 400]
 RC.GetController()
 
 RC.EndController()
