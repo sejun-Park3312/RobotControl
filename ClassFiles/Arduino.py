@@ -72,12 +72,11 @@ class Arduino:
         listener = keyboard.Listener(on_press=PWM_On, on_release=PWM_Off)
         listener.start()
 
-        PWM = [self.PWM_Value, self.PWM_Value, self.PWM_Value]
-        OnOff = True
         try:
             while self.Running:
                 # ESC 누르면 종료
                 if self.PWM_OnOff:
+                    PWM = [self.PWM_Value, self.PWM_Value, self.PWM_Value]
                     self.Send_PWM(PWM)
                     # print(f"On:{PWM}")
                 else:
