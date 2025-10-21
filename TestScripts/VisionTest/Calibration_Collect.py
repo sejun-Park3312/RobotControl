@@ -87,7 +87,7 @@ RC.Init_Pose()
 
 RD.SaveData("Robot_XYZ", "Robot_XYZ")
 RD.SaveData("Vision_XYZ", "Vision_XYZ")
-np.save('../Data/Calibration_Data/Robot_XYZ.npy', Robot_XYZ)
-np.save('../Data/Calibration_Data/Vision_XYZ.npy', Vision_XYZ)
+np.save('../../Data/Calibration_Data/Robot_XYZ.npy', Robot_XYZ)
+np.save('../../Data/Calibration_Data/Vision_XYZ.npy', Vision_XYZ)
 
 VS.Running = False

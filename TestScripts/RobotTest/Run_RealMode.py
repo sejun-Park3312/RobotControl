@@ -28,15 +28,15 @@ Gazebo.launcher_name = "SJ_Custom" # or single_robot_gazebo/SJ_Custom
 Gazebo.launcher_model = "a0509_custom2" # or a0509/a0509_Calibration/a0509_Calibration2/a0509_custom/a0509_custom2
 Gazebo.RealMode()
 
-RC = RobotController()
-RC.launcher_name = Gazebo.launcher_name
-RC.launcher_model = Gazebo.launcher_model
-RC.Ready()
-
-RC.Velocity = [20, 20]
-RC.Acceleration = [20, 20]
-RC.InitJoint = [3.179781198501587, 15.046290397644043, 95.11274719238281, -1.387559109389258e-06, 69.84093475341797, 3.1798245906829834]
-RC.InitPose = [450, 25, 400]
-RC.GetController()
-
-RC.EndController()
+# RC = RobotController()
+# RC.launcher_name = Gazebo.launcher_name
+# RC.launcher_model = Gazebo.launcher_model
+# RC.Ready()
+#
+# RC.Velocity = [20, 20]
+# RC.Acceleration = [20, 20]
+# RC.InitJoint = [3.179781198501587, 15.046290397644043, 95.11274719238281, -1.387559109389258e-06, 69.84093475341797, 3.1798245906829834]
+# RC.InitPose = [450, 25, 400]
+# RC.GetController()
+#
+# RC.EndController()

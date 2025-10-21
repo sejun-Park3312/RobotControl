@@ -150,8 +150,8 @@ class RobotController:
 
     def Init_Pose(self):
         if self.Running:
-            self.Move_Joint(self.InitJoint)
-
+            # self.Move_Joint(self.InitJoint)
+            self.Move_Abs(self.InitPose[0], self.InitPose[1], self.InitPose[2], self.InitPose[3])
 
 
     def Get_Joint(self):
