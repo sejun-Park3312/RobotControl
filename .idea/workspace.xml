@@ -5,30 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb9d1046-e9e4-45fd-a8cf-311c6b3fc451" name="Changes" comment="Fix merge conflicts">
-      <change afterPath="$PROJECT_DIR$/ClassFileSetting/Setting_RobotControl.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ClassFiles/Control_Water.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestScripts/ControlTest/WaterTest1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestScripts/ControlTest/Please.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassFiles/RobotController.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/RobotController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Calibration_Data/251021_CalibraitionData_Setup2/Robot_XYZ.npy" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Calibration_Data/251021_CalibraitionData1_HomePose[450,25,270]/Robot_XYZ.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Calibration_Data/251021_CalibraitionData_Setup2/Vision_XYZ.npy" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Calibration_Data/251021_CalibraitionData1_HomePose[450,25,270]/Vision_XYZ.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Calibration_Data/251021_CalibrationData2/Robot_XYZ.npy" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Calibration_Data/251021_CalibrationData2_HomePose[450,25,270]/Robot_XYZ.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Calibration_Data/251021_CalibrationData2/Vision_XYZ.npy" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Calibration_Data/251021_CalibrationData2_HomePose[450,25,270]/Vision_XYZ.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestScripts/ArduinoTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/ArduinoTest/ArduinoTest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestScripts/CalibrationTest.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestScripts/Calibration_Collect.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/VisionTest/Calibration_Collect.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestScripts/CollectMagneticField.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/SensorTest/CollectMagneticField.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestScripts/Results/MagneticField.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestScripts/Results/Robot_XYZ.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestScripts/Results/SystemPosition.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestScripts/Results/Vision_XYZ.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestScripts/Run_RealMode.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/RobotTest/Run_RealMode.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestScripts/Run_VirtualMode.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/RobotTest/Run_VirtualMode.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestScripts/Sensor_Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/SensorTest/Sensor_Test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestScripts/SystemCalibrationTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/SensorTest/SystemCalibrationTest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestScripts/TotalSystemTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainScripts/TotalSystemTest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClassFiles/Arduino.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/Arduino.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClassFiles/Control_Water.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/Control_Water.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClassFiles/Vision.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/Vision.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainScripts/TotalSystemTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainScripts/TotalSystemTest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestScripts/ControlTest/WaterTest1.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/ControlTest/WaterTest1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestScripts/VisionArduinoTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/VisionArduinoTest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestScripts/VisionTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/VisionTest/VisionTest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestScripts/VisionControlTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/ControlTest/VisionControlTest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestScripts/VisionTest/VisionTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/VisionTest/VisionTest.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,9 +71,11 @@
     "Python.Calibration_Collect.executor": "Run",
     "Python.Collect.executor": "Run",
     "Python.CollectMagneticField.executor": "Run",
+    "Python.Control_Water.executor": "Run",
     "Python.DoosanRobot.executor": "Run",
     "Python.MagnetFieldSensor.executor": "Run",
     "Python.MeasureMagnetField_Automatically.executor": "Run",
+    "Python.Please.executor": "Debug",
     "Python.ROS1.executor": "Run",
     "Python.ROS1_Test.executor": "Run",
     "Python.RobotController.executor": "Run",
@@ -131,11 +119,11 @@
       <recent name="$PROJECT_DIR$/Data/MagneticField/20251020_data2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/TestScripts/ControlTest" />
+      <recent name="$PROJECT_DIR$/TestScripts/ControlTest/Results" />
       <recent name="$PROJECT_DIR$/MainScripts" />
       <recent name="$PROJECT_DIR$/TestScripts/VisionTest" />
       <recent name="$PROJECT_DIR$/TestScripts/SensorTest" />
-      <recent name="$PROJECT_DIR$/TestScripts/RobotTest" />
-      <recent name="$PROJECT_DIR$/TestScripts/ArduinoTest" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -193,14 +181,6 @@
       <workItem from="1754025973488" duration="8000" />
       <workItem from="1754040648055" duration="1954000" />
       <workItem from="1754442312917" duration="1736000" />
-    </task>
-    <task id="LOCAL-00018" summary="Merge remote-tracking branch 'origin/main' into main&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;RobotController.py">
-      <option name="closed" value="true" />
-      <created>1752992525723</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1752992525723</updated>
     </task>
     <task id="LOCAL-00019" summary="Merge remote-tracking branch 'origin/main' into main&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;RobotController.py">
       <option name="closed" value="true" />
@@ -586,7 +566,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760992215066</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Fix merge conflicts">
+      <option name="closed" value="true" />
+      <created>1761035916787</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1761035916787</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

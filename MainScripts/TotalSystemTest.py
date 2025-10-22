@@ -10,7 +10,7 @@ from ClassFiles.GazeboSimulator import GazeboSimulator
 # Gazebo.RealMode()
 
 TS = TotalSystem()
-TS.RC.launcher_model = "a0509_custom"
+TS.RC.launcher_model = "a0509_custom2"
 TS.RC.Ready()
 TS.beta = 0
 TS.CT.alpha = 0.8

@@ -19,7 +19,7 @@ RC.Ready()
 
 # Vision
 VS = Vision()
-VS.GUI = True
+VS.GUI = False
 VS_Thread = threading.Thread(target=VS.Tracking, daemon=True)
 VS_Thread.start()
 

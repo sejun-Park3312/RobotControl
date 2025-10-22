@@ -9,21 +9,22 @@ class Control_Water:
         print("Controller Initializing...")
 
         # Distance Offsets
-        self.Z_Reference = 103 / 1000 # system(센터 코일 높이)과 Target 사이 Reference 거리
+        self.Z_Reference = 98 # system(센터 코일 높이)과 Target 사이 Reference 거리[mm]
+        self.PWM_Reference = 60 # Ref높이에서 뜨기시작하는 PWM
         self.P_World2VisionHomePose = [450, 25, 270] # Vision에서 측정한 값의 Zero Position이 World 좌표계 기준일 때의 위치
         self.SystemPose = [450, 25, 400 + 83.5] # System 위치 (중앙 코일 중심점 위치)
         self.TargetPose = [0,0,0] # Target 높이(World 좌표계 기준)
 
         # Control Parameters
-        self.a = 10.7091
-        self.b = -933.3455
-        self.alpha = 0
-        self.beta = 0
+        self.a = 10
+        self.alpha_p = 1.1
+        self.alpha_n = 1.2
+        self.beta = -5
 
         # PID
         self.SamplingTime = 25 / 1000
-        self.Kp = 1e-1/2
-        self.Kd = 1e-2
+        self.Kp = 1
+        self.Kd = 1
         self.Ki = 0
         self.pid = None
         self.setPID()
@@ -42,7 +43,11 @@ class Control_Water:
         z = z_System - z_Target
         z_err = self.Z_Reference - z
         x = self.pid(z_err, dt = self.SamplingTime)
-        y = self.a * z + self.b - x
+
+        if z_err < 0:
+            y = self.a * self.alpha_p * (z - self.Z_Reference) + self.PWM_Reference + self.beta  + x
+        else:
+            y = self.a * self.alpha_n * (z - self.Z_Reference) + self.PWM_Reference + self.beta  + x
 
         PWM = round(float(np.clip(y, 0, 255)))
         return PWM
