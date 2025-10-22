@@ -18,6 +18,7 @@ class TotalSystem:
         print("")
 
         self.VS = Vision()
+
         self.CT = Control()
         self.AD = Arduino()
         self.RC = RobotController()

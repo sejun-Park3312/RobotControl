@@ -1,0 +1,17 @@
+Index: TestScripts/TotalSystemTest.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import threading\nimport code\nfrom ProjectPath import PROJECT_PATH\nfrom ClassFiles.TotalSystem import TotalSystem\nfrom ClassFiles.GazeboSimulator import GazeboSimulator\n\n# Gazebo = GazeboSimulator()\n# Gazebo.launcher_name = \"SJ_Custom\" # or single_robot_gazebo/SJ_Custom\n# Gazebo.launcher_model = \"a0509_custom\" # or a0509/a0509_Calibration/a0509_custom\n# Gazebo.RealMode()\n\nTS = TotalSystem()\nTS.RC.launcher_model = \"a0509_custom\"\nTS.RC.Ready()\nTS.beta = 0\nTS.CT.alpha = 0.8\n\n\n\n## << Parameter Setting >>\n## --------------------------------------------------------------------\n# PID Gain\nTS.CT.Kp = 1e-1/2\nTS.CT.Kd = 1e-2\nTS.CT.Ki = 0\n\n\n## << Start! >>\n## --------------------------------------------------------------------\nTotalSystem_Thread = threading.Thread(target=TS.Start, daemon=True)\nTotalSystem_Thread.start()\n\nbanner = \"\\n Waiting Your Order...\"\nlocals_dict = {'MoveJoint': TS.RC.Move_Joint,\n               'MoveRel': TS.RC.Move_Rel,\n               'MoveAbs': TS.RC.Move_Abs,\n               'GetPose': TS.RC.Get_Pose,\n               'GetJoint': TS.RC.Get_Joint,\n               'InitPose': TS.RC.Init_Pose,\n               'GetTcp': TS.RC.GetTCP,\n               'SetTcp': TS.RC.SetTCP,\n               'DeleteTcp': TS.RC.DeleteTCP,\n               'Wait': TS.RC.Wait,\n               'SetRobotMode': TS.RC.SetRobotMode,\n\n               'Target': TS.Print_TargetPose,\n               'System': TS.Print_SystemPose,\n               'Error': TS.Print_Error,\n               'PWM': TS.PWM_Switch,\n               'TS': TS}\ncode.interact(banner=banner, local=locals_dict)\n\n\n## << Closing... >>\n## --------------------------------------------------------------------\nTS.VS.Running = False\nTS.RC.Running = False\nTS.Running = False\n\nTotalSystem_Thread.join()\nTS.SaveResults()\nTS.AD.Disconnect()\n\nprint(\".\")\nprint(\".\")\nprint(\".\")\nprint(\"\")\nprint(\"THE END!\")\n\n\n\n\n\n\n## <<you should connect Robot IP first>>\n## <<Connect LAN>>\n# ip addr show (보통 enp(유선)/enx(어댑터)로 시작한다함)\n\n## <<어댑터 사용했을 경우>>\n# sudo ip addr flush dev enx00e04f82fbd0\n# sudo ip addr add 192.168.0.100/24 dev enx00e04f82fbd0\n# sudo ip link set enx00e04f82fbd0 up\n\n## <<그냥 유선연결>>\n# sudo ip addr flush dev enp68s0\n# sudo ip addr add 192.168.0.100/24 dev enp68s0\n# sudo ip link set enp68s0 up\n\n# ping 192.168.0.181\n
+===================================================================
+diff --git a/TestScripts/TotalSystemTest.py b/TestScripts/TotalSystemTest.py
+--- a/TestScripts/TotalSystemTest.py	(revision 518c625e517f2737bf5824ddf9a59d423aebabdd)
++++ b/TestScripts/TotalSystemTest.py	(date 1761162247765)
+@@ -10,7 +10,7 @@
+ # Gazebo.RealMode()
+ 
+ TS = TotalSystem()
+-TS.RC.launcher_model = "a0509_custom"
++TS.RC.launcher_model = "a0509_custom2"
+ TS.RC.Ready()
+ TS.beta = 0
+ TS.CT.alpha = 0.8

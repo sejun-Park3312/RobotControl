@@ -16,14 +16,14 @@ TS.beta = 0
 TS.CT.alpha = 0.8
 TS.CT.theta = 0
 
-TS.RC.Velocity = [3, 3]
+TS.RC.Velocity = [5, 5]
 TS.RC.Acceleration = [3,3]
 
 ## << Parameter Setting >>
 ## --------------------------------------------------------------------
 # PID Gain
-TS.CT.Kp = 1.5e4
-TS.CT.Kd = 3e3
+TS.CT.Kp = 1e-1
+TS.CT.Kd = 1e-2
 TS.CT.setPID()
 
 
