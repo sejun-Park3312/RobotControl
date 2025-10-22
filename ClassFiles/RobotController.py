@@ -111,6 +111,10 @@ class RobotController:
         blendType = 0
         syncType = 0
 
+        if abs(X) + abs(Y) + abs(Z) + abs(Phi) == abs(Phi):
+            vel = [self.Velocity[0] * 3, self.Velocity[1] * 3]
+            acc = [self.Acceleration[0] * 3, self.Acceleration[1] * 3]
+
         if self.Running:
             print("Moving...")
             results = self.Function_MoveLine(pose, vel, acc, time, radius, ref, mode, blendType, syncType)

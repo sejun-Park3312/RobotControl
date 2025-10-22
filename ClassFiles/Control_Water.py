@@ -27,6 +27,7 @@ class Control_Water:
         self.Kd = 1
         self.Ki = 0
         self.pid = None
+        self.pid2 = None
         self.setPID()
 
         print("Controller Ready!")
@@ -38,14 +39,11 @@ class Control_Water:
         self.pid = PID(Kp=self.Kp, Kd=self.Kd, Ki=self.Ki, setpoint=0)
         self.pid.sample_time = self.SamplingTime
 
-
     def Get_PWM(self, z_System, z_Target):
         z = z_System - z_Target
         z_err = self.Z_Reference - z
         y = self.pid(z_err, dt = self.SamplingTime) + self.PWM_Reference
 
-        if abs(z_err) > 0.8:
-            y = y*self.beta
 
         PWM = round(float(np.clip(y, 0, 255)))
         return PWM
