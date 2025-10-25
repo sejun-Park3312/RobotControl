@@ -7,7 +7,7 @@ from ClassFiles.Vision import Vision
 from ClassFiles.Control_Water import Control_Water
 from ClassFiles.Arduino import Arduino
 from ClassFiles.RealTimeData_Recorder import RealTimeData_Recorder
-from ClassFileSetting.Setting_RobotControl import Setting_RobotControl
+from ClassFiles.RobotControlFiles.RobotController_SDK import RobotController_SDK
 from pynput import keyboard
 import numpy as np
 
@@ -18,8 +18,8 @@ class Please:
         print("")
 
         # Robot Controller
-        Set_RC = Setting_RobotControl()
-        self.RC = Set_RC.WaterControl_251021()
+
+        self.RC = RC = RobotController_SDK()
         self.RC_lock = self.RC.lock
 
         # Vision
@@ -58,9 +58,6 @@ class Please:
 
 
     def Start(self):
-        # Robot Tracking
-        RC_Thread = threading.Thread(target=self.RC.Track_EE, daemon=True)
-        RC_Thread.start()
 
         # Vision Thread
         VS_Thread = threading.Thread(target=self.VS.Tracking, daemon=True)
@@ -144,12 +141,13 @@ class Please:
                        'VS': self.VS,
                        'CT': self.CT,
                        'AD': self.AD,
-                       'MoveJoint': self.RC.Move_Joint,
-                       'MoveRel': self.RC.Move_Rel,
-                       'MoveAbs': self.RC.Move_Abs,
-                       'GetPose': self.RC.Get_Pose,
-                       'GetJoint': self.RC.Get_Joint,
-                       'InitPose': self.RC.Init_Pose,
+                       'MoveJoint': self.RC.MoveJoint,
+                       'MoveRel': self.RC.MoveRel,
+                       'MoveAbs': self.RC.MoveAbs,
+                       'GetPose': self.RC.GetPose,
+                       'GetJoint': self.RC.GetJoint,
+                       'InitPose': self.RC.MoveInit,
+                       'HomePose': self.RC.MoveHome,
                        'Wait': self.RC.Wait,
 
                        'Pose': self.Pose,

@@ -7,15 +7,13 @@ from ClassFiles.Arduino import Arduino
 from ClassFiles.RobotController import RobotController
 from ClassFiles.ManualController import ManualController
 from ClassFiles.Control_Water import Control_Water
+from ClassFiles.RobotControlFiles.RobotController_SDK import RobotController_SDK
 
 # Robot Controller
-RC = RobotController()
-RC.launcher_name = "SJ_Custom"
-RC.launcher_model = "a0509_custom2"
+RC = RobotController_SDK()
 RC.Velocity = [20, 20]
 RC.Acceleration = [20, 20]
 RC.InitPose = [450, 25, 370 + 30, 0]
-RC.Ready()
 
 # Vision
 VS = Vision()
@@ -61,11 +59,11 @@ Handle = {'RC': RC,
           'Cal': CalPWM,
           'PWM': AD.ManualPWM,
           'Pose':GetPosition,
-          'MoveRel': RC.Move_Rel,
-          'MoveAbs': RC.Move_Abs,
-          'InitPose': RC.Init_Pose,
-          'GetPose': RC.Get_Pose,
-          'GetJoint': RC.Get_Joint}
+          'MoveRel': RC.MoveRel,
+          'MoveAbs': RC.MoveAbs,
+          'InitPose': RC.MoveInit,
+          'GetPose': RC.GetPose,
+          'GetJoint': RC.GetJoint}
 
 MC = ManualController()
 MC.AddHandle(Handle)

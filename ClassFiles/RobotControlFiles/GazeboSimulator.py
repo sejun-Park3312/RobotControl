@@ -5,8 +5,9 @@ from ProjectPath import PROJECT_PATH
 
 class GazeboSimulator:
     def __init__(self):
-        self.launcher_model = "a0509_custom" # or a0509/a0509_custom/a0509_Calibration
-        self.launcher_name = "SJ_Custom" # or single_robot_gazebo/SJ_Custom
+        self.SJ_EE = None
+        self.SJ_World = None
+        self.SJ_Trj = None
 
         # Virtual Mode
         self.EmulatorModel = "a0509"
@@ -42,11 +43,22 @@ class GazeboSimulator:
         print("Emulator Opened!")
         print("")
 
+        # Options
+        Opt_Msg = ""
+        if self.SJ_EE != None:
+            Opt_Msg = Opt_Msg + " SJ_EE:=" + self.SJ_EE
+
+        if self.SJ_World != None:
+            Opt_Msg = Opt_Msg + " SJ_World:=" + self.SJ_World
+
+        if self.SJ_Trj != None:
+            Opt_Msg = Opt_Msg + " SJ_Trj:=" + self.SJ_Trj
+
         # Open Gazebo
         print("Opening Gazebo...")
         Gazebo_Msg = ("cd ~/catkin_ws; "
                       " source devel/setup.bash; "
-                      " roslaunch dsr_launcher " + self.launcher_name + ".launch model:=" + self.launcher_model)
+                      " roslaunch sj_custom_launcher SJ_Custom.launch model:=a0509_SJ_Custom" + Opt_Msg)
         subprocess.Popen(['gnome-terminal','--','bash', '-c', Gazebo_Msg + '; exec bash'])
         print("Gazebo Opened!")
         print("")
@@ -63,11 +75,23 @@ class GazeboSimulator:
         print("---------------------------")
         print("")
 
+        # Options
+        Opt_Msg = ""
+        if self.SJ_EE != None:
+            Opt_Msg = Opt_Msg + " SJ_EE:=" + self.SJ_EE
+
+        if self.SJ_World != None:
+            Opt_Msg = Opt_Msg + " SJ_World:=" + self.SJ_World
+
+        if self.SJ_Trj != None:
+            Opt_Msg = Opt_Msg + " SJ_Trj:=" + self.SJ_Trj
+
         # Open Gazebo
         print("Opening Gazebo...")
+
         Gazebo_Msg = ("cd ~/catkin_ws; "
                       " source devel/setup.bash; "
-                      " roslaunch dsr_launcher " + self.launcher_name + ".launch model:=" + self.launcher_model + " mode:=real host:=" + self.host + " port:=" + self.port)
+                      " roslaunch sj_custom_launcher SJ_Custom.launch model:=a0509_SJ_Custom" " mode:=real host:=" + self.host + " port:=" + self.port + Opt_Msg)
         subprocess.Popen(['gnome-terminal','--','bash', '-c', Gazebo_Msg + '; exec bash'])
         print("Gazebo Opened!")
         print("")

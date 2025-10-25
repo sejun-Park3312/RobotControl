@@ -1,9 +1,4 @@
-import sys
-import os
-import code
-from ProjectPath import PROJECT_PATH
-from ClassFiles.GazeboSimulator import GazeboSimulator
-from ClassFiles.RobotController import RobotController
+from GazeboSimulator import GazeboSimulator
 
 ## <<you should connect Robot IP first>>
 ## <<Connect LAN>>
@@ -24,8 +19,7 @@ from ClassFiles.RobotController import RobotController
 # ping 192.168.0.181
 
 Gazebo = GazeboSimulator()
-Gazebo.launcher_name = "SJ_Custom" # or single_robot_gazebo/SJ_Custom
-Gazebo.launcher_model = "a0509_custom2" # or a0509/a0509_Calibration/a0509_Calibration2/a0509_custom/a0509_custom2
+Gazebo.SJ_World = 'Setup2'
 Gazebo.RealMode()
 
 # RC = RobotController()
