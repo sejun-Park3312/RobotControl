@@ -17,7 +17,6 @@ class Vision:
         print("Vision Initializing...")
 
         # Vision Setting
-        self.Z_Offset = 3/1000
         self.SamplingTime = 20/1000
         self.Running = False
         self.GUI = True
@@ -61,9 +60,9 @@ class Vision:
                       [0, 1, 0],
                       [-1, 0, 0]], dtype=np.float64)
 
-        T = np.array([[-240/1000],
+        T = np.array([[-350/1000],
                       [0],
-                      [240/1000]], dtype=np.float64)  # 이동 벡터 (3x1)
+                      [330/1000]], dtype=np.float64)  # 이동 벡터 (3x1)
 
         # Projection Matrix
         self.P1 = self.K1 @ np.hstack((np.eye(3), np.zeros((3, 1))))
@@ -84,8 +83,8 @@ class Vision:
         self.Cam2.set(cv2.CAP_PROP_FPS, 100)
 
         # Set ROI(x,y,w,h)
-        self.ROI_1 = [50, 100, 550, 300]
-        self.ROI_2 = [80, 60, 450, 350]
+        self.ROI_1 = [50, 150, 550, 200]
+        self.ROI_2 = [110, 140, 450, 200]
 
 
         # World Frame Alignment
@@ -93,8 +92,8 @@ class Vision:
                       [0, 0, 1],
                       [0, -1, 0]], dtype=np.float64)
         P_World2Cam1 = np.array([[0],
-                      [-240/1000],
-                      [self.Z_Offset]], dtype=np.float64)  # 이동 벡터 (3x1)
+                      [-350/1000],
+                      [-3/1000]], dtype=np.float64)  # 이동 벡터 (3x1)
 
         self.T_World2Cam1 = np.vstack((np.hstack((R_World2Cam1, P_World2Cam1.reshape(3,1))), [[0, 0, 0, 1]]))
 

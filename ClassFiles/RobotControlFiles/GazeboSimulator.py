@@ -5,7 +5,7 @@ from ProjectPath import PROJECT_PATH
 
 class GazeboSimulator:
     def __init__(self):
-        self.SJ_EE = None
+        self.SJ_EE = 'HybridSystem'
         self.SJ_World = None
         self.SJ_Trj = None
 

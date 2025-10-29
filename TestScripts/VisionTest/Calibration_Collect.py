@@ -2,19 +2,19 @@ import numpy as np
 import threading
 import time
 from ProjectPath import PROJECT_PATH
-from ClassFiles.RobotController import RobotController
+from ClassFiles.RobotControlFiles.RobotController_SDK import RobotController_SDK
 from ClassFiles.RealTimeData_Recorder import RealTimeData_Recorder
 from ClassFiles.Vision import Vision
 
 # 각 축의 범위
-x_range = (-35, 35)
-y_range = (-22, 22)
-z_range = (-7, 10)
+x_range = (-80, 80)
+y_range = (-80, 80)
+z_range = (-15, 15)
 
 # 축별 샘플링 개수 (자유롭게 조절 가능)
 nx = 10
-ny = 7
-nz = 8
+ny = 10
+nz = 10
 
 # linspace로 균일 분포 점 생성
 x_vals = np.linspace(x_range[0], x_range[1], nx)
@@ -45,28 +45,27 @@ RD = RealTimeData_Recorder()
 RD.DefineData("Robot_XYZ", ['x', 'y', 'z'])
 RD.DefineData("Vision_XYZ", ['x', 'y', 'z'])
 
-RC = RobotController()
-RC.launcher_name = "SJ_Custom"
-RC.launcher_model = "a0509_Calibration2" # or a0509/a0509_Calibration/a0509_Calibration2/a0509_custom/a0509_custom
-RC.Ready()
-RC.Velocity = [30, 30]
-RC.Acceleration = [30, 30]
-RC.InitJoint = [3.179781198501587, 15.046290397644043, 95.11274719238281, -1.387559109389258e-06, 69.84093475341797, 3.1798245906829834]
-RC.InitPose = [450, 25, 270 + 30]
-RC.Init_Pose()
-RC.Move_Rel(0,0,-30,0)
+# Robot Controller
+RC = RobotController_SDK()
+RC.InitPose = [425, 112.5, 280 + 50]
+RC.Vel_Line = [60, 60]
+RC.Acc_Line = [60, 60]
+RC.MoveInit()
+RC.MoveRel(0,0,-50,0)
+
 
 # Base(Robot) 2 World(Reference)
-P_Offset = [450/1000, 25/1000, 270/1000]
+P_Offset = [425/1000, 112.5/1000, 280/1000]
 Robot_XYZ = np.zeros((nx*ny*nz, 3), dtype=np.float64)
 Vision_XYZ = np.zeros((nx*ny*nz, 3), dtype=np.float64)
 
 i = 0
 for move in rel_motion:
-    RC.Move_Rel(move[0], move[1], move[2], 0)
+    RC.MoveRel(move[0], move[1], move[2], 0)
     time.sleep(0.5)
 
-    Pose = RC.Get_Pose()
+    with RC.lock:
+        Pose = RC.EE_Position
     Robot_XYZ[i] = [Pose[0]/1000 - P_Offset[0], Pose[1]/1000 - P_Offset[1], Pose[2]/1000 - P_Offset[2]]
 
     RD.AppendData("Robot_XYZ", Robot_XYZ[i])
@@ -83,7 +82,7 @@ for move in rel_motion:
 
     i += 1
 
-RC.Init_Pose()
+RC.MoveInit()
 
 RD.SaveData("Robot_XYZ", "Robot_XYZ")
 RD.SaveData("Vision_XYZ", "Vision_XYZ")

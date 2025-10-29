@@ -7,7 +7,7 @@ PLS = Please()
 # PID Gain
 # system init z_pose = 85mm(VisionFrame)
 PLS.CT.Z_Reference = 90
-PLS.CT.PWM_Reference = 46
+PLS.CT.PWM_Reference = 44
 PLS.CT.a = 10.6
 PLS.CT.alpha_p = 1
 PLS.CT.alpha_n = 1.1
@@ -18,16 +18,19 @@ PLS.CT.setPID()
 
 
 # Robot Param
-PLS.RC.Velocity = [5,5]
-PLS.RC.Acceleration = [3,3]
+PLS.RC.Vel_Line = [5,5]
+PLS.RC.Acc_Line = [3,3]
 
 PC = PathCreator()
-RelMotionList_1 = [[25,25,0],[0,17.7,0],[-25,0,0],[0,-12.5,0]]
-Radius = [12.4, 12.4,12.4]
+RelMotionList_1 = [[30,0,0],[0,-30,0],[-30,0,0]]
+Radius = [10, 10]
 Trajectory_1 = PC.MakeTrajectory(RelMotionList_1, Radius, False)
 
-RelMotionList_2 = [[0,12.5,0],[-25,0,0],[0,-17.7,0],[25,-25,0]]
+RelMotionList_2 = [[0,-60,0],[30,0,0],[0,60,0]]
+Radius = [7.5, 7.5]
 Trajectory_2 = PC.MakeTrajectory(RelMotionList_2, Radius, False)
+
+
 
 
 ## << Start! >>
@@ -37,12 +40,27 @@ MainThread.start()
 
 PLS.Handle()
 
-PLS.RC.MoveRel(0,-21.34,0,0)
-PLS.RC.MoveRel(0,0,0,45)
-PLS.RC.MoveTrajectory(Trajectory_1)
-PLS.RC.MoveRel(0,0,0,-180)
-PLS.RC.MoveTrajectory(Trajectory_2)
+PLS.RC.Vel_Line = [7,20]
+PLS.RC.Acc_Line = [5,20]
+PLS.RC.Trajectory = [Trajectory_1, Trajectory_2]
 
+PLS.RC.MoveRel(-65,-30,0,90)
+PLS.RC.MoveRel(0,60,0,0)
+PLS.RC.MoveRel(0,0,0, -90)
+PLS.RC.MoveTrajectory(PLS.RC.Trajectory[0], 0, 0, 30)
+PLS.RC.Wait(3)
+
+PLS.RC.MoveRel(50,-30,0,90)
+PLS.RC.MoveRel(0,60,0,0)
+PLS.RC.MoveRel(0,0,0,26.57)
+PLS.RC.MoveRel(30,-60,0,0)
+PLS.RC.MoveRel(0,0,0,-26.57)
+PLS.RC.MoveRel(0,60,0,0)
+PLS.RC.Wait(3)
+
+PLS.RC.MoveRel(20,0,0,0)
+PLS.RC.MoveTrajectory(PLS.RC.Trajectory[1], 0,0, 30)
+PLS.RC.Wait(3)
 
 PLS.Handle()
 

@@ -42,7 +42,9 @@ class Control_Water:
     def Get_PWM(self, z_System, z_Target):
         z = z_System - z_Target
         z_err = self.Z_Reference - z
-        y = self.pid(z_err, dt = self.SamplingTime) + self.PWM_Reference
+        pid = self.pid(z_err, dt=self.SamplingTime)
+        y = pid + self.PWM_Reference
+        # y = self.PWM_Reference + self.a * (z - self.Z_Reference + pid)
 
 
         PWM = round(float(np.clip(y, 0, 255)))

@@ -19,7 +19,8 @@ from GazeboSimulator import GazeboSimulator
 # ping 192.168.0.181
 
 Gazebo = GazeboSimulator()
-Gazebo.SJ_World = 'Setup2'
+Gazebo.SJ_World = 'Setup3'
+Gazebo.SJ_Trj = 'PNU'
 Gazebo.RealMode()
 
 # RC = RobotController()

@@ -15,7 +15,7 @@ class Control:
         self.Z_Reference = 90 / 1000 # system(센터 코일 높이)과 Target 사이 Reference 거리
         self.SystemPose = [0,0,85/1000] # system 높이(World 좌표계 기준)
         self.TargetPose = [0,0,0] # Target 높이(World 좌표계 기준)
-        self.P_World2VisionHomePose = [450/1000, 25/1000, 270/1000] # Vision에서 측정한 값의 Zero Position이 World 좌표계 기준일 때의 위치
+        self.P_World2VisionHomePose = [425/1000, 112.5/1000, 280/1000] # Vision에서 측정한 값의 Zero Position이 World 좌표계 기준일 때의 위치
 
         # Array
         self.C_Points, self.C_Angles, self.M_Points, self.M_Angles = self.Array()

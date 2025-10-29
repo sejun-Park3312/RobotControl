@@ -35,6 +35,7 @@ class Please:
         self.CT.a = 10.7091
         self.CT.b = -993.3455
 
+        self.RobotOffset = [425,112.5,280]
         self.Running = True
         self.PWM_ONOFF = False
         self.StartTime = None
@@ -75,7 +76,7 @@ class Please:
                 RobotPose = self.RC.EE_Position
                 RobotRot = self.RC.EE_Rotation
 
-            RobotOffset = [450, 25, 270]
+            RobotOffset = self.RobotOffset
             SystemPose = [RobotPose[0] - RobotOffset[0], RobotPose[1] - RobotOffset[1], RobotPose[2] - RobotOffset[2]]
 
             PWM = self.CT.Get_PWM(SystemPose[2], TargetPose[2])
@@ -100,7 +101,7 @@ class Please:
             TargetPose = self.VS.Position
             TargetPose = [x * 1000 for x in TargetPose]
             RobotPose = self.RC.EE_Position
-        RobotOffset = [450, 25, 270]
+        RobotOffset = self.RobotOffset
         SystemPose = [RobotPose[0] - RobotOffset[0], RobotPose[1] - RobotOffset[1], RobotPose[2] - RobotOffset[2]]
         print(f"Target: {[round(x,2) for x in TargetPose]} [mm]")
         print(f"System: {[round(x,2) for x in SystemPose]} [mm]")
@@ -115,7 +116,7 @@ class Please:
                 TargetPose = self.VS.Position
                 TargetPose = [x*1000 for x in TargetPose]
                 RobotPose = self.RC.EE_Position
-            RobotOffset = [450, 25, 270]
+            RobotOffset = self.RobotOffset
             SystemPose = [RobotPose[0] - RobotOffset[0], RobotPose[1] - RobotOffset[1], RobotPose[2] - RobotOffset[2]]
             PWM = self.CT.Get_PWM(SystemPose[2], TargetPose[2])
             z = SystemPose[2] - TargetPose[2]

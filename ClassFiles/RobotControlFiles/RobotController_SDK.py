@@ -33,7 +33,7 @@ class RobotController_SDK:
         set_velx(20, 20)  # set global task speed: 30(mm/sec), 20(deg/sec)
         set_accx(20, 20)  # set global task accel: 60(mm/sec2), 40(deg/sec2)
 
-        self.InitPose = [450,25,280+83.5+20]
+        self.InitPose = [425,112.5,200+83.5+90]
         self.Vel_Joint = 60
         self.Acc_Joint = 30
         self.Vel_Line = [5, 20]
@@ -86,14 +86,14 @@ class RobotController_SDK:
             print("Done!")
         print("")
 
-    def MoveTrajectory(self, TrjList):
+    def MoveTrajectory(self, TrjList, Vel = 10, Acc = 10, Time = 0):
         PoseInit, sol = get_current_posx()
         posx_list = []
         for i in range(len(TrjList)):
             pos = [(PoseInit[0] + TrjList[i][0]), (PoseInit[1] + TrjList[i][1]), (PoseInit[2] + TrjList[i][2]),
                    (PoseInit[3]), (PoseInit[4]), (PoseInit[5] - TrjList[i][3])]
             posx_list.append(posx([pos[0], pos[1], pos[2], pos[3], pos[4], pos[5]]))
-        bool = movesx(posx_list, 0, 0, 35, None, DR_MV_MOD_ABS, DR_MVS_VEL_CONST)
+        bool = movesx(posx_list, Vel, Acc, Time, None, DR_MV_MOD_ABS, DR_MVS_VEL_CONST)
         if bool == -1:
             print("Failed..")
         else:
