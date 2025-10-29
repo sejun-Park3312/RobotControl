@@ -44,7 +44,7 @@ class Control_Water:
         z_err = self.Z_Reference - z
         pid = self.pid(z_err, dt=self.SamplingTime)
         y = pid + self.PWM_Reference
-        # y = self.PWM_Reference + self.a * (z - self.Z_Reference + pid)
+        # y = self.PWM_Reference + self.a * (z - self.Z_Reference) + pid
 
 
         PWM = round(float(np.clip(y, 0, 255)))

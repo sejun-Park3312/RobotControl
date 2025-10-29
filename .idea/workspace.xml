@@ -5,32 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb9d1046-e9e4-45fd-a8cf-311c6b3fc451" name="Changes" comment="Fix merge conflicts">
-      <change afterPath="$PROJECT_DIR$/Data/Calibration_Data/251029_FinalSetup_Water/Robot_XYZ.npy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Calibration_Data/251029_FinalSetup_Water/Vision_XYZ.npy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/History/1030/ControlData.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/History/1030/RobotData.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/History/1030/VisionData.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestScripts/VisionTest/VisionRobot_Test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassFiles/Control.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/Control.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClassFiles/Control_Water.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/Control_Water.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassFiles/RobotControlFiles/GazeboSimulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/RobotControlFiles/GazeboSimulator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassFiles/RobotControlFiles/PathCreator.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/RobotControlFiles/PathCreator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassFiles/RobotControlFiles/RobotController_SDK.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/RobotControlFiles/RobotController_SDK.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassFiles/RobotControlFiles/Run_RealMode.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/RobotControlFiles/Run_RealMode.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassFiles/Vision.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/Vision.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Calibration_Data/Ref_Data/Robot_XYZ.npy" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Calibration_Data/Ref_Data/Robot_XYZ.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Calibration_Data/Ref_Data/Vision_XYZ.npy" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Calibration_Data/Ref_Data/Vision_XYZ.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Calibration_Data/Robot_XYZ.npy" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Calibration_Data/Robot_XYZ.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Calibration_Data/Vision_XYZ.npy" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Calibration_Data/Vision_XYZ.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestScripts/ControlTest/Please.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/ControlTest/Please.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestScripts/ControlTest/Results/ControlData.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/ControlTest/Results/ControlData.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestScripts/ControlTest/Results/RobotData.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/ControlTest/Results/RobotData.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestScripts/ControlTest/Results/VisionData.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/ControlTest/Results/VisionData.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestScripts/ControlTest/WaterTest1.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/ControlTest/WaterTest1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestScripts/RobotTest/robot_test2.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/RobotTest/robot_test2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestScripts/RobotTest/robot_test3.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/RobotTest/robot_test3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestScripts/VisionTest/Calibration_Collect.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/VisionTest/Calibration_Collect.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,14 +177,6 @@
       <workItem from="1754025973488" duration="8000" />
       <workItem from="1754040648055" duration="1954000" />
       <workItem from="1754442312917" duration="1736000" />
-    </task>
-    <task id="LOCAL-00023" summary="Fix merge conflicts">
-      <option name="closed" value="true" />
-      <created>1752992775561</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1752992775561</updated>
     </task>
     <task id="LOCAL-00024" summary="Merge remote-tracking branch 'origin/main' into main&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;RobotController.py">
       <option name="closed" value="true" />
@@ -595,7 +562,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761740239814</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="Fix merge conflicts">
+      <option name="closed" value="true" />
+      <created>1761753089645</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1761753089646</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
