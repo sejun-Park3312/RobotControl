@@ -73,7 +73,7 @@ class Please:
                 TargetPose = self.VS.Position
                 TargetPose = [x*1000 for x in TargetPose]
                 RobotPose = self.RC.EE_Position
-                RobotRot = self.RC.EE_Position
+                RobotRot = self.RC.EE_Rotation
 
             RobotOffset = [450, 25, 270]
             SystemPose = [RobotPose[0] - RobotOffset[0], RobotPose[1] - RobotOffset[1], RobotPose[2] - RobotOffset[2]]
