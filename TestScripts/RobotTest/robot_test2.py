@@ -16,7 +16,7 @@ RC = RobotController_SDK()
 RC.Vel_Line = [12,20]
 RC.Acc_Line = [10,20]
 RC.Trajectory = [Trajectory_1, Trajectory_2]
-RC.GetPose()
+# RC.GetPose()
 
 RC.InitPose = [425, 112.5, 367.5]
 # Center = [425,112.5,200+83.5+90]

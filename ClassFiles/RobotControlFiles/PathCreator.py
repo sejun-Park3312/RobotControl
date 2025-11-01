@@ -207,15 +207,26 @@ class PathCreator:
         plt.show()
 
 
-    def MakeTrajectory(self, RelativeMotionList, Radius, PlotOption = False):
+    def MakeTrajectory(self, RelativeMotionList, Radius, PlotOption = False, Plane_XAxisAngle = 0):
 
         StartPoint = [0, 0, 0]
         PointList = RelativeMotionList
         TotalPoints = self.Abs_RoundPath(StartPoint, PointList, Radius, False)
-        SampledPoints = self.linear_resample(TotalPoints, 50)
+        SampledPoints = self.linear_resample(TotalPoints, 90)
 
         RelMotions = self.Cal_RelativeMotion(SampledPoints)
         AbsMotions = self.Rel2Abs([0, 0, 0, 0], RelMotions)
+
+        RelMotions_Angle = []
+        Plane_XAxisAngle = Plane_XAxisAngle/180*np.pi
+        if Plane_XAxisAngle != 0:
+            for rel in RelMotions:
+                new_rel = [rel[0], rel[1] * np.cos(Plane_XAxisAngle), rel[1] * np.sin(Plane_XAxisAngle),rel[3]]
+                RelMotions_Angle.append(new_rel)
+
+            RelMotions_Angle = np.asarray(RelMotions_Angle, dtype = float)
+            AbsMotions = self.Rel2Abs([0, 0, 0, 0], RelMotions_Angle)
+
 
         if PlotOption:
             self.plot_3d_points(SampledPoints)

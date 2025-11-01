@@ -5,7 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb9d1046-e9e4-45fd-a8cf-311c6b3fc451" name="Changes" comment="Fix merge conflicts">
-      <change beforePath="$PROJECT_DIR$/ClassFiles/Control_Water.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/Control_Water.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__10__23___4_45__Changes_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__10__23__오전_4_45_[Changes]1/ControlData.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__10__23__오전_4_45_[Changes]1/RobotData.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__10__23__오전_4_45_[Changes]1/VisionData.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__10__23__오전_4_45_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClassFiles/RobotControlFiles/PathCreator.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/RobotControlFiles/PathCreator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClassFiles/RobotControlFiles/RobotController_SDK.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/RobotControlFiles/RobotController_SDK.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClassFiles/RobotControlFiles/Run_RealMode.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/RobotControlFiles/Run_RealMode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClassFiles/Vision.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/Vision.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestScripts/RobotTest/robot_test2.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/RobotTest/robot_test2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestScripts/RobotTest/robot_test3.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/RobotTest/robot_test3.py" afterDir="false" />
+      <change beforePath="$USER_HOME$/catkin_ws/src/doosan-robot/dsr_description/xacro/a0509.urdf.xacro" beforeDir="false" afterPath="$USER_HOME$/catkin_ws/src/doosan-robot/dsr_description/xacro/a0509.urdf.xacro" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,10 +40,11 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="PleaseWater_1026" />
+        <entry key="$PROJECT_DIR$" value="Final_251029" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -95,7 +109,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Final__251029",
+    "git-widget-placeholder": "Final__251101",
     "last_opened_file_path": "/home/msrl/PycharmProjects/RobotControl/Data/History/1030(1)",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",

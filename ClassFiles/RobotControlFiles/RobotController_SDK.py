@@ -86,13 +86,20 @@ class RobotController_SDK:
             print("Done!")
         print("")
 
-    def MoveTrajectory(self, TrjList, Vel = 10, Acc = 10, Time = 0):
-        PoseInit, sol = get_current_posx()
+    def MoveTrajectory(self, TrjList, Vel = 5, Acc = 3, Time = 0):
+        rospy.sleep(2)
+        with self.lock:
+            EE_Position = self.EE_Position
+            EE_Rotation = self.EE_Rotation
+
+        PoseInit = [EE_Position[0], EE_Position[1], EE_Position[2], EE_Rotation[0], EE_Rotation[1], EE_Rotation[2]]
         posx_list = []
         for i in range(len(TrjList)):
             pos = [(PoseInit[0] + TrjList[i][0]), (PoseInit[1] + TrjList[i][1]), (PoseInit[2] + TrjList[i][2]),
                    (PoseInit[3]), (PoseInit[4]), (PoseInit[5] - TrjList[i][3])]
             posx_list.append(posx([pos[0], pos[1], pos[2], pos[3], pos[4], pos[5]]))
+
+        time.sleep(1)
         bool = movesx(posx_list, Vel, Acc, Time, None, DR_MV_MOD_ABS, DR_MVS_VEL_CONST)
         if bool == -1:
             print("Failed..")
@@ -117,8 +124,10 @@ class RobotController_SDK:
         self.JointAngle = [Joint[0], Joint[1], Joint[2], Joint[3], Joint[4], Joint[5]]
 
     def GetPose(self):
-        x, sol = get_current_posx()
-        print(f"{[round(x[0],2), round(x[1],2), round(x[2],2)]} [mm] / {round(x[3]- x[5],2)} [degree]")
+        with self.lock:
+            EE_Position = self.EE_Position
+            EE_Rotation = self.EE_Rotation
+        print(f"{[round(EE_Position[0],2), round(EE_Position[1],2), round(EE_Position[2],2)]} [mm] / {round(EE_Rotation[0]- EE_Rotation[2],2)} [degree]")
 
     def GetJoint(self):
         q = get_current_posj()
