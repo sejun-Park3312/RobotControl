@@ -108,7 +108,7 @@ class RobotController_SDK:
         print("")
 
     def Wait(self, Time):
-        time.sleep(Time)
+        rospy.sleep(Time)
 
     # ========================================================================================================================
     ## </Move Functions>

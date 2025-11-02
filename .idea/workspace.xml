@@ -5,20 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb9d1046-e9e4-45fd-a8cf-311c6b3fc451" name="Changes" comment="Fix merge conflicts">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__10__23___4_45__Changes_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__10__23__오전_4_45_[Changes]1/ControlData.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__10__23__오전_4_45_[Changes]1/RobotData.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__10__23__오전_4_45_[Changes]1/VisionData.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25__10__23__오전_4_45_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestScripts/ControlTest/Infinite_Test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClassFiles/RobotControlFiles/PathCreator.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/RobotControlFiles/PathCreator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClassFiles/RobotControlFiles/RobotController_SDK.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/RobotControlFiles/RobotController_SDK.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassFiles/RobotControlFiles/Run_RealMode.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/RobotControlFiles/Run_RealMode.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassFiles/Vision.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/Vision.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestScripts/RobotTest/robot_test2.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/RobotTest/robot_test2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestScripts/ControlTest/Results/ControlData.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/ControlTest/Results/ControlData.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestScripts/ControlTest/Results/RobotData.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/ControlTest/Results/RobotData.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestScripts/ControlTest/Results/VisionData.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/ControlTest/Results/VisionData.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestScripts/RobotTest/robot_test3.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/RobotTest/robot_test3.py" afterDir="false" />
-      <change beforePath="$USER_HOME$/catkin_ws/src/doosan-robot/dsr_description/xacro/a0509.urdf.xacro" beforeDir="false" afterPath="$USER_HOME$/catkin_ws/src/doosan-robot/dsr_description/xacro/a0509.urdf.xacro" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +72,7 @@
     "Python.CollectMagneticField.executor": "Run",
     "Python.Control_Water.executor": "Run",
     "Python.DoosanRobot.executor": "Run",
+    "Python.Infinite_Test.executor": "Run",
     "Python.MagnetFieldSensor.executor": "Run",
     "Python.MeasureMagnetField_Automatically.executor": "Run",
     "Python.Please.executor": "Run",
@@ -110,7 +105,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "Final__251101",
-    "last_opened_file_path": "/home/msrl/PycharmProjects/RobotControl/Data/History/1030(1)",
+    "last_opened_file_path": "/home/msrl/PycharmProjects/RobotControl/Data/History/1102",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -122,11 +117,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Data/History/1102" />
       <recent name="$PROJECT_DIR$/Data/History/1030(1)" />
       <recent name="$PROJECT_DIR$/Data/History/1030" />
       <recent name="$PROJECT_DIR$/Data/Calibration_Data/Ref_Data" />
       <recent name="$PROJECT_DIR$/Data/Calibration_Data/251029_FinalSetup_Water" />
-      <recent name="$PROJECT_DIR$/Data/History/1026(1)" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/TestScripts/ControlTest" />
@@ -191,14 +186,6 @@
       <workItem from="1754025973488" duration="8000" />
       <workItem from="1754040648055" duration="1954000" />
       <workItem from="1754442312917" duration="1736000" />
-    </task>
-    <task id="LOCAL-00024" summary="Merge remote-tracking branch 'origin/main' into main&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;RobotController.py">
-      <option name="closed" value="true" />
-      <created>1753432843188</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1753432843188</updated>
     </task>
     <task id="LOCAL-00025" summary="Fix merge conflicts">
       <option name="closed" value="true" />
@@ -584,7 +571,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761753089646</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="Fix merge conflicts">
+      <option name="closed" value="true" />
+      <created>1761989161178</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1761989161178</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

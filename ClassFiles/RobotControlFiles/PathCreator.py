@@ -212,7 +212,7 @@ class PathCreator:
         StartPoint = [0, 0, 0]
         PointList = RelativeMotionList
         TotalPoints = self.Abs_RoundPath(StartPoint, PointList, Radius, False)
-        SampledPoints = self.linear_resample(TotalPoints, 90)
+        SampledPoints = self.linear_resample(TotalPoints, 75)
 
         RelMotions = self.Cal_RelativeMotion(SampledPoints)
         AbsMotions = self.Rel2Abs([0, 0, 0, 0], RelMotions)
