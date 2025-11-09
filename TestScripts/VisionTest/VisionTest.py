@@ -10,8 +10,8 @@ from ClassFiles.Vision import Vision
 # sudo apt install v4l-utils (위에 설치 필요 시)
 VS = Vision()
 VS.GUI = True
+time.sleep(5)
 VS.Tracking()
-
 
 # Close Vision
 VS.Running = False

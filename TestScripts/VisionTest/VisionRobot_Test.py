@@ -4,6 +4,7 @@ from pynput import keyboard
 from ProjectPath import PROJECT_PATH
 from ClassFiles.Vision import Vision
 from ClassFiles.ManualController import ManualController
+from ClassFiles.VideoWriter import VideoWriter
 from ClassFiles.RobotControlFiles.RobotController_SDK import RobotController_SDK
 
 # Robot Controller
@@ -18,7 +19,10 @@ VS.GUI = True
 VS_Thread = threading.Thread(target=VS.Tracking, daemon=True)
 VS_Thread.start()
 
-
+# Recorder
+VW = VideoWriter(VS)
+VW_Thread = threading.Thread(target=VW.Capture, daemon=True)
+VW_Thread.start()
 
 def GetPosition():
 
@@ -46,3 +50,7 @@ Handle = {'RC': RC,
 MC = ManualController()
 MC.AddHandle(Handle)
 MC.Start()
+
+# Close Vision
+VS.Running = False
+VW.SaveVideo('251109')
