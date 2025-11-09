@@ -4,6 +4,7 @@ import threading
 import code
 from ProjectPath import PROJECT_PATH
 from ClassFiles.Vision import Vision
+from ClassFiles.VideoWriter import VideoWriter
 from ClassFiles.Control_Water import Control_Water
 from ClassFiles.Arduino import Arduino
 from ClassFiles.RealTimeData_Recorder import RealTimeData_Recorder
@@ -26,6 +27,9 @@ class Please:
         self.VS = Vision()
         self.VS.GUI = False
         self.VS_lock = self.VS.lock
+
+        # Recorder
+        self.VW = VideoWriter(self.VS)
 
         # Arduino
         self.AD = Arduino()
@@ -65,7 +69,9 @@ class Please:
         VS_Thread.start()
         time.sleep(5)
 
-
+        # VideoWirter Thread
+        VW_Thread = threading.Thread(target=self.VW.Capture, daemon=True)
+        VW_Thread.start()
 
         self.StartTime = time.time()
         while self.Running:

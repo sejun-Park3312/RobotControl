@@ -86,7 +86,14 @@ class RobotController_SDK:
             print("Done!")
         print("")
 
-    def MoveTrajectory(self, TrjList, Vel = 5, Acc = 3, Time = 0):
+
+    def MoveBlend(self, BlendList, Vel, Acc):
+
+
+        moveb(BlendList, vel=Vel, acc=Acc, ref=DR_BASE, mod=DR_MV_MOD_REL)
+
+
+    def MoveTrajectory(self, TrjList, Vel = 15, Acc = 15, Time = 0):
         rospy.sleep(2)
         with self.lock:
             EE_Position = self.EE_Position

@@ -12,9 +12,9 @@ y_range = (-80, 80)
 z_range = (-15, 15)
 
 # 축별 샘플링 개수 (자유롭게 조절 가능)
-nx = 10
-ny = 10
-nz = 10
+nx = 3
+ny = 3
+nz = 3
 
 # linspace로 균일 분포 점 생성
 x_vals = np.linspace(x_range[0], x_range[1], nx)
