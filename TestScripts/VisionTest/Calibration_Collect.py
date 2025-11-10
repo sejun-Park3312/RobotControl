@@ -9,12 +9,12 @@ from ClassFiles.Vision import Vision
 # 각 축의 범위
 x_range = (-80, 80)
 y_range = (-80, 80)
-z_range = (-15, 15)
+z_range = (-15, 10)
 
 # 축별 샘플링 개수 (자유롭게 조절 가능)
-nx = 3
-ny = 3
-nz = 3
+nx = 10
+ny = 10
+nz = 10
 
 # linspace로 균일 분포 점 생성
 x_vals = np.linspace(x_range[0], x_range[1], nx)
@@ -86,7 +86,7 @@ RC.MoveInit()
 
 RD.SaveData("Robot_XYZ", "Robot_XYZ")
 RD.SaveData("Vision_XYZ", "Vision_XYZ")
-np.save('../../Data/Calibration_Data/Robot_XYZ.npy', Robot_XYZ)
-np.save('../../Data/Calibration_Data/Vision_XYZ.npy', Vision_XYZ)
+np.save('Results/Robot_XYZ.npy', Robot_XYZ)
+np.save('Results/Vision_XYZ.npy', Vision_XYZ)
 
 VS.Running = False

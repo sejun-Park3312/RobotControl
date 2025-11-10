@@ -21,6 +21,7 @@ from GazeboSimulator import GazeboSimulator
 Gazebo = GazeboSimulator()
 Gazebo.SJ_World = 'Setup3'
 Gazebo.SJ_Trj = 'Infinite'
+Gazebo.SJ_EE = 'Calibration'
 Gazebo.RealMode()
 
 # RC = RobotController()

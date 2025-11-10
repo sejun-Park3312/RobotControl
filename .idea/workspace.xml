@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb9d1046-e9e4-45fd-a8cf-311c6b3fc451" name="Changes" comment="Fix merge conflicts">
-      <change afterPath="$PROJECT_DIR$/Data/History/1109_water_Basic/251109_Basic_Water__1.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/History/1109_water_Basic/251109_Basic_Water__2.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/History/1109_water_Infinite/251109_Infinite_Water_1.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/History/1109_water_Infinite/251109_Infinite_Water_2.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/History/1109_water_PNU/251109_2.mp4" afterDir="false" />
-    </list>
+    <list default="true" id="cb9d1046-e9e4-45fd-a8cf-311c6b3fc451" name="Changes" comment="Fix merge conflicts" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,10 +25,10 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Final_251101" />
+        <entry key="$PROJECT_DIR$" value="Final_251109" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../SiliconOil" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -43,12 +37,12 @@
     &quot;assignee&quot;: &quot;sejun-Park3312&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/sejun-Park3312/RobotControl.git&quot;,
-    &quot;accountId&quot;: &quot;e522d249-37d0-46ca-897a-7cdfe1e3737a&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/doosan-robotics/doosan-robot",
+    "accountId": "e522d249-37d0-46ca-897a-7cdfe1e3737a"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -105,8 +99,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Final__251109",
-    "last_opened_file_path": "/home/msrl/PycharmProjects/RobotControl/Data/History/1109_water_Basic",
+    "git-widget-placeholder": "Final__251110",
+    "last_opened_file_path": "/home/msrl/PycharmProjects/RobotControl/Data/Calibration_Data/Ref_Data",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -118,11 +112,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Data/Calibration_Data/Ref_Data" />
+      <recent name="$PROJECT_DIR$/Data/Calibration_Data/251110_SiliconOil_Setup4" />
       <recent name="$PROJECT_DIR$/Data/History/1109_water_Basic" />
       <recent name="$PROJECT_DIR$/Data/History/1109_water_Infinite" />
       <recent name="$PROJECT_DIR$/ClassFiles/RobotControlFiles" />
-      <recent name="$PROJECT_DIR$/TestScripts/ControlTest" />
-      <recent name="$PROJECT_DIR$/Data/History/1109_water_PNU" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/TestScripts/ControlTest" />
@@ -187,14 +181,6 @@
       <workItem from="1754025973488" duration="8000" />
       <workItem from="1754040648055" duration="1954000" />
       <workItem from="1754442312917" duration="1736000" />
-    </task>
-    <task id="LOCAL-00027" summary="Fix merge conflicts">
-      <option name="closed" value="true" />
-      <created>1753443183739</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1753443183739</updated>
     </task>
     <task id="LOCAL-00028" summary="Fix merge conflicts">
       <option name="closed" value="true" />
@@ -580,7 +566,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762681974756</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="Fix merge conflicts">
+      <option name="closed" value="true" />
+      <created>1762759992821</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1762759992821</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

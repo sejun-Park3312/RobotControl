@@ -11,7 +11,6 @@ class Control_Water:
         # Distance Offsets
         self.Z_Reference = 93 # system(센터 코일 높이)과 Target 사이 Reference 거리[mm]
         self.PWM_Reference = 76 # Ref높이에서 뜨기시작하는 PWM
-        self.P_World2VisionHomePose = [450, 25, 270] # Vision에서 측정한 값의 Zero Position이 World 좌표계 기준일 때의 위치
         self.SystemPose = [450, 25, 400 + 83.5] # System 위치 (중앙 코일 중심점 위치)
         self.TargetPose = [0,0,0] # Target 높이(World 좌표계 기준)
 
