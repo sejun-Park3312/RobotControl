@@ -29,6 +29,7 @@ class Control_SiliconOil:
         self.Weight = 0.006776951342543
         self.I_Max = 1.5
         self.alpha = 0.55
+        self.beta = 1
         self.theta = 0
         self.F_pid = 0
         self.a = 1
@@ -139,6 +140,9 @@ class Control_SiliconOil:
 
 
     def Get_PWM(self, SystemPose, TargetPose):
+        TargetPose = [TargetPose[0] * self.beta, TargetPose[1] * self.beta, TargetPose[2]]
+        SystemPose = [SystemPose[0] * self.beta, SystemPose[1] * self.beta, SystemPose[2]]
+
         Z_Error = self.Z_Reference/1000 - (SystemPose[2] - TargetPose[2])
         F_pid = self.pid(Z_Error, dt = self.SamplingTime)
         I = ((F_pid -self.MagnetArray_Force(SystemPose, TargetPose) + self.alpha * (-self.F_Buoyance + self.Weight))
