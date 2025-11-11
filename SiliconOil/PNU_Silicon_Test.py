@@ -1,25 +1,23 @@
 import threading
-from Final_SiliconOil import Please
+from Final_SiliconOil import Final_SiliconOil
 from ClassFiles.RobotControlFiles.PathCreator import PathCreator
 
-PLS = Please()
+PLS = Final_SiliconOil()
 
 # PID Gain
 # system init z_pose = 85mm(VisionFrame)
 PLS.CT.Z_Reference = 92
-PLS.CT.PWM_Reference = 56
-PLS.CT.a = 10.6
-PLS.CT.alpha_p = 1
-PLS.CT.alpha_n = 1.1
-PLS.CT.beta = 1.4
-PLS.CT.Kp = 15
-PLS.CT.Kd = 4
+PLS.CT.Kp = 1e-1/3
+PLS.CT.Kd = 1e-2
+PLS.CT.alpha = 0.52
+PLS.CT.beta = 0.6
+PLS.CT.theta = 0
 PLS.CT.setPID()
 
-
 # Robot Param
-PLS.RC.Vel_Line = [5,5]
-PLS.RC.Acc_Line = [3,3]
+PLS.RC.Vel_Line = [10,30]
+PLS.RC.Acc_Line = [7,30]
+
 
 PC = PathCreator()
 RelMotionList_1 = [[30,0,0],[0,-30,0],[-30,0,0]]
@@ -31,9 +29,6 @@ Radius = [7.5, 7.5]
 Trajectory_2 = PC.MakeTrajectory(RelMotionList_2, Radius, False)
 
 
-
-
-
 ## << Start! >>
 ## --------------------------------------------------------------------
 MainThread = threading.Thread(target=PLS.Start, daemon=True)
@@ -41,8 +36,8 @@ MainThread.start()
 
 PLS.Handle()
 
-PLS.RC.Vel_Line = [7,20]
-PLS.RC.Acc_Line = [5,20]
+PLS.RC.Vel_Line = [10,30]
+PLS.RC.Acc_Line = [7,30]
 PLS.RC.Trajectory = [Trajectory_1, Trajectory_2]
 
 PLS.RC.MoveRel(-65,-30,0,90)
@@ -73,7 +68,7 @@ MainThread.join()
 
 PLS.SaveResults()
 PLS.AD.Disconnect()
-PLS.VW.SaveVideo('251109')
+PLS.VW.SaveVideo('251111_silicon_PNU')
 
 print(".")
 print(".")
