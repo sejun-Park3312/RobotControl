@@ -10,14 +10,12 @@
       <change afterPath="$PROJECT_DIR$/Data/History/1109_water_Infinite/251109_Infinite_Water_1.mp4" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Data/History/1109_water_Infinite/251109_Infinite_Water_2.mp4" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Data/History/1109_water_PNU/251109_2.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/History/1111_silicon_Infinite/251109_Infinite_Silicon_1.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/History/1111_silicon_Infinite/251109_Infinite_Silicon_2.mp4" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Data/History/1111_silicon_PNU/251109_1.mp4" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Data/History/1111_silicon_PNU/251109_2.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/History/1111_silicon_PNU/ControlData.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/History/1111_silicon_PNU/RobotData.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/History/1111_silicon_PNU/VisionData.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SiliconOil/Infinite_Water_Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiliconOil/Infinite_SiliconOil_Test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SiliconOil/PNU_Water_Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiliconOil/PNU_Silicon_Test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SiliconOil/Basic_Water_Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiliconOil/Basic_Silicon_Test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +68,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.Arduino.executor": "Run",
     "Python.ArduinoTest.executor": "Run",
+    "Python.Basic_Silicon_Test.executor": "Run",
     "Python.Basic_Water_Test.executor": "Run",
     "Python.CalibrationData.executor": "Run",
     "Python.CalibrationTest.executor": "Run",
@@ -117,7 +116,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "Final__251110",
-    "last_opened_file_path": "/home/msrl/PycharmProjects/RobotControl/Data/History/1111_silicon_PNU",
+    "last_opened_file_path": "/home/msrl/PycharmProjects/RobotControl/Data/History/1111_silicon_Basic",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -129,11 +128,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Data/History/1111_silicon_Basic" />
+      <recent name="$PROJECT_DIR$/Data/History/1111_silicon_Infinite" />
       <recent name="$PROJECT_DIR$/Data/History/1111_silicon_PNU" />
       <recent name="$PROJECT_DIR$/SiliconOil" />
       <recent name="$PROJECT_DIR$/Water" />
-      <recent name="$PROJECT_DIR$/Data/Calibration_Data/Ref_Data" />
-      <recent name="$PROJECT_DIR$/Data/Calibration_Data/251110_SiliconOil_Setup4" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/TestScripts/ControlTest" />
@@ -198,14 +197,6 @@
       <workItem from="1754025973488" duration="8000" />
       <workItem from="1754040648055" duration="1954000" />
       <workItem from="1754442312917" duration="1736000" />
-    </task>
-    <task id="LOCAL-00031" summary="Fix merge conflicts">
-      <option name="closed" value="true" />
-      <created>1753517645450</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1753517645450</updated>
     </task>
     <task id="LOCAL-00032" summary="Fix merge conflicts">
       <option name="closed" value="true" />
@@ -591,7 +582,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762843005446</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="Fix merge conflicts">
+      <option name="closed" value="true" />
+      <created>1762844421606</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1762844421606</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
