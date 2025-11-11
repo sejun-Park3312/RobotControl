@@ -9,13 +9,7 @@
       <change afterPath="$PROJECT_DIR$/Data/History/1109_water_Basic/Basic_CAM2.mp4" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Data/History/1109_water_Infinite/Infinite_CAM1.mp4" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Data/History/1109_water_Infinite/Infinite_CAM2.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/History/1109_water_PNU/PNU_CAM2.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestScripts/VisionTest/Rebuild_Vision.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/RobotControl.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RobotControl.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassFiles/Vision.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/Vision.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/History/1109_water_PNU/251109_1.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/Data/History/1109_water_PNU/PNU_CAM1.mp4" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,14 +188,6 @@
       <workItem from="1754025973488" duration="8000" />
       <workItem from="1754040648055" duration="1954000" />
       <workItem from="1754442312917" duration="1736000" />
-    </task>
-    <task id="LOCAL-00026" summary="Fix merge conflicts">
-      <option name="closed" value="true" />
-      <created>1753442462579</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1753442462579</updated>
     </task>
     <task id="LOCAL-00027" summary="Fix merge conflicts">
       <option name="closed" value="true" />
@@ -587,7 +573,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762064487465</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Fix merge conflicts">
+      <option name="closed" value="true" />
+      <created>1762702794633</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1762702794634</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
