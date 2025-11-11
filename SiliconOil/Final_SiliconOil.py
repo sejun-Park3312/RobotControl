@@ -83,10 +83,11 @@ class Final_SiliconOil:
             RobotOffset = self.RobotOffset
             SystemPose = [RobotPose[0] - RobotOffset[0], RobotPose[1] - RobotOffset[1], RobotPose[2] - RobotOffset[2]]
 
-            PWM = self.CT.Get_PWM(SystemPose[2], TargetPose[2])
+            PWM = self.CT.Get_PWM([SystemPose[0]/1000, SystemPose[1]/1000, SystemPose[2]/1000],
+                                  [TargetPose[0]/1000, TargetPose[1]/1000, TargetPose[2]/1000])
 
             if self.PWM_ONOFF:
-                self.AD.Send_PWM([PWM, PWM, PWM])
+                self.AD.Send_PWM(PWM)
             else:
                 self.AD.Send_PWM([0, 0, 0])
 
@@ -122,9 +123,9 @@ class Final_SiliconOil:
                 RobotPose = self.RC.EE_Position
             RobotOffset = self.RobotOffset
             SystemPose = [RobotPose[0] - RobotOffset[0], RobotPose[1] - RobotOffset[1], RobotPose[2] - RobotOffset[2]]
-            PWM = self.CT.Get_PWM(SystemPose[2], TargetPose[2])
+            PWM = self.CT.Get_PWM([SystemPose[0]/1000, SystemPose[1]/1000, SystemPose[2]/1000],
+                                  [TargetPose[0]/1000, TargetPose[1]/1000, TargetPose[2]/1000])
             z = SystemPose[2] - TargetPose[2]
-            print(f"Eql PWM: {round(self.CT.a * (z - self.CT.Z_Reference) + self.CT.PWM_Reference + self.CT.beta)}")
             print(f"PID PWM: {PWM}")
             print("")
 

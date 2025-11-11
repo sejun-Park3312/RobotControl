@@ -103,71 +103,71 @@ class Vision:
 
 
 
-    # def Get_Center(self, frame, CamNum):
-    #
-    #     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-    #     lower = np.array([40, 50, 50])
-    #     upper = np.array([80, 255, 255])
-    #     mask = cv2.inRange(hsv, lower, upper)
-    #     cnts, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-    #     if cnts:
-    #         c = max(cnts, key=cv2.contourArea)
-    #         M = cv2.moments(c)
-    #         if M["m00"] > 0:
-    #             cx = int(M["m10"] / M["m00"])
-    #             cy = int(M["m01"] / M["m00"])
-    #             return np.array([cx, cy], dtype=np.float64)
-    #     return None
-
     def Get_Center(self, frame, CamNum):
+
         hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-        lower = np.array([40, 80, 80])
-        upper = np.array([80, 255, 240])
+        lower = np.array([40, 50, 50])
+        upper = np.array([80, 255, 255])
         mask = cv2.inRange(hsv, lower, upper)
-
-        kernel = np.ones((5,5), np.uint8)
-        mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel)
-        mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel)
-
         cnts, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-        if CamNum == 1:
-            prev_center = self.prev_center_1
-        else:
-            prev_center = self.prev_center_2
-
-        if not cnts:
-            return prev_center
-
-        # 모든 contour 중심 계산
-        centers = []
-        for c in cnts:
-            M = cv2.moments(c)
-            if M["m00"] == 0:
-                continue
-            cx = int(M["m10"] / M["m00"])
-            cy = int(M["m01"] / M["m00"])
-            centers.append(np.array([cx, cy], dtype=np.float64))
-
-        # 이전 프레임이 있다면 → 가장 가까운 blob 선택
-        if prev_center is not None and len(centers) > 1:
-            dists = [np.linalg.norm(c - prev_center) for c in centers]
-            best = centers[np.argmin(dists)]  # 이전 위치에 가장 가까운 것 선택
-        else:
-            # 첫 프레임은 가장 큰 contour
+        if cnts:
             c = max(cnts, key=cv2.contourArea)
             M = cv2.moments(c)
-            best = np.array([
-                int(M["m10"] / M["m00"]),
-                int(M["m01"] / M["m00"])
-            ], dtype=np.float64)
+            if M["m00"] > 0:
+                cx = int(M["m10"] / M["m00"])
+                cy = int(M["m01"] / M["m00"])
+                return np.array([cx, cy], dtype=np.float64)
+        return None
 
-        prev_center = best
-        if CamNum == 1:
-            self.prev_center_1 = prev_center
-        else:
-            self.prev_center_2 = prev_center
-
-        return best
+    # def Get_Center(self, frame, CamNum):
+    #     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+    #     lower = np.array([40, 80, 80])
+    #     upper = np.array([80, 255, 240])
+    #     mask = cv2.inRange(hsv, lower, upper)
+    #
+    #     kernel = np.ones((5,5), np.uint8)
+    #     mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel)
+    #     mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel)
+    #
+    #     cnts, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    #     if CamNum == 1:
+    #         prev_center = self.prev_center_1
+    #     else:
+    #         prev_center = self.prev_center_2
+    #
+    #     if not cnts:
+    #         return prev_center
+    #
+    #     # 모든 contour 중심 계산
+    #     centers = []
+    #     for c in cnts:
+    #         M = cv2.moments(c)
+    #         if M["m00"] == 0:
+    #             continue
+    #         cx = int(M["m10"] / M["m00"])
+    #         cy = int(M["m01"] / M["m00"])
+    #         centers.append(np.array([cx, cy], dtype=np.float64))
+    #
+    #     # 이전 프레임이 있다면 → 가장 가까운 blob 선택
+    #     if prev_center is not None and len(centers) > 1:
+    #         dists = [np.linalg.norm(c - prev_center) for c in centers]
+    #         best = centers[np.argmin(dists)]  # 이전 위치에 가장 가까운 것 선택
+    #     else:
+    #         # 첫 프레임은 가장 큰 contour
+    #         c = max(cnts, key=cv2.contourArea)
+    #         M = cv2.moments(c)
+    #         best = np.array([
+    #             int(M["m10"] / M["m00"]),
+    #             int(M["m01"] / M["m00"])
+    #         ], dtype=np.float64)
+    #
+    #     prev_center = best
+    #     if CamNum == 1:
+    #         self.prev_center_1 = prev_center
+    #     else:
+    #         self.prev_center_2 = prev_center
+    #
+    #     return best
 
 
     def Get_Position(self):
