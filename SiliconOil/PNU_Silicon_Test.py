@@ -10,7 +10,7 @@ PLS.CT.Z_Reference = 92
 PLS.CT.Kp = 1e-1/3
 PLS.CT.Kd = 1e-2
 PLS.CT.alpha = 0.52
-PLS.CT.beta = 0.6
+PLS.CT.beta = 0.4
 PLS.CT.theta = 0
 PLS.CT.setPID()
 
@@ -41,12 +41,14 @@ PLS.RC.Acc_Line = [7,30]
 PLS.RC.Trajectory = [Trajectory_1, Trajectory_2]
 
 PLS.RC.MoveRel(-65,-30,0,90)
+PLS.RC.Wait(3)
 PLS.RC.MoveRel(0,60,0,0)
 PLS.RC.MoveRel(0,0,0, -90)
 PLS.RC.MoveTrajectory(PLS.RC.Trajectory[0], 0, 0, 30)
 PLS.RC.Wait(3)
 
 PLS.RC.MoveRel(50,-30,0,90)
+PLS.RC.Wait(3)
 PLS.RC.MoveRel(0,60,0,0)
 PLS.RC.MoveRel(0,0,0,26.57)
 PLS.RC.MoveRel(30,-60,0,0)

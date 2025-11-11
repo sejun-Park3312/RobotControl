@@ -140,6 +140,22 @@ class Final_SiliconOil:
             print("")
 
 
+    def TCP_Control(self, Mode):
+        self.RC.SetRobotMode(1)
+        time.sleep(1)
+        with self.VS_lock:
+            TargetPose = self.VS.Position
+
+        if Mode == 1:
+            self.RC.AddTCP('Offset', [-1000 * TargetPose[0], 1000 * TargetPose[1], 0,0,0,0])
+            self.RC.SetTCP('Offset')
+            print('TCP Offset Applied!')
+            print('')
+        else:
+            self.RC.DeleteTCP('Offset')
+            print('TCP Deleted!')
+            print('')
+
 
     def Handle(self):
         banner = "\n Waiting Your Order..."
@@ -159,6 +175,7 @@ class Final_SiliconOil:
                        'Pose': self.Pose,
                        'PWM': self.PWM_Switch,
                        'MPWM': self.AD.ManualPWM,
+                       'TCP': self.TCP_Control,
                        'PLS': self}
 
         code.interact(banner=banner, local=locals_dict)

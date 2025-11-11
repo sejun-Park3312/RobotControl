@@ -5,11 +5,11 @@ PLS = Final_SiliconOil()
 
 # PID Gain
 # system init z_pose = 85mm(VisionFrame)
-PLS.CT.Z_Reference = 92
+PLS.CT.Z_Reference = 95
 PLS.CT.Kp = 1e-1/3
 PLS.CT.Kd = 1e-2
 PLS.CT.alpha = 0.52
-PLS.CT.beta = 0.7
+PLS.CT.beta = 0.4
 PLS.CT.theta = 0
 PLS.CT.setPID()
 

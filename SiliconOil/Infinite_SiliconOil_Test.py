@@ -10,7 +10,7 @@ PLS.CT.Z_Reference = 92
 PLS.CT.Kp = 1e-1/3
 PLS.CT.Kd = 1e-2
 PLS.CT.alpha = 0.52
-PLS.CT.beta = 0.6
+PLS.CT.beta = 0.4
 PLS.CT.theta = 0
 PLS.CT.setPID()
 
@@ -36,7 +36,7 @@ PLS.RC.MoveInit()
 PLS.RC.Wait(3)
 PLS.RC.MoveRel(0,0,0,45)
 PLS.RC.Wait(1)
-PLS.RC.MoveBlend(b_list, 10, 7)
+PLS.RC.MoveBlend(b_list, 5, 5)
 PLS.RC.Wait(1)
 PLS.RC.MoveRel(0,0,0,-45)
 PLS.RC.Wait(3)
