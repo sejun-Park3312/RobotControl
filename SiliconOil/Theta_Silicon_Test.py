@@ -7,7 +7,7 @@ PLS = Final_SiliconOil()
 # system init z_pose = 85mm(VisionFrame)
 PLS.CT.Z_Reference = 95
 PLS.CT.Kp = 1e-1/3
-PLS.CT.Kd = 1e-2
+PLS.CT.Kd = 1e-2/3
 PLS.CT.alpha = 0.52
 PLS.CT.beta = 0
 PLS.CT.theta = 0
@@ -30,19 +30,50 @@ PLS.Handle()
 PLS.RC.Vel_Line = [7,30]
 PLS.RC.Acc_Line = [5,30]
 
-PLS.CT.theta = 0.7
-PLS.RC.Wait(3)
-PLS.RC.MoveRel(0,0,20,0)
-PLS.TCP_Control(1)
-PLS.RC.MoveRel(0,0,-20,0)
-PLS.TCP_Control(1)
-PLS.RC.MoveRel(0,0,15,0)
 
 PLS.RC.Wait(3)
-PLS.RC.MoveRel(30,0,0,0)
-PLS.TCP_Control(1)
-PLS.RC.MoveRel(-30,0,0,0)
+PLS.CT.theta = 0.2
 PLS.RC.Wait(4)
+PLS.CT.theta = 0.4
+PLS.RC.Wait(4)
+PLS.CT.theta = 0.6
+PLS.RC.Wait(4)
+PLS.CT.theta = 0.8
+PLS.RC.Wait(4)
+PLS.CT.theta = 1
+PLS.RC.Wait(4)
+PLS.CT.theta = 0
+
+
+PLS.RC.Wait(5)
+PLS.CT.theta = -0.2
+PLS.RC.Wait(4)
+PLS.CT.theta = -0.4
+PLS.RC.Wait(4)
+PLS.CT.theta = -0.6
+PLS.RC.Wait(4)
+PLS.CT.theta = -0.8
+PLS.RC.Wait(4)
+PLS.CT.theta = -1
+PLS.RC.Wait(4)
+PLS.CT.theta = 0
+PLS.RC.Wait(4)
+
+
+PLS.CT.theta = 0.7
+PLS.RC.Wait(4)
+
+
+PLS.RC.MoveRel(0,0,10,0)
+PLS.RC.Wait(1)
+PLS.RC.MoveRel(0,0,-10,0)
+PLS.RC.Wait(1)
+
+
+PLS.RC.MoveRel(30,0,0,0)
+PLS.RC.Wait(1)
+PLS.RC.MoveRel(-30,0,0,0)
+PLS.RC.Wait(5)
 
 PLS.TCP_Control(1)
 PLS.RC.MoveRel(0,0,0,90)
@@ -50,20 +81,15 @@ PLS.RC.MoveRel(0,0,0,-180)
 PLS.RC.Wait(3)
 
 PLS.RC.MoveRel(30,0,0,0)
-PLS.TCP_Control(1)
+PLS.RC.Wait(1)
 PLS.RC.MoveRel(-30,0,0,0)
-PLS.RC.Wait(4)
+PLS.RC.Wait(5)
 
 PLS.TCP_Control(1)
 PLS.RC.MoveRel(0,0,0,90)
 PLS.RC.Wait(1)
 PLS.CT.theta = 0
-PLS.RC.Wait(2)
-PLS.CT.theta = -0.7
-PLS.RC.Wait(4)
-
-PLS.CT.theta = 0
-PLS.RC.Wait(4)
+PLS.RC.Wait(3)
 
 
 PLS.Running = False
