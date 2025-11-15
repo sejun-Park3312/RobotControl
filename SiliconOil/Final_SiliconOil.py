@@ -157,6 +157,42 @@ class Final_SiliconOil:
             print('')
 
 
+    def Error(self, DesiredPose):
+        with self.VS_lock, self.RC_lock:
+            TargetPose = self.VS.Position
+            TargetPose = [x * 1000 for x in TargetPose]
+
+        Error = [DesiredPose[0]-TargetPose[0], DesiredPose[1]-TargetPose[1], DesiredPose[2]-TargetPose[2]]
+        print(f"Target: {[round(x, 2) for x in TargetPose]} [mm]")
+        print(f"Desired: {[round(x, 2) for x in DesiredPose]} [mm]")
+        print(f"Error: {[round(x, 2) for x in Error]} [mm]")
+        print("")
+
+        return Error
+
+
+    def MoveDesiredPose(self, DesiredPose):
+
+        def on_press(key):
+            try:
+                if key.char == 'e':
+                    self.Error(DesiredPose)
+
+                elif key.char == 'f':
+                    Error = self.Error(DesiredPose)
+                    self.RC.MoveRel(Error[0], Error[1], Error[2],0)
+
+                elif key.char == 'q':
+                    print("End FeedBack Control...")
+                    return False  # 리스너 종료
+
+            except AttributeError:
+                pass
+
+        with keyboard.Listener(on_press=on_press) as listener:
+            listener.join()
+
+
     def Handle(self):
         banner = "\n Waiting Your Order..."
         locals_dict = {'RC': self.RC,
@@ -173,6 +209,8 @@ class Final_SiliconOil:
                        'Wait': self.RC.Wait,
 
                        'Pose': self.Pose,
+                       'Error': self.Error,
+                       'MoveDesired': self.MoveDesiredPose,
                        'PWM': self.PWM_Switch,
                        'MPWM': self.AD.ManualPWM,
                        'TCP': self.TCP_Control,

@@ -20,6 +20,9 @@
       <change afterPath="$PROJECT_DIR$/Data/History/1111_silicon_theta/251111_Theta_Silicon_2.mp4" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Data/History/1112_Theta_silicon/251111_Theta_Silicon_1.mp4" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Data/History/1112_Theta_silicon/251111_Theta_Silicon_2.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SiliconOil/Final_SiliconOil.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiliconOil/Final_SiliconOil.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SiliconOil/Test_SiliconOil.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiliconOil/Test_SiliconOil.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +124,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "Final__251110",
-    "last_opened_file_path": "/home/msrl/PycharmProjects/RobotControl/Data/History/1112_Theta_silicon",
+    "last_opened_file_path": "/home/msrl/PycharmProjects/RobotControl/Data/History/1115_SimpleFeedbackControl",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -133,11 +136,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Data/History/1115_SimpleFeedbackControl" />
       <recent name="$PROJECT_DIR$/Data/History/1112_Theta_silicon" />
       <recent name="$PROJECT_DIR$/Data/History/1111_silicon_Infinite" />
       <recent name="$PROJECT_DIR$/Data/History/1111_silicon_PNU" />
       <recent name="$PROJECT_DIR$/Data/History/1111_silicon_theta" />
-      <recent name="$PROJECT_DIR$/Data/History/1111_silicon_Basic" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/TestScripts/ControlTest" />
@@ -202,14 +205,6 @@
       <workItem from="1754025973488" duration="8000" />
       <workItem from="1754040648055" duration="1954000" />
       <workItem from="1754442312917" duration="1736000" />
-    </task>
-    <task id="LOCAL-00036" summary="Fix merge conflicts">
-      <option name="closed" value="true" />
-      <created>1753611800996</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1753611800996</updated>
     </task>
     <task id="LOCAL-00037" summary="Fix merge conflicts">
       <option name="closed" value="true" />
@@ -595,7 +590,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762923955687</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Fix merge conflicts">
+      <option name="closed" value="true" />
+      <created>1763194012589</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1763194012589</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
