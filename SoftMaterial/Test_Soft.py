@@ -6,7 +6,7 @@ PLS = Please()
 # PID Gain
 # system init z_pose = 85mm(VisionFrame)
 PLS.CT.Z_Reference = 98
-PLS.CT.PWM_Reference = 75
+PLS.CT.PWM_Reference = 68
 # PLS.CT.a = 10.6
 # PLS.CT.alpha_p = 1
 # PLS.CT.alpha_n = 1.1
