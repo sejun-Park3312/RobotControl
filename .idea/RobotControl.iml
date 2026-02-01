@@ -7,7 +7,7 @@
     <content url="file://$USER_HOME$/catkin_ws/devel/lib/python3/dist-packages" />
     <content url="file://$USER_HOME$/catkin_ws/src/doosan-robot/common/imp" />
     <content url="file:///opt/ros/noetic/lib/python3/dist-packages" />
-    <orderEntry type="jdk" jdkName="Python 3.8" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.8 (RobotControl) (3)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

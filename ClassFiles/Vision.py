@@ -74,20 +74,20 @@ class Vision:
 
         # Open Camera
         # v4l2-ctl --list-devices
-        self.Cam1 = cv2.VideoCapture('/dev/video2', cv2.CAP_V4L2)  # USB 캠 1
+        self.Cam1 = cv2.VideoCapture('/dev/video0', cv2.CAP_V4L2)  # USB 캠 1
         self.Cam1.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG'))
         self.Cam1.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
         self.Cam1.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
         self.Cam1.set(cv2.CAP_PROP_FPS, 100)
 
-        self.Cam2 = cv2.VideoCapture('/dev/video0', cv2.CAP_V4L2)  # USB 캠 2
+        self.Cam2 = cv2.VideoCapture('/dev/video2', cv2.CAP_V4L2)  # USB 캠 2
         self.Cam2.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG'))
         self.Cam2.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
         self.Cam2.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
         self.Cam2.set(cv2.CAP_PROP_FPS, 100)
 
         # Set ROI(x,y,w,h)
-        self.ROI_1 = [50, 230, 550, 120]
+        self.ROI_1 = [50, 200, 550, 120]
         self.ROI_2 = [130, 200, 400, 100]
 
 
