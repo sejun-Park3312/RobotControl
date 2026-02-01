@@ -20,9 +20,13 @@
       <change afterPath="$PROJECT_DIR$/Data/History/1111_silicon_theta/251111_Theta_Silicon_2.mp4" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Data/History/1112_Theta_silicon/251111_Theta_Silicon_1.mp4" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Data/History/1112_Theta_silicon/251111_Theta_Silicon_2.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/History/1115_SimpleFeedbackControl/251115_Test_1.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/History/1115_SimpleFeedbackControl/251115_Test_2.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SoftMaterial/Please.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SoftMaterial/Test_Soft.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SiliconOil/Final_SiliconOil.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiliconOil/Final_SiliconOil.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SiliconOil/Test_SiliconOil.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiliconOil/Test_SiliconOil.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClassFiles/Vision.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/Vision.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestScripts/ArduinoTest/ArduinoTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestScripts/ArduinoTest/ArduinoTest.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +48,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Final_251109" />
+        <entry key="$PROJECT_DIR$" value="Final_251110" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -102,6 +106,7 @@
     "Python.Sensor_Test.executor": "Run",
     "Python.Sensor_Test2.executor": "Run",
     "Python.Test_SiliconOil.executor": "Run",
+    "Python.Test_Soft.executor": "Run",
     "Python.Theta_Silicon_Test.executor": "Run",
     "Python.TotalSystem.executor": "Run",
     "Python.TotalSystemTest.executor": "Run",
@@ -123,8 +128,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Final__251110",
-    "last_opened_file_path": "/home/msrl/PycharmProjects/RobotControl/Data/History/1115_SimpleFeedbackControl",
+    "git-widget-placeholder": "SoftCapule__251201",
+    "last_opened_file_path": "/home/msrl/PycharmProjects/RobotControl/SoftMaterial",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -136,11 +141,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/SoftMaterial" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Data/History/1115_SimpleFeedbackControl" />
       <recent name="$PROJECT_DIR$/Data/History/1112_Theta_silicon" />
       <recent name="$PROJECT_DIR$/Data/History/1111_silicon_Infinite" />
-      <recent name="$PROJECT_DIR$/Data/History/1111_silicon_PNU" />
-      <recent name="$PROJECT_DIR$/Data/History/1111_silicon_theta" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/TestScripts/ControlTest" />
@@ -205,14 +210,6 @@
       <workItem from="1754025973488" duration="8000" />
       <workItem from="1754040648055" duration="1954000" />
       <workItem from="1754442312917" duration="1736000" />
-    </task>
-    <task id="LOCAL-00037" summary="Fix merge conflicts">
-      <option name="closed" value="true" />
-      <created>1753619314864</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1753619314864</updated>
     </task>
     <task id="LOCAL-00038" summary="Fix merge conflicts">
       <option name="closed" value="true" />
@@ -598,7 +595,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763194012589</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="Fix merge conflicts">
+      <option name="closed" value="true" />
+      <created>1763197175067</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1763197175067</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

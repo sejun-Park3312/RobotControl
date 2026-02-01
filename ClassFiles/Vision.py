@@ -87,8 +87,8 @@ class Vision:
         self.Cam2.set(cv2.CAP_PROP_FPS, 100)
 
         # Set ROI(x,y,w,h)
-        self.ROI_1 = [50, 150, 550, 200]
-        self.ROI_2 = [110, 140, 450, 200]
+        self.ROI_1 = [50, 230, 550, 120]
+        self.ROI_2 = [130, 200, 400, 100]
 
 
         # World Frame Alignment
@@ -106,9 +106,26 @@ class Vision:
     def Get_Center(self, frame, CamNum):
 
         hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+        # 초록색
         lower = np.array([40, 50, 50])
         upper = np.array([80, 255, 255])
+
+        # 적갈색
+        # lower = np.array([5, 120, 80])  # S, V 하한을 확 올림
+        # upper = np.array([15, 255, 255])
+
         mask = cv2.inRange(hsv, lower, upper)
+
+        # 쨍한 빨강
+        # lower_red1 = np.array([0, 100, 80])
+        # upper_red1 = np.array([12, 255, 255])
+        #
+        # lower_red2 = np.array([165, 100, 80])
+        # upper_red2 = np.array([180, 255, 255])
+        # mask = cv2.inRange(hsv, lower_red1, upper_red1) | \
+        #        cv2.inRange(hsv, lower_red2, upper_red2)
+
+
         cnts, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
         if cnts:
             c = max(cnts, key=cv2.contourArea)
