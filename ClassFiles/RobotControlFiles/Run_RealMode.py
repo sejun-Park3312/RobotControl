@@ -11,9 +11,9 @@ from GazeboSimulator import GazeboSimulator
 # sudo ip link set enxa0cec8ac637d up
 
 ## <<그냥 유선연결>>
-# sudo ip addr flush dev enp68s0
-# sudo ip addr add 192.168.0.100/24 dev enp68s0
-# sudo ip link set enp68s0 up
+# sudo ip addr flush dev enp131s0 / enp68s0
+# sudo ip addr add 192.168.0.100/24 dev enp131s0
+# sudo ip link set enp131s0 up
 
 # sudo ethtool -s enxa0cec8ac637d speed 100 duplex full autoneg off
 # ping 192.168.0.181

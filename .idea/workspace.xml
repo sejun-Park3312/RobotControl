@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb9d1046-e9e4-45fd-a8cf-311c6b3fc451" name="Changes" comment="Fix merge conflicts">
-      <change beforePath="$PROJECT_DIR$/.idea/RobotControl.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RobotControl.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestScripts/ArduinoTest/ds.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassFiles/Vision.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/Vision.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClassFiles/Arduino.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/Arduino.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClassFiles/RobotControlFiles/Run_RealMode.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClassFiles/RobotControlFiles/Run_RealMode.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SoftMaterial/Test_Soft.py" beforeDir="false" afterPath="$PROJECT_DIR$/SoftMaterial/Test_Soft.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,6 +100,7 @@
     "Python.VisionRobot_Test.executor": "Run",
     "Python.VisionTest.executor": "Run",
     "Python.WaterTest1.executor": "Run",
+    "Python.ds.executor": "Run",
     "Python.dsr_ex_a0509.executor": "Run",
     "Python.ex.executor": "Debug",
     "Python.robot_console.executor": "Run",
@@ -197,15 +198,8 @@
       <workItem from="1754025973488" duration="8000" />
       <workItem from="1754040648055" duration="1954000" />
       <workItem from="1754442312917" duration="1736000" />
-      <workItem from="1769953235856" duration="5534000" />
-    </task>
-    <task id="LOCAL-00039" summary="Fix merge conflicts">
-      <option name="closed" value="true" />
-      <created>1753625085312</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1753625085312</updated>
+      <workItem from="1769953235856" duration="6345000" />
+      <workItem from="1769959887725" duration="2674000" />
     </task>
     <task id="LOCAL-00040" summary="Fix merge conflicts">
       <option name="closed" value="true" />
@@ -591,7 +585,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769953033013</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="Fix merge conflicts">
+      <option name="closed" value="true" />
+      <created>1769958775277</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1769958775278</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -615,29 +617,41 @@
     <MESSAGE value="Fix merge conflicts" />
     <option name="LAST_COMMIT_MESSAGE" value="Fix merge conflicts" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ClassFiles/Arduino.py</url>
+          <line>90</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/RobotControl$Vision.coverage" NAME="Vision Coverage Results" MODIFIED="1753442790431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RobotControl$CalibrationTest.coverage" NAME="CalibrationTest Coverage Results" MODIFIED="1753444727601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RobotControl$Run_VirtualMode.coverage" NAME="Run_VirtualMode Coverage Results" MODIFIED="1769958310167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ClassFiles/RobotControlFiles" />
+    <SUITE FILE_PATH="coverage/RobotControl$ArduinoTest.coverage" NAME="ArduinoTest Coverage Results" MODIFIED="1769962145736" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestScripts/ArduinoTest" />
+    <SUITE FILE_PATH="coverage/RobotControl$TotalSystem.coverage" NAME="TotalSystem Coverage Results" MODIFIED="1753818373317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ClassFiles" />
+    <SUITE FILE_PATH="coverage/RobotControl$ds.coverage" NAME="ds Coverage Results" MODIFIED="1769961699859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestScripts/ArduinoTest" />
+    <SUITE FILE_PATH="coverage/RobotControl$RTtest.coverage" NAME="RTtest Coverage Results" MODIFIED="1753106002457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RobotControl$dsr_ex_a0509.coverage" NAME="dsr_ex_a0509 Coverage Results" MODIFIED="1752678634899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RobotControl$ex.coverage" NAME="ex Coverage Results" MODIFIED="1752685079426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RobotControl$RobotController_SDK.coverage" NAME="RobotController_SDK Coverage Results" MODIFIED="1769959173308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ClassFiles/RobotControlFiles" />
     <SUITE FILE_PATH="coverage/RobotControl$VisionControlTest.coverage" NAME="VisionControlTest Coverage Results" MODIFIED="1753809840357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestScripts" />
     <SUITE FILE_PATH="coverage/RobotControl$VisionCalibration.coverage" NAME="VisionCalibration Coverage Results" MODIFIED="1753365369033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RobotControl$VisionTest.coverage" NAME="VisionTest Coverage Results" MODIFIED="1769958100214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestScripts/VisionTest" />
-    <SUITE FILE_PATH="coverage/RobotControl$CalibrationTest.coverage" NAME="CalibrationTest Coverage Results" MODIFIED="1753444727601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/RobotControl$Run_VirtualMode.coverage" NAME="Run_VirtualMode Coverage Results" MODIFIED="1769958310167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ClassFiles/RobotControlFiles" />
     <SUITE FILE_PATH="coverage/RobotControl$CalibrationData.coverage" NAME="CalibrationData Coverage Results" MODIFIED="1753431846100" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Results" />
     <SUITE FILE_PATH="coverage/RobotControl$DoosanRobot.coverage" NAME="DoosanRobot Coverage Results" MODIFIED="1752674511225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RobotControl$VisionArduinoTest.coverage" NAME="VisionArduinoTest Coverage Results" MODIFIED="1753686478689" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestScripts" />
     <SUITE FILE_PATH="coverage/RobotControl$ROS1_Test.coverage" NAME="ROS1_Test Coverage Results" MODIFIED="1752745478674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/RobotControl$ArduinoTest.coverage" NAME="ArduinoTest Coverage Results" MODIFIED="1753809131042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestScripts" />
-    <SUITE FILE_PATH="coverage/RobotControl$TotalSystem.coverage" NAME="TotalSystem Coverage Results" MODIFIED="1753818373317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ClassFiles" />
     <SUITE FILE_PATH="coverage/RobotControl$robot_console.coverage" NAME="robot_console Coverage Results" MODIFIED="1752684465437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/RobotControl$RTtest.coverage" NAME="RTtest Coverage Results" MODIFIED="1753106002457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RobotControl$RobotController.coverage" NAME="RobotController Coverage Results" MODIFIED="1753633262423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ClassFiles" />
-    <SUITE FILE_PATH="coverage/RobotControl$Run_RealMode.coverage" NAME="Run_RealMode Coverage Results" MODIFIED="1769958288568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ClassFiles/RobotControlFiles" />
-    <SUITE FILE_PATH="coverage/RobotControl$dsr_ex_a0509.coverage" NAME="dsr_ex_a0509 Coverage Results" MODIFIED="1752678634899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/RobotControl$Arduino.coverage" NAME="Arduino Coverage Results" MODIFIED="1753615278693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ClassFiles" />
-    <SUITE FILE_PATH="coverage/RobotControl$ex.coverage" NAME="ex Coverage Results" MODIFIED="1752685079426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RobotControl$Run_RealMode.coverage" NAME="Run_RealMode Coverage Results" MODIFIED="1769959937891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ClassFiles/RobotControlFiles" />
+    <SUITE FILE_PATH="coverage/RobotControl$Arduino.coverage" NAME="Arduino Coverage Results" MODIFIED="1769960532421" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ClassFiles" />
     <SUITE FILE_PATH="coverage/RobotControl$TotalSystemTest.coverage" NAME="TotalSystemTest Coverage Results" MODIFIED="1754443954377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestScripts" />
-    <SUITE FILE_PATH="coverage/RobotControl$Test_Soft.coverage" NAME="Test_Soft Coverage Results" MODIFIED="1769958691960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SoftMaterial" />
+    <SUITE FILE_PATH="coverage/RobotControl$Test_Soft.coverage" NAME="Test_Soft Coverage Results" MODIFIED="1769962225537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SoftMaterial" />
     <SUITE FILE_PATH="coverage/RobotControl$Collect.coverage" NAME="Collect Coverage Results" MODIFIED="1753514750690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/RobotControl$RobotController_SDK.coverage" NAME="RobotController_SDK Coverage Results" MODIFIED="1769957392217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ClassFiles/RobotControlFiles" />
   </component>
 </project>
