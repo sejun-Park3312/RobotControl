@@ -5,14 +5,14 @@ PLS = Please()
 
 # PID Gain
 # system init z_pose = 85mm(VisionFrame)
-PLS.CT.Z_Reference = 98
-PLS.CT.PWM_Reference = 68
+PLS.CT.Z_Reference = 90
+PLS.CT.PWM_Reference = 100
 # PLS.CT.a = 10.6
 # PLS.CT.alpha_p = 1
 # PLS.CT.alpha_n = 1.1
 # PLS.CT.beta = 1.4
-PLS.CT.Kp = 15
-PLS.CT.Kd = 4
+PLS.CT.Kp = 30
+PLS.CT.Kd = 5
 PLS.CT.setPID()
 
 
