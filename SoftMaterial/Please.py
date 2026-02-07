@@ -39,6 +39,7 @@ class Please:
         self.CT.a = 10.7091
         self.CT.b = -993.3455
 
+        self.tilt = 0
         self.RobotOffset = [425,112.5,280]
         self.Running = True
         self.PWM_ONOFF = False
@@ -88,7 +89,7 @@ class Please:
             PWM = self.CT.Get_PWM(SystemPose[2], TargetPose[2])
 
             if self.PWM_ONOFF:
-                self.AD.Send_PWM([PWM, PWM, PWM])
+                self.AD.Send_PWM([PWM * (1 - self.tilt), PWM * (1 + self.tilt), PWM])
             else:
                 self.AD.Send_PWM([0, 0, 0])
 
@@ -141,6 +142,14 @@ class Please:
             print("")
 
 
+    def compensate_pose_err(self, x_world, y_world, z_world):
+        with self.VS_lock:
+            TargetPose = self.VS.Position
+            TargetPose = [x * 1000 for x in TargetPose]
+
+        Pose_Error = [x_world - TargetPose[0], y_world - TargetPose[1], z_world - TargetPose[2]]
+        self.RC.MoveRel(Pose_Error[0], Pose_Error[1], Pose_Error[2], 0)
+
 
     def Handle(self):
         banner = "\n Waiting Your Order..."
@@ -159,7 +168,7 @@ class Please:
 
                        'Pose': self.Pose,
                        'PWM': self.PWM_Switch,
-                       'MPWM': self.AD.ManualPWM,
+                       'AbsPose': self.compensate_pose_err,
                        'PLS': self}
 
         code.interact(banner=banner, local=locals_dict)
