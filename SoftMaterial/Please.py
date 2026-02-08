@@ -71,8 +71,8 @@ class Please:
         time.sleep(5)
 
         # VideoWirter Thread
-        VW_Thread = threading.Thread(target=self.VW.Capture, daemon=True)
-        VW_Thread.start()
+        # VW_Thread = threading.Thread(target=self.VW.Capture, daemon=True)
+        # VW_Thread.start()
 
         self.StartTime = time.time()
         while self.Running:
@@ -110,9 +110,10 @@ class Please:
             RobotPose = self.RC.EE_Position
         RobotOffset = self.RobotOffset
         SystemPose = [RobotPose[0] - RobotOffset[0], RobotPose[1] - RobotOffset[1], RobotPose[2] - RobotOffset[2]]
+        XY_Err = [SystemPose[0] - TargetPose[0], SystemPose[1] - TargetPose[1]]
         print(f"Target: {[round(x,2) for x in TargetPose]} [mm]")
         print(f"System: {[round(x,2) for x in SystemPose]} [mm]")
-        print(f"Z, Error: {[round((SystemPose[2] - TargetPose[2]),2), round(self.CT.Z_Reference - (SystemPose[2] - TargetPose[2]), 2)]} [mm]")
+        print(f"Error: {[round(XY_Err[0],2), round(XY_Err[1],2), round(self.CT.Z_Reference - (SystemPose[2] - TargetPose[2]), 2)]} [mm]")
         print("")
 
 
@@ -142,14 +143,40 @@ class Please:
             print("")
 
 
-    def compensate_pose_err(self, x_world, y_world, z_world):
+    def compensate_pose_err(self, x_world, y_world, z_world, phi_world):
         with self.VS_lock:
             TargetPose = self.VS.Position
             TargetPose = [x * 1000 for x in TargetPose]
+            Rot = self.RC.EE_Rotation
+            Phi = Rot[0] - Rot[2]
 
-        Pose_Error = [x_world - TargetPose[0], y_world - TargetPose[1], z_world - TargetPose[2]]
-        self.RC.MoveRel(Pose_Error[0], Pose_Error[1], Pose_Error[2], 0)
+        Pose_Error = [x_world - TargetPose[0], y_world - TargetPose[1], z_world - TargetPose[2], phi_world - Phi]
+        self.RC.MoveRel(Pose_Error[0], Pose_Error[1], Pose_Error[2], Pose_Error[3])
 
+    def TCP_Reset(self):
+        self.RC.SetRobotMode(1)
+        self.RC.AddTCP('sj', [0,0,0,0,0,0])
+        self.RC.SetTCP('sj')
+        self.RC.SetRobotMode(0)
+
+
+    def TCP(self):
+
+        self.TCP_Reset()
+
+        with self.VS_lock, self.RC_lock:
+            TargetPose = self.VS.Position
+            TargetPose = [x * 1000 for x in TargetPose]
+            RobotPose = self.RC.EE_Position
+        RobotOffset = self.RobotOffset
+        SystemPose = [RobotPose[0] - RobotOffset[0], RobotPose[1] - RobotOffset[1], RobotPose[2] - RobotOffset[2]]
+
+        XY_Error = [TargetPose[0] - SystemPose[0], TargetPose[1] - SystemPose[1]]
+        TCP_Pose = [-XY_Error[0], XY_Error[1], 0, 0, 0, 0]
+        self.RC.SetRobotMode(1)
+        self.RC.AddTCP('sj', TCP_Pose)
+        self.RC.SetTCP('sj')
+        self.RC.SetRobotMode(0)
 
     def Handle(self):
         banner = "\n Waiting Your Order..."

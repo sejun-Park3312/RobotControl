@@ -7,9 +7,9 @@ PLS = Please()
 # system init z_pose = 85mm(VisionFrame)
 PLS.CT.Z_Reference = 93
 PLS.CT.PWM_Reference = 70
-PLS.tilt = -0.2
+PLS.tilt = -0.15
 
-PLS.CT.Kp = 20
+PLS.CT.Kp = 30
 PLS.CT.Kd = 5
 PLS.CT.setPID()
 

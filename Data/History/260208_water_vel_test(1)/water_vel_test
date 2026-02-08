@@ -1,0 +1,55 @@
+PLS.CT.Z_Reference = 93
+PLS.CT.PWM_Reference = 70
+PLS.tilt = -0.15
+
+PLS.CT.Kp = 30
+PLS.CT.Kd = 5
+PLS.CT.setPID()
+
+
+
+
+PLS.RC.Vel_Line = [8,30]
+PLS.RC.Acc_Line = [4,30]
+
+
+PLS.RC.Vel_Line = [12,30]
+PLS.RC.Acc_Line = [6,30]
+
+
+PLS.RC.Vel_Line = [16,30]
+PLS.RC.Acc_Line = [8,30]
+
+PLS.RC.Vel_Line = [20,30]
+PLS.RC.Acc_Line = [10,30]
+
+PLS.RC.Vel_Line = [25,30]
+PLS.RC.Acc_Line = [12.5,30]
+
+PLS.RC.Vel_Line = [30,30]
+PLS.RC.Acc_Line = [15,30]
+
+PLS.RC.Vel_Line = [40,30]
+PLS.RC.Acc_Line = [20,30]
+
+PLS.RC.Vel_Line = [50,30]
+PLS.RC.Acc_Line = [25,30]
+
+PLS.TCP()
+
+
+z
+MoveRel(0,0,15,0);MoveRel(0,0,-15,0)
+
+x
+MoveRel(40,0,0,0);MoveRel(-80,0,0,0);MoveRel(40,0,0,0)
+
+y
+MoveRel(0,0,0,90);Wait(1)
+MoveRel(40,0,0,0);MoveRel(-80,0,0,0);MoveRel(40,0,0,0)
+MoveRel(0,0,0,-90)
+
+
+
+
+
