@@ -5,7 +5,7 @@ PLS = Please()
 
 # PID Gain
 # system init z_pose = 85mm(VisionFrame)
-PLS.CT.Z_Reference = 95
+PLS.CT.Z_Reference = 93
 PLS.CT.PWM_Reference = 110
 # PLS.CT.a = 10.6
 # PLS.CT.alpha_p = 1
@@ -17,8 +17,8 @@ PLS.CT.setPID()
 
 
 # Robot Param
-PLS.RC.Vel_Line = [5,30]
-PLS.RC.Acc_Line = [3,30]
+PLS.RC.Vel_Line = [10,30]
+PLS.RC.Acc_Line = [5,30]
 PLS.RC.InitPose = [425, 112.5, 370.5]
 
 

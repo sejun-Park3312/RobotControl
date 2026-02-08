@@ -1,17 +1,17 @@
 InitPose()
 
-MoveRel(0,0,10,0);MoveRel(55,-50,0,90);MoveRel(0,0,-8,0);Wait(3)
+MoveRel(0,0,10,0);AbsPose(55,-50,-5,90);MoveRel(0,0,-8,0);Wait(3)
 
 PWM(0)
 
 PLS.CT.Z_Reference = 95
 PLS.CT.PWM_Reference = 100
-PLS.CT.Kp = 20
+PLS.CT.Kp = 25
 PLS.CT.Kd = 5
 PLS.CT.setPID()
 
 PWM(1)
-InitPose();MoveRel(-60,30,0,-90);MoveRel(0,0,-10,0);Wait(3)
+InitPose();AbsPose(-60,30,-5,-90);AbsPose(-60,30,-15,-90);Wait(3)
 
 PWM(0)
 
