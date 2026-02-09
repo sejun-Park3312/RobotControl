@@ -12,11 +12,7 @@ PLS.CT.Kd = 5
 PLS.CT.setPID()
 
 PWM(1)
-InitPose();
-
-AbsPose(-59,55,-5,0)
-
-AbsPose(-59,55,-12,0)
+InitPose();AbsPose(-59,55,-5,0);AbsPose(-59,55,-12,0);Wait(3)
 
 PWM(0)
 
