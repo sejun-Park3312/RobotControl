@@ -1,7 +1,10 @@
 InitPose()
 PLS.CT.Z_Reference = 93
 PLS.CT.PWM_Reference = 140
-MoveRel(0,0,10,0);AbsPose(53,-57.5,-5,90);AbsPose(53,-57.5,-13,90);Wait(3)
+
+AbsPose(53,-57.5,-5,90)
+
+AbsPose(53,-57.5,-13,90)
 
 PWM(0)
 
@@ -9,6 +12,7 @@ PLS.CT.Z_Reference = 95
 PLS.CT.PWM_Reference = 100
 PLS.CT.Kp = 25
 PLS.CT.Kd = 5
+PLS.tilt = -0.15
 PLS.CT.setPID()
 
 PWM(1)
